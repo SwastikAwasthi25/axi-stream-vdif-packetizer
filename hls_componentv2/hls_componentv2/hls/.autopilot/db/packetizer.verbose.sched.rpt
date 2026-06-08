@@ -1,0 +1,252 @@
+
+
+================================================================
+== Vitis HLS Report for 'packetizer'
+================================================================
+* Date:           Mon Jun  8 17:44:12 2026
+
+* Version:        2025.2 (Build 6295257 on Nov 14 2025)
+* Project:        hls_componentv2
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: artix7
+* Target device:  xc7a12t-cpg238-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  4.980 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       21|       21|  0.210 us|  0.210 us|   22|   22|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 10
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 4.16>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%pps_read = read i1 @_ssdm_op_Read.ap_none.i1, i1 %pps"   --->   Operation 11 'read' 'pps_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%complex_data_read = read i1 @_ssdm_op_Read.ap_none.i1, i1 %complex_data"   --->   Operation 12 'read' 'complex_data_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%bits_per_sample_read = read i5 @_ssdm_op_Read.ap_none.i5, i5 %bits_per_sample"   --->   Operation 13 'read' 'bits_per_sample_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%thread_id_read = read i10 @_ssdm_op_Read.ap_none.i10, i10 %thread_id"   --->   Operation 14 'read' 'thread_id_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%station_id_read = read i16 @_ssdm_op_Read.ap_none.i16, i16 %station_id"   --->   Operation 15 'read' 'station_id_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%epoch_read = read i6 @_ssdm_op_Read.ap_none.i6, i6 %epoch"   --->   Operation 16 'read' 'epoch_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%p_phi4_loc = alloca i64 1"   --->   Operation 17 'alloca' 'p_phi4_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%p_phi_loc = alloca i64 1"   --->   Operation 18 'alloca' 'p_phi_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%spectopmodule_ln7 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_6" [../packetizer2.cpp:7]   --->   Operation 19 'spectopmodule' 'spectopmodule_ln7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%specinterface_ln7 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_7, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0, i32 0" [../packetizer2.cpp:7]   --->   Operation 20 'specinterface' 'specinterface_ln7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %in_stream_V_data_V, i4 %in_stream_V_keep_V, i4 %in_stream_V_strb_V, i1 %in_stream_V_last_V, void @empty, i32 1, i32 1, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 21 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %in_stream_V_data_V"   --->   Operation 22 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i4 %in_stream_V_keep_V"   --->   Operation 23 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i4 %in_stream_V_strb_V"   --->   Operation 24 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %in_stream_V_last_V"   --->   Operation 25 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %out_stream_V_data_V, i4 %out_stream_V_keep_V, i4 %out_stream_V_strb_V, i1 %out_stream_V_last_V, void @empty, i32 1, i32 1, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 26 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %out_stream_V_data_V"   --->   Operation 27 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i4 %out_stream_V_keep_V"   --->   Operation 28 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i4 %out_stream_V_strb_V"   --->   Operation 29 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %out_stream_V_last_V"   --->   Operation 30 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i6 %epoch"   --->   Operation 31 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i6 %epoch, void @empty_2, i32 4294967295, i32 4294967295, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 32 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i16 %station_id"   --->   Operation 33 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %station_id, void @empty_2, i32 4294967295, i32 4294967295, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 34 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i10 %thread_id"   --->   Operation 35 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i10 %thread_id, void @empty_2, i32 4294967295, i32 4294967295, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 36 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i5 %bits_per_sample"   --->   Operation 37 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i5 %bits_per_sample, void @empty_2, i32 4294967295, i32 4294967295, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 38 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %complex_data"   --->   Operation 39 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %complex_data, void @empty_2, i32 4294967295, i32 4294967295, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 40 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %pps"   --->   Operation 41 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %pps, void @empty_2, i32 4294967295, i32 4294967295, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 42 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%fifo = alloca i64 1" [../packetizer2.cpp:32]   --->   Operation 43 'alloca' 'fifo' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.68> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 8> <FIFO>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%empty = specchannel i32 @_ssdm_op_SpecChannel, void @fifo_str, i32 1, void @p_str, void @p_str, i32 8, i32 8, i32 %fifo, i32 %fifo"   --->   Operation 44 'specchannel' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %fifo, void @empty_3, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 45 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln44 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %out_stream_V_data_V, i4 %out_stream_V_keep_V, i4 %out_stream_V_strb_V, i1 0, i1 %out_stream_V_last_V, i1 0, i1 0, void @empty_4" [../packetizer2.cpp:44]   --->   Operation 46 'specaxissidechannel' 'specaxissidechannel_ln44' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln44 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %in_stream_V_data_V, i4 %in_stream_V_keep_V, i4 %in_stream_V_strb_V, i1 0, i1 %in_stream_V_last_V, i1 0, i1 0, void @empty_5" [../packetizer2.cpp:44]   --->   Operation 47 'specaxissidechannel' 'specaxissidechannel_ln44' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%seconds_from_epoch_load = load i30 %seconds_from_epoch" [../packetizer2.cpp:46]   --->   Operation 48 'load' 'seconds_from_epoch_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%frame_no_load = load i24 %frame_no" [../packetizer2.cpp:70]   --->   Operation 49 'load' 'frame_no_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (1.61ns)   --->   "%br_ln44 = br i1 %pps_read, void %VITIS_LOOP_54_1, void %if.then" [../packetizer2.cpp:44]   --->   Operation 50 'br' 'br_ln44' <Predicate = true> <Delay = 1.61>
+ST_1 : Operation 51 [1/1] (2.63ns)   --->   "%add_ln46 = add i30 %seconds_from_epoch_load, i30 1" [../packetizer2.cpp:46]   --->   Operation 51 'add' 'add_ln46' <Predicate = (pps_read)> <Delay = 2.63> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%store_ln46 = store i30 %add_ln46, i30 %seconds_from_epoch" [../packetizer2.cpp:46]   --->   Operation 52 'store' 'store_ln46' <Predicate = (pps_read)> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (1.61ns)   --->   "%br_ln48 = br void %VITIS_LOOP_54_1" [../packetizer2.cpp:48]   --->   Operation 53 'br' 'br_ln48' <Predicate = (pps_read)> <Delay = 1.61>
+ST_1 : Operation 54 [2/2] (4.16ns)   --->   "%call_ln0 = call void @packetizer_Pipeline_VITIS_LOOP_54_1, i32 %in_stream_V_data_V, i4 %in_stream_V_keep_V, i4 %in_stream_V_strb_V, i1 %in_stream_V_last_V, i32 %fifo, i4 %p_phi_loc, i4 %p_phi4_loc"   --->   Operation 54 'call' 'call_ln0' <Predicate = true> <Delay = 4.16> <CoreType = "Generic">   --->   Generic Core
+
+State 2 <SV = 1> <Delay = 4.90>
+ST_2 : Operation 55 [1/1] (0.00ns)   --->   "%word0 = phi i30 %add_ln46, void %if.then, i30 %seconds_from_epoch_load, void %entry" [../packetizer2.cpp:46]   --->   Operation 55 'phi' 'word0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 56 [1/1] (0.00ns)   --->   "%frame_no_loc_0 = phi i24 0, void %if.then, i24 %frame_no_load, void %entry" [../packetizer2.cpp:70]   --->   Operation 56 'phi' 'frame_no_loc_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 57 [1/2] (4.90ns)   --->   "%call_ln0 = call void @packetizer_Pipeline_VITIS_LOOP_54_1, i32 %in_stream_V_data_V, i4 %in_stream_V_keep_V, i4 %in_stream_V_strb_V, i1 %in_stream_V_last_V, i32 %fifo, i4 %p_phi_loc, i4 %p_phi4_loc"   --->   Operation 57 'call' 'call_ln0' <Predicate = true> <Delay = 4.90> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 58 [1/1] (2.42ns)   --->   "%add_ln126 = add i24 %frame_no_loc_0, i24 1" [../packetizer2.cpp:126]   --->   Operation 58 'add' 'add_ln126' <Predicate = true> <Delay = 2.42> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.42> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 59 [1/1] (0.00ns)   --->   "%store_ln47 = store i24 %add_ln126, i24 %frame_no" [../packetizer2.cpp:47]   --->   Operation 59 'store' 'store_ln47' <Predicate = true> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 1.31>
+ST_3 : Operation 60 [1/1] (0.00ns)   --->   "%p_phi_loc_load = load i4 %p_phi_loc"   --->   Operation 60 'load' 'p_phi_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 61 [1/1] (0.00ns)   --->   "%p_phi4_loc_load = load i4 %p_phi4_loc"   --->   Operation 61 'load' 'p_phi4_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 62 [1/1] (0.00ns)   --->   "%zext_ln67 = zext i30 %word0" [../packetizer2.cpp:67]   --->   Operation 62 'zext' 'zext_ln67' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 63 [2/2] (1.31ns)   --->   "%write_ln94 = write void @_ssdm_op_Write.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %out_stream_V_data_V, i4 %out_stream_V_keep_V, i4 %out_stream_V_strb_V, i1 %out_stream_V_last_V, i32 %zext_ln67, i4 %p_phi_loc_load, i4 %p_phi4_loc_load, i1 0" [../packetizer2.cpp:94]   --->   Operation 63 'write' 'write_ln94' <Predicate = true> <Delay = 1.31> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 2.05> <Adapter> <Opcode : 'read' 'write'>
+
+State 4 <SV = 3> <Delay = 1.31>
+ST_4 : Operation 64 [1/1] (0.00ns)   --->   "%word1 = bitconcatenate i30 @_ssdm_op_BitConcatenate.i30.i6.i24, i6 %epoch_read, i24 %frame_no_loc_0" [../packetizer2.cpp:70]   --->   Operation 64 'bitconcatenate' 'word1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 65 [1/1] (0.00ns)   --->   "%zext_ln70 = zext i30 %word1" [../packetizer2.cpp:70]   --->   Operation 65 'zext' 'zext_ln70' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 66 [1/2] ( I:1.31ns O:1.31ns )   --->   "%write_ln94 = write void @_ssdm_op_Write.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %out_stream_V_data_V, i4 %out_stream_V_keep_V, i4 %out_stream_V_strb_V, i1 %out_stream_V_last_V, i32 %zext_ln67, i4 %p_phi_loc_load, i4 %p_phi4_loc_load, i1 0" [../packetizer2.cpp:94]   --->   Operation 66 'write' 'write_ln94' <Predicate = true> <Delay = 1.31> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 2.05> <Adapter> <Opcode : 'read' 'write'>
+ST_4 : Operation 67 [2/2] (1.31ns)   --->   "%write_ln98 = write void @_ssdm_op_Write.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %out_stream_V_data_V, i4 %out_stream_V_keep_V, i4 %out_stream_V_strb_V, i1 %out_stream_V_last_V, i32 %zext_ln70, i4 %p_phi_loc_load, i4 %p_phi4_loc_load, i1 0" [../packetizer2.cpp:98]   --->   Operation 67 'write' 'write_ln98' <Predicate = true> <Delay = 1.31> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 2.05> <Adapter> <Opcode : 'read' 'write'>
+
+State 5 <SV = 4> <Delay = 1.31>
+ST_5 : Operation 68 [1/2] ( I:1.31ns O:1.31ns )   --->   "%write_ln98 = write void @_ssdm_op_Write.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %out_stream_V_data_V, i4 %out_stream_V_keep_V, i4 %out_stream_V_strb_V, i1 %out_stream_V_last_V, i32 %zext_ln70, i4 %p_phi_loc_load, i4 %p_phi4_loc_load, i1 0" [../packetizer2.cpp:98]   --->   Operation 68 'write' 'write_ln98' <Predicate = true> <Delay = 1.31> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 2.05> <Adapter> <Opcode : 'read' 'write'>
+ST_5 : Operation 69 [2/2] (1.31ns)   --->   "%write_ln102 = write void @_ssdm_op_Write.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %out_stream_V_data_V, i4 %out_stream_V_keep_V, i4 %out_stream_V_strb_V, i1 %out_stream_V_last_V, i32 536870920, i4 %p_phi_loc_load, i4 %p_phi4_loc_load, i1 0" [../packetizer2.cpp:102]   --->   Operation 69 'write' 'write_ln102' <Predicate = true> <Delay = 1.31> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 2.05> <Adapter> <Opcode : 'read' 'write'>
+
+State 6 <SV = 5> <Delay = 4.98>
+ST_6 : Operation 70 [1/1] (0.00ns)   --->   "%shl_ln = bitconcatenate i32 @_ssdm_op_BitConcatenate.i32.i1.i31, i1 %complex_data_read, i31 0" [../packetizer2.cpp:83]   --->   Operation 70 'bitconcatenate' 'shl_ln' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 71 [1/1] (0.00ns)   --->   "%shl_ln1 = bitconcatenate i31 @_ssdm_op_BitConcatenate.i31.i5.i26, i5 %bits_per_sample_read, i26 0" [../packetizer2.cpp:84]   --->   Operation 71 'bitconcatenate' 'shl_ln1' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 72 [1/1] (0.00ns)   --->   "%zext_ln85 = zext i31 %shl_ln1" [../packetizer2.cpp:85]   --->   Operation 72 'zext' 'zext_ln85' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 73 [1/1] (2.66ns)   --->   "%add_ln85 = add i32 %zext_ln85, i32 4227858432" [../packetizer2.cpp:85]   --->   Operation 73 'add' 'add_ln85' <Predicate = true> <Delay = 2.66> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 74 [1/1] (0.00ns)   --->   "%tmp_1 = partselect i6 @_ssdm_op_PartSelect.i6.i32.i32.i32, i32 %add_ln85, i32 26, i32 31" [../packetizer2.cpp:85]   --->   Operation 74 'partselect' 'tmp_1' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 75 [1/1] (0.00ns)   --->   "%or_ln85_1 = bitconcatenate i32 @_ssdm_op_BitConcatenate.i32.i6.i10.i16, i6 %tmp_1, i10 %thread_id_read, i16 %station_id_read" [../packetizer2.cpp:85]   --->   Operation 75 'bitconcatenate' 'or_ln85_1' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 76 [1/1] (0.99ns)   --->   "%word3 = or i32 %or_ln85_1, i32 %shl_ln" [../packetizer2.cpp:85]   --->   Operation 76 'or' 'word3' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 77 [1/2] ( I:1.31ns O:1.31ns )   --->   "%write_ln102 = write void @_ssdm_op_Write.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %out_stream_V_data_V, i4 %out_stream_V_keep_V, i4 %out_stream_V_strb_V, i1 %out_stream_V_last_V, i32 536870920, i4 %p_phi_loc_load, i4 %p_phi4_loc_load, i1 0" [../packetizer2.cpp:102]   --->   Operation 77 'write' 'write_ln102' <Predicate = true> <Delay = 1.31> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 2.05> <Adapter> <Opcode : 'read' 'write'>
+ST_6 : Operation 78 [2/2] (1.31ns)   --->   "%write_ln106 = write void @_ssdm_op_Write.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %out_stream_V_data_V, i4 %out_stream_V_keep_V, i4 %out_stream_V_strb_V, i1 %out_stream_V_last_V, i32 %word3, i4 %p_phi_loc_load, i4 %p_phi4_loc_load, i1 0" [../packetizer2.cpp:106]   --->   Operation 78 'write' 'write_ln106' <Predicate = true> <Delay = 1.31> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 2.05> <Adapter> <Opcode : 'read' 'write'>
+
+State 7 <SV = 6> <Delay = 1.31>
+ST_7 : Operation 79 [1/2] ( I:1.31ns O:1.31ns )   --->   "%write_ln106 = write void @_ssdm_op_Write.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %out_stream_V_data_V, i4 %out_stream_V_keep_V, i4 %out_stream_V_strb_V, i1 %out_stream_V_last_V, i32 %word3, i4 %p_phi_loc_load, i4 %p_phi4_loc_load, i1 0" [../packetizer2.cpp:106]   --->   Operation 79 'write' 'write_ln106' <Predicate = true> <Delay = 1.31> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 2.05> <Adapter> <Opcode : 'read' 'write'>
+
+State 8 <SV = 7> <Delay = 0.00>
+ST_8 : Operation 80 [2/2] (0.00ns)   --->   "%call_ln0 = call void @packetizer_Pipeline_VITIS_LOOP_112_2, i32 %fifo, i4 %p_phi_loc_load, i4 %p_phi4_loc_load, i32 %out_stream_V_data_V, i4 %out_stream_V_keep_V, i4 %out_stream_V_strb_V, i1 %out_stream_V_last_V"   --->   Operation 80 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+
+State 9 <SV = 8> <Delay = 4.96>
+ST_9 : Operation 81 [1/2] (4.96ns)   --->   "%call_ln0 = call void @packetizer_Pipeline_VITIS_LOOP_112_2, i32 %fifo, i4 %p_phi_loc_load, i4 %p_phi4_loc_load, i32 %out_stream_V_data_V, i4 %out_stream_V_keep_V, i4 %out_stream_V_strb_V, i1 %out_stream_V_last_V"   --->   Operation 81 'call' 'call_ln0' <Predicate = true> <Delay = 4.96> <CoreType = "Generic">   --->   Generic Core
+
+State 10 <SV = 9> <Delay = 0.00>
+ST_10 : Operation 82 [1/1] (0.00ns)   --->   "%ret_ln127 = ret" [../packetizer2.cpp:127]   --->   Operation 82 'ret' 'ret_ln127' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 4.168ns
+The critical path consists of the following:
+	'alloca' operation 4 bit ('p_phi4_loc') [23]  (0.000 ns)
+	'call' operation ('call_ln0') to 'packetizer_Pipeline_VITIS_LOOP_54_1' [64]  (4.168 ns)
+
+ <State 2>: 4.901ns
+The critical path consists of the following:
+	'call' operation ('call_ln0') to 'packetizer_Pipeline_VITIS_LOOP_54_1' [64]  (4.901 ns)
+
+ <State 3>: 1.318ns
+The critical path consists of the following:
+	'load' operation 4 bit ('p_phi_loc_load') on local variable 'p_phi_loc' [65]  (0.000 ns)
+	axis write operation ('write_ln94', ../packetizer2.cpp:94) on port 'out_stream_V_data_V' (../packetizer2.cpp:94) [77]  (0.000 ns)
+	blocking operation 1.318 ns on control path)
+
+ <State 4>: 1.318ns
+The critical path consists of the following:
+	axis write operation ('write_ln94', ../packetizer2.cpp:94) on port 'out_stream_V_data_V' (../packetizer2.cpp:94) [77]  (1.318 ns)
+
+ <State 5>: 1.318ns
+The critical path consists of the following:
+	axis write operation ('write_ln98', ../packetizer2.cpp:98) on port 'out_stream_V_data_V' (../packetizer2.cpp:98) [78]  (1.318 ns)
+
+ <State 6>: 4.980ns
+The critical path consists of the following:
+	'add' operation 32 bit ('add_ln85', ../packetizer2.cpp:85) [73]  (2.667 ns)
+	'or' operation 32 bit ('word3', ../packetizer2.cpp:85) [76]  (0.995 ns)
+	axis write operation ('write_ln106', ../packetizer2.cpp:106) on port 'out_stream_V_data_V' (../packetizer2.cpp:106) [80]  (0.000 ns)
+	blocking operation 1.318 ns on control path)
+
+ <State 7>: 1.318ns
+The critical path consists of the following:
+	axis write operation ('write_ln106', ../packetizer2.cpp:106) on port 'out_stream_V_data_V' (../packetizer2.cpp:106) [80]  (1.318 ns)
+
+ <State 8>: 0.000ns
+The critical path consists of the following:
+
+ <State 9>: 4.968ns
+The critical path consists of the following:
+	'call' operation ('call_ln0') to 'packetizer_Pipeline_VITIS_LOOP_112_2' [81]  (4.968 ns)
+
+ <State 10>: 0.000ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

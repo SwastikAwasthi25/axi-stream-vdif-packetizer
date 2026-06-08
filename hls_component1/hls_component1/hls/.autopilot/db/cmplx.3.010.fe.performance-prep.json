@@ -1,0 +1,22 @@
+{
+  "0": {
+    "basicblocks": 5,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "packetizer1.cpp",
+    "fileloc": 7,
+    "instructions": 345,
+    "loads": {
+      "G": 1,
+      "L": 26
+    },
+    "memory_accesses": 25,
+    "name": "packetizer",
+    "stores": {
+      "G": 1,
+      "L": 43
+    },
+    "total_instructions": 434
+  }
+}

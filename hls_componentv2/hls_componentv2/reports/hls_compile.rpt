@@ -1,0 +1,148 @@
+
+
+================================================================
+== Synthesis Summary Report of 'packetizer'
+================================================================
++ General Information: 
+    * Date:           Mon Jun  8 17:44:13 2026
+    * Version:        2025.2 (Build 6295257 on Nov 14 2025)
+    * Project:        hls_componentv2
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: artix7
+    * Target device:  xc7a12t-cpg238-1
+    
+
+* Performance & Resource Estimates: 
++-----------------------------------------+------+---------------+----------+---------+------+----------+---------+---------+------+------+----+----------+----------+-----+
+|                 Modules                 | Issue|               | Iteration|         | Trip |          |      Latency      |      |      |    |          |          |     |
+|                 & Loops                 | Type | Violation Type|  Latency | Interval| Count| Pipelined| (cycles)|   (ns)  | Slack| BRAM | DSP|    FF    |    LUT   | URAM|
++-----------------------------------------+------+---------------+----------+---------+------+----------+---------+---------+------+------+----+----------+----------+-----+
+|+ packetizer                             |     -|              -|         -|       22|     -|        no|       21|  210.000|  2.32|     -|   -|  319 (1%)|  565 (7%)|    -|
+| + packetizer_Pipeline_VITIS_LOOP_54_1   |     -|              -|         -|        -|     -|       yes|        6|   60.000|  2.40|     -|   -|  14 (~0%)|   84 (1%)|    -|
+|  o VITIS_LOOP_54_1                      |     -|              -|         2|        1|     4|       yes|        4|   40.000|  7.30|     -|   -|         -|         -|    -|
+| + packetizer_Pipeline_VITIS_LOOP_112_2  |     -|              -|         -|        -|     -|       yes|        6|   60.000|  2.33|     -|   -|   7 (~0%)|   97 (1%)|    -|
+|  o VITIS_LOOP_112_2                     |     -|              -|         2|        1|     4|       yes|        4|   40.000|  7.30|     -|   -|         -|         -|    -|
++-----------------------------------------+------+---------------+----------+---------+------+----------+---------+---------+------+------+----+----------+----------+-----+
+    Name Prefix: '+' for module, 'o' for loop, '*' for dataflow
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AXIS
++------------+-----------+---------------+-------+-------+-------+--------+-------+--------+
+| Interface  | Direction | Register Mode | TDATA | TKEEP | TLAST | TREADY | TSTRB | TVALID |
++------------+-----------+---------------+-------+-------+-------+--------+-------+--------+
+| in_stream  | in        | both          | 32    | 4     | 1     | 1      | 4     | 1      |
+| out_stream | out       | both          | 32    | 4     | 1     | 1      | 4     | 1      |
++------------+-----------+---------------+-------+-------+-------+--------+-------+--------+
+
+* Other Ports
++-----------------+---------+-----------+----------+
+| Port            | Mode    | Direction | Bitwidth |
++-----------------+---------+-----------+----------+
+| bits_per_sample | ap_none | in        | 5        |
+| complex_data    | ap_none | in        | 1        |
+| epoch           | ap_none | in        | 6        |
+| pps             | ap_none | in        | 1        |
+| station_id      | ap_none | in        | 16       |
+| thread_id       | ap_none | in        | 10       |
++-----------------+---------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+--------------+----------+
+| Interface | Type         | Ports    |
++-----------+--------------+----------+
+| ap_clk    | clock        | ap_clk   |
+| ap_rst_n  | reset        | ap_rst_n |
+| ap_ctrl   | ap_ctrl_none |          |
++-----------+--------------+----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++-----------------+-----------+------------------------------------------------------------------------------+
+| Argument        | Direction | Datatype                                                                     |
++-----------------+-----------+------------------------------------------------------------------------------+
+| in_stream       | in        | stream<hls::axis<ap_uint<32>, 0UL, 0UL, 0UL, (unsigned char)'8', false>, 0>& |
+| out_stream      | out       | stream<hls::axis<ap_uint<32>, 0UL, 0UL, 0UL, (unsigned char)'8', false>, 0>& |
+| epoch           | in        | ap_uint<6>                                                                   |
+| station_id      | in        | ap_uint<16>                                                                  |
+| thread_id       | in        | ap_uint<10>                                                                  |
+| bits_per_sample | in        | ap_uint<5>                                                                   |
+| complex_data    | in        | ap_uint<1>                                                                   |
+| pps             | in        | ap_uint<1>                                                                   |
++-----------------+-----------+------------------------------------------------------------------------------+
+
+* SW-to-HW Mapping
++-----------------+-----------------+-----------+
+| Argument        | HW Interface    | HW Type   |
++-----------------+-----------------+-----------+
+| in_stream       | in_stream       | interface |
+| out_stream      | out_stream      | interface |
+| epoch           | epoch           | port      |
+| station_id      | station_id      | port      |
+| thread_id       | thread_id       | port      |
+| bits_per_sample | bits_per_sample | port      |
+| complex_data    | complex_data    | port      |
+| pps             | pps             | port      |
++-----------------+-----------------+-----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++-----------------------------------------+-----+--------+------------+-------+--------+---------+
+| Name                                    | DSP | Pragma | Variable   | Op    | Impl   | Latency |
++-----------------------------------------+-----+--------+------------+-------+--------+---------+
+| + packetizer                            | 0   |        |            |       |        |         |
+|   add_ln46_fu_248_p2                    |     |        | add_ln46   | add   | fabric | 0       |
+|   add_ln85_fu_315_p2                    |     |        | add_ln85   | add   | fabric | 0       |
+|   word3_fu_339_p2                       |     |        | word3      | or    | auto   | 0       |
+|   add_ln126_fu_260_p2                   |     |        | add_ln126  | add   | fabric | 0       |
+|  + packetizer_Pipeline_VITIS_LOOP_54_1  | 0   |        |            |       |        |         |
+|    icmp_ln54_fu_111_p2                  |     |        | icmp_ln54  | seteq | auto   | 0       |
+|    i_2_fu_117_p2                        |     |        | i_2        | add   | fabric | 0       |
+|  + packetizer_Pipeline_VITIS_LOOP_112_2 | 0   |        |            |       |        |         |
+|    icmp_ln112_fu_107_p2                 |     |        | icmp_ln112 | seteq | auto   | 0       |
+|    i_3_fu_113_p2                        |     |        | i_3        | add   | fabric | 0       |
+|    icmp_ln118_fu_119_p2                 |     |        | icmp_ln118 | seteq | auto   | 0       |
++-----------------------------------------+-----+--------+------------+-------+--------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++---------------+------------+------+------+------+--------+----------+------+---------+------------------+
+| Name          | Usage      | Type | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
+|               |            |      |      |      |        |          |      |         | Banks            |
++---------------+------------+------+------+------+--------+----------+------+---------+------------------+
+| + packetizer  |            |      | 0    | 0    |        |          |      |         |                  |
+|   fifo_fifo_U | fifo array |      |      |      |        | fifo     | srl  | 0       | 32, 8, 1         |
++---------------+------------+------+------+------+--------+----------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------+------------------------------+----------------------------------------+
+| Type      | Options                      | Location                               |
++-----------+------------------------------+----------------------------------------+
+| INTERFACE | axis port=in_stream          | in packetizer (../packetizer2.cpp:20)  |
+| INTERFACE | axis port=out_stream         | in packetizer (../packetizer2.cpp:21)  |
+| INTERFACE | ap_none port=epoch           | in packetizer (../packetizer2.cpp:23)  |
+| INTERFACE | ap_none port=station_id      | in packetizer (../packetizer2.cpp:24)  |
+| INTERFACE | ap_none port=thread_id       | in packetizer (../packetizer2.cpp:25)  |
+| INTERFACE | ap_none port=bits_per_sample | in packetizer (../packetizer2.cpp:26)  |
+| INTERFACE | ap_none port=complex_data    | in packetizer (../packetizer2.cpp:27)  |
+| INTERFACE | ap_none port=pps             | in packetizer (../packetizer2.cpp:28)  |
+| INTERFACE | ap_ctrl_none port=return     | in packetizer (../packetizer2.cpp:30)  |
+| STREAM    | variable=fifo depth=8        | in packetizer (../packetizer2.cpp:33)  |
+| PIPELINE  | ii=1                         | in packetizer (../packetizer2.cpp:56)  |
+| PIPELINE  | ii=1                         | in packetizer (../packetizer2.cpp:114) |
++-----------+------------------------------+----------------------------------------+
+
+

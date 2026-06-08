@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindInfo>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op seteq" ID="" IMPL="auto" LATENCY="0" OPTYPE="seteq" PRAGMA="" RTLNAME="out_stream_TLAST" SOURCE="../packetizer.cpp:42" VARIABLE="icmp_ln42" MODULE="packetizer_Pipeline_VITIS_LOOP_38_1" LOOP="VITIS_LOOP_38_1" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0" USAGE="" STORAGESUBTYPE="" STORAGESIZE=""/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="i_3_fu_120_p2" SOURCE="../packetizer.cpp:38" VARIABLE="i_3" MODULE="packetizer_Pipeline_VITIS_LOOP_38_1" LOOP="VITIS_LOOP_38_1" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0" USAGE="" STORAGESUBTYPE="" STORAGESIZE=""/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln51_fu_122_p2" SOURCE="../packetizer.cpp:51" VARIABLE="add_ln51" MODULE="packetizer" LOOP="" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0" USAGE="" STORAGESUBTYPE="" STORAGESIZE=""/>
+</BindInfo>

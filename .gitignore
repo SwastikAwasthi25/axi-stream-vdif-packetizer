@@ -21,11 +21,6 @@ project_1.gen/
 
 _ide/
 
-# HLS Components
-
-hls_component/
-hls_component1/
-hls_componentv2/
 
 # HLS Outputs
 

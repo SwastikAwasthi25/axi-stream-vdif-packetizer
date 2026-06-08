@@ -1,0 +1,225 @@
+
+
+================================================================
+== Vitis HLS Report for 'packetizer'
+================================================================
+* Date:           Mon Jun  8 17:11:50 2026
+
+* Version:        2025.2 (Build 6295257 on Nov 14 2025)
+* Project:        hls_component1
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: artix7
+* Target device:  xc7a12t-cpg238-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  4.968 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       22|       22|  0.220 us|  0.220 us|   23|   23|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 11
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%p_phi4_loc = alloca i64 1"   --->   Operation 12 'alloca' 'p_phi4_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%p_phi_loc = alloca i64 1"   --->   Operation 13 'alloca' 'p_phi_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%fifo = alloca i64 1" [../hls_component/packetizer1.cpp:16]   --->   Operation 14 'alloca' 'fifo' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.68> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 8> <FIFO>
+
+State 2 <SV = 1> <Delay = 4.16>
+ST_2 : Operation 15 [2/2] (4.16ns)   --->   "%call_ln0 = call void @packetizer_Pipeline_VITIS_LOOP_36_1, i32 %in_stream_V_data_V, i4 %in_stream_V_keep_V, i4 %in_stream_V_strb_V, i1 %in_stream_V_last_V, i32 %fifo, i4 %p_phi_loc, i4 %p_phi4_loc"   --->   Operation 15 'call' 'call_ln0' <Predicate = true> <Delay = 4.16> <CoreType = "Generic">   --->   Generic Core
+
+State 3 <SV = 2> <Delay = 4.90>
+ST_3 : Operation 16 [1/2] (4.90ns)   --->   "%call_ln0 = call void @packetizer_Pipeline_VITIS_LOOP_36_1, i32 %in_stream_V_data_V, i4 %in_stream_V_keep_V, i4 %in_stream_V_strb_V, i1 %in_stream_V_last_V, i32 %fifo, i4 %p_phi_loc, i4 %p_phi4_loc"   --->   Operation 16 'call' 'call_ln0' <Predicate = true> <Delay = 4.90> <CoreType = "Generic">   --->   Generic Core
+
+State 4 <SV = 3> <Delay = 1.31>
+ST_4 : Operation 17 [1/1] (0.00ns)   --->   "%p_phi_loc_load = load i4 %p_phi_loc"   --->   Operation 17 'load' 'p_phi_loc_load' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 18 [1/1] (0.00ns)   --->   "%p_phi4_loc_load = load i4 %p_phi4_loc"   --->   Operation 18 'load' 'p_phi4_loc_load' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 19 [2/2] (1.31ns)   --->   "%write_ln76 = write void @_ssdm_op_Write.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %out_stream_V_data_V, i4 %out_stream_V_keep_V, i4 %out_stream_V_strb_V, i1 %out_stream_V_last_V, i32 5000, i4 %p_phi_loc_load, i4 %p_phi4_loc_load, i1 0" [../hls_component/packetizer1.cpp:76]   --->   Operation 19 'write' 'write_ln76' <Predicate = true> <Delay = 1.31> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 2.05> <Adapter> <Opcode : 'read' 'write'>
+
+State 5 <SV = 4> <Delay = 2.42>
+ST_5 : Operation 20 [1/1] (0.00ns)   --->   "%frame_no_load = load i24 %frame_no" [../hls_component/packetizer1.cpp:52]   --->   Operation 20 'load' 'frame_no_load' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 21 [1/1] (0.00ns)   --->   "%zext_ln52 = zext i24 %frame_no_load" [../hls_component/packetizer1.cpp:52]   --->   Operation 21 'zext' 'zext_ln52' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 22 [1/1] (0.00ns)   --->   "%word1 = bitconcatenate i29 @_ssdm_op_BitConcatenate.i29.i3.i26, i3 5, i26 %zext_ln52" [../hls_component/packetizer1.cpp:52]   --->   Operation 22 'bitconcatenate' 'word1' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 23 [1/1] (0.00ns)   --->   "%sext_ln51 = sext i29 %word1" [../hls_component/packetizer1.cpp:51]   --->   Operation 23 'sext' 'sext_ln51' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 24 [1/1] (0.00ns)   --->   "%zext_ln51 = zext i30 %sext_ln51" [../hls_component/packetizer1.cpp:51]   --->   Operation 24 'zext' 'zext_ln51' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 25 [1/2] ( I:1.31ns O:1.31ns )   --->   "%write_ln76 = write void @_ssdm_op_Write.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %out_stream_V_data_V, i4 %out_stream_V_keep_V, i4 %out_stream_V_strb_V, i1 %out_stream_V_last_V, i32 5000, i4 %p_phi_loc_load, i4 %p_phi4_loc_load, i1 0" [../hls_component/packetizer1.cpp:76]   --->   Operation 25 'write' 'write_ln76' <Predicate = true> <Delay = 1.31> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 2.05> <Adapter> <Opcode : 'read' 'write'>
+ST_5 : Operation 26 [2/2] (1.31ns)   --->   "%write_ln80 = write void @_ssdm_op_Write.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %out_stream_V_data_V, i4 %out_stream_V_keep_V, i4 %out_stream_V_strb_V, i1 %out_stream_V_last_V, i32 %zext_ln51, i4 %p_phi_loc_load, i4 %p_phi4_loc_load, i1 0" [../hls_component/packetizer1.cpp:80]   --->   Operation 26 'write' 'write_ln80' <Predicate = true> <Delay = 1.31> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 2.05> <Adapter> <Opcode : 'read' 'write'>
+ST_5 : Operation 27 [1/1] (2.42ns)   --->   "%add_ln108 = add i24 %frame_no_load, i24 1" [../hls_component/packetizer1.cpp:108]   --->   Operation 27 'add' 'add_ln108' <Predicate = true> <Delay = 2.42> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.42> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 28 [1/1] (0.00ns)   --->   "%store_ln108 = store i24 %add_ln108, i24 %frame_no" [../hls_component/packetizer1.cpp:108]   --->   Operation 28 'store' 'store_ln108' <Predicate = true> <Delay = 0.00>
+
+State 6 <SV = 5> <Delay = 1.31>
+ST_6 : Operation 29 [1/2] ( I:1.31ns O:1.31ns )   --->   "%write_ln80 = write void @_ssdm_op_Write.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %out_stream_V_data_V, i4 %out_stream_V_keep_V, i4 %out_stream_V_strb_V, i1 %out_stream_V_last_V, i32 %zext_ln51, i4 %p_phi_loc_load, i4 %p_phi4_loc_load, i1 0" [../hls_component/packetizer1.cpp:80]   --->   Operation 29 'write' 'write_ln80' <Predicate = true> <Delay = 1.31> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 2.05> <Adapter> <Opcode : 'read' 'write'>
+ST_6 : Operation 30 [2/2] (1.31ns)   --->   "%write_ln84 = write void @_ssdm_op_Write.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %out_stream_V_data_V, i4 %out_stream_V_keep_V, i4 %out_stream_V_strb_V, i1 %out_stream_V_last_V, i32 536870920, i4 %p_phi_loc_load, i4 %p_phi4_loc_load, i1 0" [../hls_component/packetizer1.cpp:84]   --->   Operation 30 'write' 'write_ln84' <Predicate = true> <Delay = 1.31> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 2.05> <Adapter> <Opcode : 'read' 'write'>
+
+State 7 <SV = 6> <Delay = 1.31>
+ST_7 : Operation 31 [1/2] ( I:1.31ns O:1.31ns )   --->   "%write_ln84 = write void @_ssdm_op_Write.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %out_stream_V_data_V, i4 %out_stream_V_keep_V, i4 %out_stream_V_strb_V, i1 %out_stream_V_last_V, i32 536870920, i4 %p_phi_loc_load, i4 %p_phi4_loc_load, i1 0" [../hls_component/packetizer1.cpp:84]   --->   Operation 31 'write' 'write_ln84' <Predicate = true> <Delay = 1.31> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 2.05> <Adapter> <Opcode : 'read' 'write'>
+ST_7 : Operation 32 [2/2] (1.31ns)   --->   "%write_ln88 = write void @_ssdm_op_Write.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %out_stream_V_data_V, i4 %out_stream_V_keep_V, i4 %out_stream_V_strb_V, i1 %out_stream_V_last_V, i32 67108869, i4 %p_phi_loc_load, i4 %p_phi4_loc_load, i1 0" [../hls_component/packetizer1.cpp:88]   --->   Operation 32 'write' 'write_ln88' <Predicate = true> <Delay = 1.31> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 2.05> <Adapter> <Opcode : 'read' 'write'>
+
+State 8 <SV = 7> <Delay = 1.31>
+ST_8 : Operation 33 [1/2] ( I:1.31ns O:1.31ns )   --->   "%write_ln88 = write void @_ssdm_op_Write.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %out_stream_V_data_V, i4 %out_stream_V_keep_V, i4 %out_stream_V_strb_V, i1 %out_stream_V_last_V, i32 67108869, i4 %p_phi_loc_load, i4 %p_phi4_loc_load, i1 0" [../hls_component/packetizer1.cpp:88]   --->   Operation 33 'write' 'write_ln88' <Predicate = true> <Delay = 1.31> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 2.05> <Adapter> <Opcode : 'read' 'write'>
+
+State 9 <SV = 8> <Delay = 0.00>
+ST_9 : Operation 34 [2/2] (0.00ns)   --->   "%call_ln0 = call void @packetizer_Pipeline_VITIS_LOOP_94_2, i32 %fifo, i4 %p_phi_loc_load, i4 %p_phi4_loc_load, i32 %out_stream_V_data_V, i4 %out_stream_V_keep_V, i4 %out_stream_V_strb_V, i1 %out_stream_V_last_V"   --->   Operation 34 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+
+State 10 <SV = 9> <Delay = 4.96>
+ST_10 : Operation 35 [1/2] (4.96ns)   --->   "%call_ln0 = call void @packetizer_Pipeline_VITIS_LOOP_94_2, i32 %fifo, i4 %p_phi_loc_load, i4 %p_phi4_loc_load, i32 %out_stream_V_data_V, i4 %out_stream_V_keep_V, i4 %out_stream_V_strb_V, i1 %out_stream_V_last_V"   --->   Operation 35 'call' 'call_ln0' <Predicate = true> <Delay = 4.96> <CoreType = "Generic">   --->   Generic Core
+
+State 11 <SV = 10> <Delay = 0.00>
+ST_11 : Operation 36 [1/1] (0.00ns)   --->   "%spectopmodule_ln7 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_5" [../hls_component/packetizer1.cpp:7]   --->   Operation 36 'spectopmodule' 'spectopmodule_ln7' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 37 [1/1] (0.00ns)   --->   "%specinterface_ln7 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_6, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0, i32 0" [../hls_component/packetizer1.cpp:7]   --->   Operation 37 'specinterface' 'specinterface_ln7' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 38 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %in_stream_V_data_V, i4 %in_stream_V_keep_V, i4 %in_stream_V_strb_V, i1 %in_stream_V_last_V, void @empty, i32 1, i32 1, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 38 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 39 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %in_stream_V_data_V"   --->   Operation 39 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 40 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i4 %in_stream_V_keep_V"   --->   Operation 40 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 41 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i4 %in_stream_V_strb_V"   --->   Operation 41 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 42 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %in_stream_V_last_V"   --->   Operation 42 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 43 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %out_stream_V_data_V, i4 %out_stream_V_keep_V, i4 %out_stream_V_strb_V, i1 %out_stream_V_last_V, void @empty, i32 1, i32 1, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 43 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 44 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %out_stream_V_data_V"   --->   Operation 44 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 45 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i4 %out_stream_V_keep_V"   --->   Operation 45 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 46 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i4 %out_stream_V_strb_V"   --->   Operation 46 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 47 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %out_stream_V_last_V"   --->   Operation 47 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 48 [1/1] (0.00ns)   --->   "%empty = specchannel i32 @_ssdm_op_SpecChannel, void @fifo_str, i32 1, void @p_str, void @p_str, i32 8, i32 8, i32 %fifo, i32 %fifo"   --->   Operation 48 'specchannel' 'empty' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 49 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %fifo, void @empty_2, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 49 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 50 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln36 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %out_stream_V_data_V, i4 %out_stream_V_keep_V, i4 %out_stream_V_strb_V, i1 0, i1 %out_stream_V_last_V, i1 0, i1 0, void @empty_3" [../hls_component/packetizer1.cpp:36]   --->   Operation 50 'specaxissidechannel' 'specaxissidechannel_ln36' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 51 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln36 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %in_stream_V_data_V, i4 %in_stream_V_keep_V, i4 %in_stream_V_strb_V, i1 0, i1 %in_stream_V_last_V, i1 0, i1 0, void @empty_4" [../hls_component/packetizer1.cpp:36]   --->   Operation 51 'specaxissidechannel' 'specaxissidechannel_ln36' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 52 [1/1] (0.00ns)   --->   "%ret_ln109 = ret" [../hls_component/packetizer1.cpp:109]   --->   Operation 52 'ret' 'ret_ln109' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 0.000ns
+The critical path consists of the following:
+
+ <State 2>: 4.168ns
+The critical path consists of the following:
+	'call' operation ('call_ln0') to 'packetizer_Pipeline_VITIS_LOOP_36_1' [29]  (4.168 ns)
+
+ <State 3>: 4.901ns
+The critical path consists of the following:
+	'call' operation ('call_ln0') to 'packetizer_Pipeline_VITIS_LOOP_36_1' [29]  (4.901 ns)
+
+ <State 4>: 1.318ns
+The critical path consists of the following:
+	'load' operation 4 bit ('p_phi_loc_load') on local variable 'p_phi_loc' [30]  (0.000 ns)
+	axis write operation ('write_ln76', ../hls_component/packetizer1.cpp:76) on port 'out_stream_V_data_V' (../hls_component/packetizer1.cpp:76) [37]  (0.000 ns)
+	blocking operation 1.318 ns on control path)
+
+ <State 5>: 2.424ns
+The critical path consists of the following:
+	'load' operation 24 bit ('frame_no_load', ../hls_component/packetizer1.cpp:52) on static variable 'frame_no' [32]  (0.000 ns)
+	'add' operation 24 bit ('add_ln108', ../hls_component/packetizer1.cpp:108) [42]  (2.424 ns)
+
+ <State 6>: 1.318ns
+The critical path consists of the following:
+	axis write operation ('write_ln80', ../hls_component/packetizer1.cpp:80) on port 'out_stream_V_data_V' (../hls_component/packetizer1.cpp:80) [38]  (1.318 ns)
+
+ <State 7>: 1.318ns
+The critical path consists of the following:
+	axis write operation ('write_ln84', ../hls_component/packetizer1.cpp:84) on port 'out_stream_V_data_V' (../hls_component/packetizer1.cpp:84) [39]  (1.318 ns)
+
+ <State 8>: 1.318ns
+The critical path consists of the following:
+	axis write operation ('write_ln88', ../hls_component/packetizer1.cpp:88) on port 'out_stream_V_data_V' (../hls_component/packetizer1.cpp:88) [40]  (1.318 ns)
+
+ <State 9>: 0.000ns
+The critical path consists of the following:
+
+ <State 10>: 4.968ns
+The critical path consists of the following:
+	'call' operation ('call_ln0') to 'packetizer_Pipeline_VITIS_LOOP_94_2' [41]  (4.968 ns)
+
+ <State 11>: 0.000ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
