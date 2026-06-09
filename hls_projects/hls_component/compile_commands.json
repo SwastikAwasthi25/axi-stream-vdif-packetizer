@@ -1,6 +1,6 @@
 [
   {
-    "directory": "D:\\IITK\\project_1\\hls_component",
+    "directory": "D:\\IITK\\project_1\\hls_projects\\hls_component",
     "arguments": [
       "D:\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
       "--sysroot=D:\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
@@ -8,20 +8,20 @@
       "-hls-syn-headers-dir=D:\\2025.2\\Vitis\\common\\technology\\autopilot",
       "-fhlstoplevel=packetizer",
       "-c",
-      "D:\\IITK\\project_1\\packetizer.cpp"
+      "..\\packetizer.cpp"
     ],
-    "file": "D:\\IITK\\project_1\\packetizer.cpp"
+    "file": "..\\packetizer.cpp"
   },
   {
-    "directory": "D:\\IITK\\project_1\\hls_component",
+    "directory": "D:\\IITK\\project_1\\hls_projects\\hls_component",
     "arguments": [
       "D:\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
       "--sysroot=D:\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
       "-fhls-tb",
       "-hls-sim-headers-dir=D:\\2025.2\\Vitis\\include",
       "-c",
-      "D:\\IITK\\project_1\\packetizer_tb.cpp"
+      "..\\packetizer_tb.cpp"
     ],
-    "file": "D:\\IITK\\project_1\\packetizer_tb.cpp"
+    "file": "..\\packetizer_tb.cpp"
   }
 ]
