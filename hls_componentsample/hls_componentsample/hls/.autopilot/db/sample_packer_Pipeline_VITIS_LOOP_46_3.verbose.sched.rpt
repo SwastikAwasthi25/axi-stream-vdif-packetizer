@@ -1,0 +1,150 @@
+
+
+================================================================
+== Vitis HLS Report for 'sample_packer_Pipeline_VITIS_LOOP_46_3'
+================================================================
+* Date:           Tue Jun  9 16:24:55 2026
+
+* Version:        2025.2 (Build 6295257 on Nov 14 2025)
+* Project:        hls_componentsample
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: artix7
+* Target device:  xc7a12t-cpg238-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  4.901 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+-------------------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval |      Pipeline     |
+    |   min   |   max   |    min    |    max    | min | max |        Type       |
+    +---------+---------+-----------+-----------+-----+-----+-------------------+
+    |        6|        6|  60.000 ns|  60.000 ns|    0|    0|  loop pipeline stp|
+    +---------+---------+-----------+-----------+-----+-----+-------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_46_3  |        4|        4|         2|          1|          1|     4|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 1 2 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 4.90>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%word = alloca i32 1" [../src/sample_packer/sample_packer.cpp:16]   --->   Operation 5 'alloca' 'word' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%i = alloca i32 1" [../src/sample_packer/sample_packer.cpp:46]   --->   Operation 6 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %adc_in, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 7 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (1.61ns)   --->   "%store_ln46 = store i3 0, i3 %i" [../src/sample_packer/sample_packer.cpp:46]   --->   Operation 8 'store' 'store_ln46' <Predicate = true> <Delay = 1.61>
+ST_1 : Operation 9 [1/1] (1.61ns)   --->   "%store_ln16 = store i32 0, i32 %word" [../src/sample_packer/sample_packer.cpp:16]   --->   Operation 9 'store' 'store_ln16' <Predicate = true> <Delay = 1.61>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%br_ln46 = br void %for.inc36" [../src/sample_packer/sample_packer.cpp:46]   --->   Operation 10 'br' 'br_ln46' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%i_1 = load i3 %i" [../src/sample_packer/sample_packer.cpp:46]   --->   Operation 11 'load' 'i_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (1.68ns)   --->   "%icmp_ln46 = icmp_eq  i3 %i_1, i3 4" [../src/sample_packer/sample_packer.cpp:46]   --->   Operation 12 'icmp' 'icmp_ln46' <Predicate = true> <Delay = 1.68> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.68> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 13 [1/1] (1.68ns)   --->   "%i_2 = add i3 %i_1, i3 1" [../src/sample_packer/sample_packer.cpp:46]   --->   Operation 13 'add' 'i_2' <Predicate = true> <Delay = 1.68> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.68> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%br_ln46 = br i1 %icmp_ln46, void %for.inc36.split, void %for.end38.exitStub" [../src/sample_packer/sample_packer.cpp:46]   --->   Operation 14 'br' 'br_ln46' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%trunc_ln51 = trunc i3 %i_1" [../src/sample_packer/sample_packer.cpp:51]   --->   Operation 15 'trunc' 'trunc_ln51' <Predicate = (!icmp_ln46)> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (1.61ns)   --->   "%store_ln46 = store i3 %i_2, i3 %i" [../src/sample_packer/sample_packer.cpp:46]   --->   Operation 16 'store' 'store_ln46' <Predicate = (!icmp_ln46)> <Delay = 1.61>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%word_load = load i32 %word"   --->   Operation 26 'load' 'word_load' <Predicate = (icmp_ln46)> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i32P0A, i32 %word_4_out, i32 %word_load"   --->   Operation 27 'write' 'write_ln0' <Predicate = (icmp_ln46)> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (1.61ns)   --->   "%ret_ln0 = ret"   --->   Operation 28 'ret' 'ret_ln0' <Predicate = (icmp_ln46)> <Delay = 1.61>
+
+State 2 <SV = 1> <Delay = 3.28>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%word_load_1 = load i32 %word" [../src/sample_packer/sample_packer.cpp:51]   --->   Operation 17 'load' 'word_load_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%specpipeline_ln48 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, i32 4294967295, void @empty_1" [../src/sample_packer/sample_packer.cpp:48]   --->   Operation 18 'specpipeline' 'specpipeline_ln48' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%speclooptripcount_ln16 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 4, i64 4, i64 4" [../src/sample_packer/sample_packer.cpp:16]   --->   Operation 19 'speclooptripcount' 'speclooptripcount_ln16' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%specloopname_ln46 = specloopname void @_ssdm_op_SpecLoopName, void @empty_7" [../src/sample_packer/sample_packer.cpp:46]   --->   Operation 20 'specloopname' 'specloopname_ln46' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] ( I:0.51ns O:0.51ns )   --->   "%sample = read i8 @_ssdm_op_Read.axis.volatile.i8P128A, i8 %adc_in" [../src/sample_packer/sample_packer.cpp:50]   --->   Operation 21 'read' 'sample' <Predicate = true> <Delay = 0.51> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 1.75> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%shl_ln2 = bitconcatenate i5 @_ssdm_op_BitConcatenate.i5.i2.i3, i2 %trunc_ln51, i3 0" [../src/sample_packer/sample_packer.cpp:51]   --->   Operation 22 'bitconcatenate' 'shl_ln2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (1.15ns)   --->   "%word_1 = partset i32 @_ssdm_op_PartSet.i32.i32.i8.i5, i32 %word_load_1, i8 %sample, i5 %shl_ln2" [../src/sample_packer/sample_packer.cpp:51]   --->   Operation 23 'partset' 'word_1' <Predicate = true> <Delay = 1.15> <CoreInst = "PartSet">   --->   Core 144 'PartSet' <Latency = 0> <II = 1> <Delay = 1.15> <FuncUnit> <Opcode : 'partset'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 24 [1/1] (1.61ns)   --->   "%store_ln16 = store i32 %word_1, i32 %word" [../src/sample_packer/sample_packer.cpp:16]   --->   Operation 24 'store' 'store_ln16' <Predicate = true> <Delay = 1.61>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%br_ln46 = br void %for.inc36" [../src/sample_packer/sample_packer.cpp:46]   --->   Operation 25 'br' 'br_ln46' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 4.901ns
+The critical path consists of the following:
+	'store' operation ('store_ln46', ../src/sample_packer/sample_packer.cpp:46) of constant 0 3 bit on local variable 'i', ../src/sample_packer/sample_packer.cpp:46 [6]  (1.610 ns)
+	'load' operation 3 bit ('i', ../src/sample_packer/sample_packer.cpp:46) on local variable 'i', ../src/sample_packer/sample_packer.cpp:46 [10]  (0.000 ns)
+	'add' operation 3 bit ('i', ../src/sample_packer/sample_packer.cpp:46) [12]  (1.680 ns)
+	'store' operation ('store_ln46', ../src/sample_packer/sample_packer.cpp:46) of variable 'i', ../src/sample_packer/sample_packer.cpp:46 3 bit on local variable 'i', ../src/sample_packer/sample_packer.cpp:46 [23]  (1.610 ns)
+
+ <State 2>: 3.283ns
+The critical path consists of the following:
+	axis read operation ('sample', ../src/sample_packer/sample_packer.cpp:50) on port 'adc_in' (../src/sample_packer/sample_packer.cpp:50) [19]  (0.518 ns)
+	'store' operation ('store_ln16', ../src/sample_packer/sample_packer.cpp:16) of variable 'word', ../src/sample_packer/sample_packer.cpp:51 32 bit on local variable 'word', ../src/sample_packer/sample_packer.cpp:16 [24]  (1.610 ns)
+	blocking operation 1.155 ns on control path)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

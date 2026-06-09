@@ -1,0 +1,124 @@
+
+
+================================================================
+== Synthesis Summary Report of 'sample_packer'
+================================================================
++ General Information: 
+    * Date:           Tue Jun  9 16:24:59 2026
+    * Version:        2025.2 (Build 6295257 on Nov 14 2025)
+    * Project:        hls_componentsample
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: artix7
+    * Target device:  xc7a12t-cpg238-1
+    
+
+* Performance & Resource Estimates: 
++-------------------------------------------+------+---------------+----------+---------+------+----------+---------+---------+------+------+----+-----------+----------+-----+
+|                  Modules                  | Issue|               | Iteration|         | Trip |          |      Latency      |      |      |    |           |          |     |
+|                  & Loops                  | Type | Violation Type|  Latency | Interval| Count| Pipelined| (cycles)|   (ns)  | Slack| BRAM | DSP|     FF    |    LUT   | URAM|
++-------------------------------------------+------+---------------+----------+---------+------+----------+---------+---------+------+------+----+-----------+----------+-----+
+|+ sample_packer                            |     -|              -|         -|       22|     -|        no|       21|  210.000|  2.16|     -|   -|  143 (~0%)|  431 (5%)|    -|
+| + sample_packer_Pipeline_VITIS_LOOP_46_3  |     -|              -|         -|        -|     -|       yes|        6|   60.000|  2.40|     -|   -|   40 (~0%)|  118 (1%)|    -|
+|  o VITIS_LOOP_46_3                        |     -|              -|         2|        1|     4|       yes|        4|   40.000|  7.30|     -|   -|          -|         -|    -|
+| + sample_packer_Pipeline_VITIS_LOOP_33_2  |     -|              -|         -|        -|     -|       yes|       10|  100.000|  2.30|     -|   -|   42 (~0%)|  120 (1%)|    -|
+|  o VITIS_LOOP_33_2                        |     -|              -|         2|        1|     8|       yes|        8|   80.000|  7.30|     -|   -|          -|         -|    -|
+| + sample_packer_Pipeline_VITIS_LOOP_20_1  |     -|              -|         -|        -|     -|       yes|       18|  180.000|  2.22|     -|   -|   45 (~0%)|  121 (1%)|    -|
+|  o VITIS_LOOP_20_1                        |     -|              -|         2|        1|    16|       yes|       16|  160.000|  7.30|     -|   -|          -|         -|    -|
++-------------------------------------------+------+---------------+----------+---------+------+----------+---------+---------+------+------+----+-----------+----------+-----+
+    Name Prefix: '+' for module, 'o' for loop, '*' for dataflow
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AXIS
++------------+-----------+---------------+-------+--------+--------+
+| Interface  | Direction | Register Mode | TDATA | TREADY | TVALID |
++------------+-----------+---------------+-------+--------+--------+
+| adc_in     | in        | both          | 8     | 1      | 1      |
+| packed_out | out       | both          | 32    | 1      | 1      |
++------------+-----------+---------------+-------+--------+--------+
+
+* Other Ports
++-----------------+---------+-----------+----------+
+| Port            | Mode    | Direction | Bitwidth |
++-----------------+---------+-----------+----------+
+| bits_per_sample | ap_none | in        | 5        |
++-----------------+---------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+--------------+----------+
+| Interface | Type         | Ports    |
++-----------+--------------+----------+
+| ap_clk    | clock        | ap_clk   |
+| ap_rst_n  | reset        | ap_rst_n |
+| ap_ctrl   | ap_ctrl_none |          |
++-----------+--------------+----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++-----------------+-----------+-------------------------+
+| Argument        | Direction | Datatype                |
++-----------------+-----------+-------------------------+
+| adc_in          | in        | stream<ap_uint<8>, 0>&  |
+| packed_out      | out       | stream<ap_uint<32>, 0>& |
+| bits_per_sample | in        | ap_uint<5>              |
++-----------------+-----------+-------------------------+
+
+* SW-to-HW Mapping
++-----------------+-----------------+-----------+
+| Argument        | HW Interface    | HW Type   |
++-----------------+-----------------+-----------+
+| adc_in          | adc_in          | interface |
+| packed_out      | packed_out      | interface |
+| bits_per_sample | bits_per_sample | port      |
++-----------------+-----------------+-----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++-------------------------------------------+-----+--------+-----------+---------+--------+---------+
+| Name                                      | DSP | Pragma | Variable  | Op      | Impl   | Latency |
++-------------------------------------------+-----+--------+-----------+---------+--------+---------+
+| + sample_packer                           | 0   |        |           |         |        |         |
+|  + sample_packer_Pipeline_VITIS_LOOP_46_3 | 0   |        |           |         |        |         |
+|    icmp_ln46_fu_76_p2                     |     |        | icmp_ln46 | seteq   | auto   | 0       |
+|    i_2_fu_82_p2                           |     |        | i_2       | add     | fabric | 0       |
+|    partset_32ns_32ns_8ns_5ns_32_1_1_U1    |     |        | word_1    | partset | auto   | 0       |
+|  + sample_packer_Pipeline_VITIS_LOOP_33_2 | 0   |        |           |         |        |         |
+|    icmp_ln33_fu_78_p2                     |     |        | icmp_ln33 | seteq   | auto   | 0       |
+|    i_3_fu_84_p2                           |     |        | i_3       | add     | fabric | 0       |
+|    partset_32ns_32ns_4ns_5ns_32_1_1_U5    |     |        | word_2    | partset | auto   | 0       |
+|  + sample_packer_Pipeline_VITIS_LOOP_20_1 | 0   |        |           |         |        |         |
+|    icmp_ln20_fu_74_p2                     |     |        | icmp_ln20 | seteq   | auto   | 0       |
+|    i_5_fu_80_p2                           |     |        | i_5       | add     | fabric | 0       |
+|    partset_32ns_32ns_2ns_5ns_32_1_1_U9    |     |        | word_1    | partset | auto   | 0       |
++-------------------------------------------+-----+--------+-----------+---------+--------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------+------------------------------+--------------------------------------------------------------+
+| Type      | Options                      | Location                                                     |
++-----------+------------------------------+--------------------------------------------------------------+
+| INTERFACE | axis port=adc_in             | in sample_packer (../src/sample_packer/sample_packer.cpp:10) |
+| INTERFACE | axis port=packed_out         | in sample_packer (../src/sample_packer/sample_packer.cpp:11) |
+| INTERFACE | ap_none port=bits_per_sample | in sample_packer (../src/sample_packer/sample_packer.cpp:13) |
+| INTERFACE | ap_ctrl_none port=return     | in sample_packer (../src/sample_packer/sample_packer.cpp:14) |
+| PIPELINE  | ii=1                         | in sample_packer (../src/sample_packer/sample_packer.cpp:22) |
+| PIPELINE  | ii=1                         | in sample_packer (../src/sample_packer/sample_packer.cpp:35) |
+| PIPELINE  | ii=1                         | in sample_packer (../src/sample_packer/sample_packer.cpp:48) |
++-----------+------------------------------+--------------------------------------------------------------+
+
+

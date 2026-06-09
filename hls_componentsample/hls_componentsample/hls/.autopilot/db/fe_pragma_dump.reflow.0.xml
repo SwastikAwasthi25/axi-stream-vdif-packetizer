@@ -1,0 +1,35 @@
+<pragmas>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<4, false>::ap_int_base<8, false>(ap_int_base<8, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<2, false>::ap_int_base<8, false>(ap_int_base<8, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="range" off="0" region="0" recursive="0"/>
+<pragma file="D:/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h" line="530" pragmaType="inline" parentfunction="_ZN8ssdm_intILi4ELb0EEC2EDU4_" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<32>::ap_uint(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>::ap_int_base<8, false>(ap_int_base<8, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="bool operator==<5, false>(ap_int_base<5, false> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<2>::ap_uint<8>(ap_uint<8> const&)" off="0" region="0" recursive="0"/>
+<pragma file="D:/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h" line="522" pragmaType="inline" parentfunction="ssdm_int<32, true>::ssdm_int(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
+<pragma file="D:/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h" line="530" pragmaType="inline" parentfunction="ssdm_int<32, false>::ssdm_int(unsigned int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<4>::ap_uint<8>(ap_uint<8> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>::ap_int_base<2, false>(ap_int_base<2, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="write" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_range_ref<32, false>::ap_range_ref(ap_int_base<32, false>*, int, int)" off="0" region="0" recursive="0"/>
+<pragma file="D:/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h" line="530" pragmaType="inline" parentfunction="_ZN8ssdm_intILi2ELb0EEC2EDU2_" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>::ap_int_base<4, false>(ap_int_base<4, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="bool ap_int_base<5, false>::operator==<32, true>(ap_int_base<32, true> const&) const" off="0" region="0" recursive="0"/>
+<pragma file="../src/sample_packer/sample_packer.cpp" line="0" pragmaType="fpga.handshake.mode" parentfunction="sample_packer" mode="ap_ctrl_none" name="ap_ctrl_none"/>
+<pragma file="../src/sample_packer/sample_packer.cpp" line="22" pragmaType="pipeline" parentfunction="sample_packer" off="0" ii="1" rewind="0" style=""/>
+<pragma file="../src/sample_packer/sample_packer.cpp" line="35" pragmaType="pipeline" parentfunction="sample_packer" off="0" ii="1" rewind="0" style=""/>
+<pragma file="../src/sample_packer/sample_packer.cpp" line="48" pragmaType="pipeline" parentfunction="sample_packer" off="0" ii="1" rewind="0" style=""/>
+<pragma file="../src/sample_packer/sample_packer.cpp" line="10" pragmaType="interface" parentfunction="sample_packer" mode="axis" port="adc_in" register="1" register_mode="both" name="" depth="-1"/>
+<pragma file="../src/sample_packer/sample_packer.cpp" line="11" pragmaType="interface" parentfunction="sample_packer" mode="axis" port="packed_out" register="1" register_mode="both" name="" depth="-1"/>
+<pragma file="../src/sample_packer/sample_packer.cpp" line="13" pragmaType="interface" parentfunction="sample_packer" mode="ap_none" port="bits_per_sample" name="" register="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_range_ref<32, false>& ap_range_ref<32, false>::operator=<4, false>(ap_int_base<4, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_range_ref<32, false>& ap_range_ref<32, false>::operator=<8, false>(ap_int_base<8, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_range_ref<32, false>& ap_range_ref<32, false>::operator=<2, false>(ap_int_base<2, false> const&)" off="0" region="0" recursive="0"/>
+</pragmas>

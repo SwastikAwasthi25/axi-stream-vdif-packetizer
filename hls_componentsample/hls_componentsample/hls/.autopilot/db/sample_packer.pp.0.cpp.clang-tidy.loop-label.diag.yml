@@ -1,0 +1,88 @@
+---
+MainSourceFile:  'D:/IITK/project_1/hls_componentsample/hls_componentsample/hls/.autopilot/db/sample_packer.pp.0.cpp'
+Diagnostics:
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_676_1:  '
+      FilePath:        'D:\2025.2\Vitis\common\technology\autopilot\etc\ap_int_ref.h'
+      FileOffset:      676
+      Replacements:
+        - FilePath:        'D:\IITK\project_1\hls_componentsample\hls_componentsample\hls\.autopilot\db\sample_packer.pp.0.cpp'
+          Offset:          283012
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_676_1: '
+    Level:           Remark
+    BuildDirectory:  'D:\IITK\project_1\hls_componentsample'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_690_1:  '
+      FilePath:        'D:\2025.2\Vitis\common\technology\autopilot\etc\ap_int_ref.h'
+      FileOffset:      690
+      Replacements:
+        - FilePath:        'D:\IITK\project_1\hls_componentsample\hls_componentsample\hls\.autopilot\db\sample_packer.pp.0.cpp'
+          Offset:          283483
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_690_1: '
+    Level:           Remark
+    BuildDirectory:  'D:\IITK\project_1\hls_componentsample'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_704_1:  '
+      FilePath:        'D:\2025.2\Vitis\common\technology\autopilot\etc\ap_int_ref.h'
+      FileOffset:      704
+      Replacements:
+        - FilePath:        'D:\IITK\project_1\hls_componentsample\hls_componentsample\hls\.autopilot\db\sample_packer.pp.0.cpp'
+          Offset:          283955
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_704_1: '
+    Level:           Remark
+    BuildDirectory:  'D:\IITK\project_1\hls_componentsample'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_1251_1:  '
+      FilePath:        'D:\2025.2\Vitis\common\technology\autopilot\etc\ap_fixed_base.h'
+      FileOffset:      1251
+      Replacements:
+        - FilePath:        'D:\IITK\project_1\hls_componentsample\hls_componentsample\hls\.autopilot\db\sample_packer.pp.0.cpp'
+          Offset:          628533
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_1251_1: '
+    Level:           Remark
+    BuildDirectory:  'D:\IITK\project_1\hls_componentsample'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_20_1:  '
+      FilePath:        'D:\IITK\project_1\src\sample_packer\sample_packer.cpp'
+      FileOffset:      20
+      Replacements:
+        - FilePath:        'D:\IITK\project_1\hls_componentsample\hls_componentsample\hls\.autopilot\db\sample_packer.pp.0.cpp'
+          Offset:          2209360
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_20_1: '
+    Level:           Remark
+    BuildDirectory:  'D:\IITK\project_1\hls_componentsample'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_33_2:  '
+      FilePath:        'D:\IITK\project_1\src\sample_packer\sample_packer.cpp'
+      FileOffset:      33
+      Replacements:
+        - FilePath:        'D:\IITK\project_1\hls_componentsample\hls_componentsample\hls\.autopilot\db\sample_packer.pp.0.cpp'
+          Offset:          2209612
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_33_2: '
+    Level:           Remark
+    BuildDirectory:  'D:\IITK\project_1\hls_componentsample'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_46_3:  '
+      FilePath:        'D:\IITK\project_1\src\sample_packer\sample_packer.cpp'
+      FileOffset:      46
+      Replacements:
+        - FilePath:        'D:\IITK\project_1\hls_componentsample\hls_componentsample\hls\.autopilot\db\sample_packer.pp.0.cpp'
+          Offset:          2209863
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_46_3: '
+    Level:           Remark
+    BuildDirectory:  'D:\IITK\project_1\hls_componentsample'
+...

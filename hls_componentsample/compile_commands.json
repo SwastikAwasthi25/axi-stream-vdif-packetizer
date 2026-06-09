@@ -1,0 +1,27 @@
+[
+  {
+    "directory": "D:\\IITK\\project_1\\hls_componentsample",
+    "arguments": [
+      "D:\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=D:\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls",
+      "-hls-syn-headers-dir=D:\\2025.2\\Vitis\\common\\technology\\autopilot",
+      "-fhlstoplevel=sample_packer",
+      "-c",
+      "D:\\IITK\\project_1\\src\\sample_packer\\sample_packer.cpp"
+    ],
+    "file": "D:\\IITK\\project_1\\src\\sample_packer\\sample_packer.cpp"
+  },
+  {
+    "directory": "D:\\IITK\\project_1\\hls_componentsample",
+    "arguments": [
+      "D:\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=D:\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls-tb",
+      "-hls-sim-headers-dir=D:\\2025.2\\Vitis\\include",
+      "-c",
+      "D:\\IITK\\project_1\\testbench\\sample_packer\\sample_packer_tb.cpp"
+    ],
+    "file": "D:\\IITK\\project_1\\testbench\\sample_packer\\sample_packer_tb.cpp"
+  }
+]

@@ -1,0 +1,245 @@
+<ENTRY>
+{
+ "thisFile": "D:/IITK\\project_1\\hls_componentsample\\hls_componentsample\\hls_componentsample.hlscompile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "06/09/26 16:24:31",
+ "timestampMillis": "1781002471719",
+ "buildStep": {
+  "cmdId": "212d38f0-163e-49cf-8cfc-6b6921a30b11",
+  "name": "v++",
+  "logFile": "D:/IITK\\project_1\\hls_componentsample\\hls_componentsample\\logs\\hls_componentsample.steps.log",
+  "commandLine": "D:/2025.2/Vitis/bin/unwrapped/win64.o/v++.exe  -c --mode hls --config D:\\IITK\\project_1\\hls_componentsample\\hls_config.cfg --work_dir hls_componentsample ",
+  "args": [
+   "-c",
+   "--mode",
+   "hls",
+   "--config",
+   "D:\\IITK\\project_1\\hls_componentsample\\hls_config.cfg",
+   "--work_dir",
+   "hls_componentsample"
+  ],
+  "iniFiles": [
+   {
+    "path": "D:/IITK\\project_1\\hls_componentsample\\hls_config.cfg",
+    "content": "part=xc7a12tcpg238-1\n\n[hls]\nflow_target=vivado\npackage.output.format=ip_catalog\npackage.output.syn=false\nsyn.file=../src/sample_packer/sample_packer.cpp\ntb.file=../testbench/sample_packer/sample_packer_tb.cpp\nsyn.top=sample_packer"
+   }
+  ],
+  "cwd": "D:\\IITK\\project_1\\hls_componentsample"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "06/09/26 16:24:31",
+ "timestampMillis": "1781002471719",
+ "status": {
+  "cmdId": "212d38f0-163e-49cf-8cfc-6b6921a30b11",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "06/09/26 16:24:34",
+ "timestampMillis": "1781002474786",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_COMPILE",
+  "target": "TT_HW",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "sample_packer",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "D:/IITK\\project_1\\src\\sample_packer\\sample_packer.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2025.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "06/09/26 16:24:34",
+ "timestampMillis": "1781002474787",
+ "buildStep": {
+  "cmdId": "0bd1cd9f-e758-4dfa-ac85-459bc4134143",
+  "name": "",
+  "logFile": "D:/IITK\\project_1\\hls_componentsample\\hls_componentsample\\hls\\hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "D:\\IITK\\project_1\\hls_componentsample"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "06/09/26 16:24:34",
+ "timestampMillis": "1781002474787",
+ "status": {
+  "cmdId": "0bd1cd9f-e758-4dfa-ac85-459bc4134143",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "06/09/26 16:24:34",
+ "timestampMillis": "1781002474787",
+ "report": {
+  "path": "D:/IITK\\project_1\\hls_componentsample\\hls_componentsample\\hls\\hls_data.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "06/09/26 16:24:34",
+ "timestampMillis": "1781002474787",
+ "report": {
+  "path": "D:/IITK\\project_1\\hls_componentsample\\hls_componentsample\\hls\\syn\\report\\csynth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "06/09/26 16:24:34",
+ "timestampMillis": "1781002474788",
+ "report": {
+  "path": "D:/IITK\\project_1\\hls_componentsample\\hls_componentsample\\hls\\syn\\report\\csynth.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "06/09/26 16:25:00",
+ "timestampMillis": "1781002500048",
+ "report": {
+  "path": "D:/IITK\\project_1\\hls_componentsample\\hls_componentsample\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_DATAFLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "06/09/26 16:25:00",
+ "timestampMillis": "1781002500049",
+ "report": {
+  "path": "D:/IITK\\project_1\\hls_componentsample\\hls_componentsample\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_FUNCTION_CALL_GRAPH",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "06/09/26 16:25:00",
+ "timestampMillis": "1781002500049",
+ "report": {
+  "path": "D:/IITK\\project_1\\hls_componentsample\\hls_componentsample\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_SCHEDULE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "06/09/26 16:25:00",
+ "timestampMillis": "1781002500049",
+ "status": {
+  "cmdId": "0bd1cd9f-e758-4dfa-ac85-459bc4134143",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "06/09/26 16:25:00",
+ "timestampMillis": "1781002500147",
+ "status": {
+  "cmdId": "212d38f0-163e-49cf-8cfc-6b6921a30b11",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "06/09/26 16:25:00",
+ "timestampMillis": "1781002500165",
+ "report": {
+  "path": "D:/IITK\\project_1\\hls_componentsample\\hls_componentsample\\reports\\v++_compile_hls_componentsample_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "06/09/26 16:25:00",
+ "timestampMillis": "1781002500166",
+ "report": {
+  "path": "D:/IITK\\project_1\\hls_componentsample\\hls_componentsample\\reports\\.db\\v++_compile_hls_componentsample_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

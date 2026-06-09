@@ -1,0 +1,12 @@
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+Function:        apatb_sample_packer_ir
+Args:            
+  - Callee:          'sample_packer(hls::stream<ap_uint<8>, 0>&, hls::stream<ap_uint<32>, 0>&, ap_uint<5>)'
+    DebugLoc:        { File: ../src/sample_packer/sample_packer.cpp, Line: 9, 
+                       Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          apatb_sample_packer_ir
+  - String:          ' because it should never be inlined (cost=never)'
+...
