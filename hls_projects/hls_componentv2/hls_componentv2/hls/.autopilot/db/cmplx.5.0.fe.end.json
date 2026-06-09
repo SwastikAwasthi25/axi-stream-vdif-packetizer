@@ -1,0 +1,63 @@
+{
+    "0": {
+        "name": "packetizer",
+        "file": "packetizer2.cpp",
+        "fileloc": "134",
+        "instructions": "66",
+        "total_instructions": "116",
+        "calls": "2 1",
+        "basicblocks": "3",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "5",
+        "loads": {
+            "G": "2",
+            "L": "2"
+        },
+        "stores": {
+            "G": "2"
+        }
+    },
+    "1": {
+        "name": "packetizer_Pipeline_VITIS_LOOP_247_2",
+        "file": "D:\/IITK\/project_1\/src\/packetizer2.cpp",
+        "fileloc": "247",
+        "instructions": "21",
+        "total_instructions": "21",
+        "calls": "",
+        "basicblocks": "4",
+        "memory_accesses": "4",
+        "control_depth": "1",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "2": {
+        "name": "packetizer_Pipeline_VITIS_LOOP_188_1",
+        "file": "D:\/IITK\/project_1\/src\/packetizer2.cpp",
+        "fileloc": "188",
+        "instructions": "29",
+        "total_instructions": "29",
+        "calls": "",
+        "basicblocks": "4",
+        "memory_accesses": "6",
+        "control_depth": "1",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "3"
+        },
+        "stores": {
+            "L": "4"
+        },
+        "loops": {
+            "L": "1"
+        }
+    }
+}
