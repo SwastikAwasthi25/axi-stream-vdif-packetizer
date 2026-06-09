@@ -130,7 +130,11 @@
 #include <ap_int.h>
 
 typedef ap_axiu<32,0,0,0> axis_t;
+ap_uint<32> pack_2bit(ap_uint<2> samples[16]);
 
+ap_uint<32> pack_4bit(ap_uint<4> samples[8]);
+
+ap_uint<32> pack_8bit(ap_uint<8> samples[4]);
 void packetizer(
     hls::stream<axis_t> &in_stream,
     hls::stream<axis_t> &out_stream,
