@@ -1,0 +1,3 @@
+relativeroot=D:/IITK/project_1/hls_integration
+original_argv=--mode hls --csim --config D:\IITK\project_1\hls_integration\hls_config.cfg --work_dir vdif_chain 
+

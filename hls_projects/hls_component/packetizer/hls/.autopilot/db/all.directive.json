@@ -1,24 +1,20 @@
-[
-  {
-    "csim": false,
-    "functionLabel": "",
-    "functionName": "packetizer",
+[{
     "id": 0,
-    "ifcond": "",
     "insert_position": "",
+    "functionName": "packetizer",
     "label": "",
-    "pragma": {
-      "name": "TOP",
-      "option": [
-        {
-          "name": "name",
-          "value": "packetizer"
-        }
-      ]
-    },
+    "functionLabel": "",
+    "success": false,
     "slx": false,
+    "csim": false,
+    "ifcond": "",
     "sourceFile": "",
     "sourceLine": 0,
-    "success": true
-  }
-]
+    "pragma": {
+      "name": "TOP",
+      "option": [{
+          "name": "name",
+          "value": "packetizer"
+        }]
+    }
+  }]
