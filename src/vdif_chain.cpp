@@ -13,17 +13,18 @@ void sample_packer(
     hls::stream<ap_uint<32>> &packed_out,
     ap_uint<5> bits_per_sample
 );
-
-void packetizer(
-    hls::stream<axis_t> &in_stream,
+void packetizer( 
+    hls::stream<ap_uint<32>> &in_stream,
     hls::stream<axis_t> &out_stream,
     ap_uint<6> epoch,
     ap_uint<16> station_id,
     ap_uint<10> thread_id,
     ap_uint<5> bits_per_sample,
     ap_uint<1> complex_data,
-    ap_uint<1> pps
+    ap_uint<1> pps,
+    ap_uint<16> payload_words
 );
+
 
 //--------------------------------------------------
 // Top Wrapper
@@ -38,7 +39,9 @@ void vdif_chain(
     ap_uint<10> thread_id,
     ap_uint<5> bits_per_sample,
     ap_uint<1> complex_data,
-    ap_uint<1> pps
+    ap_uint<1> pps,
+
+    ap_uint<16> payload_words
 )
 {
 #pragma HLS INTERFACE axis port=adc_in
@@ -54,18 +57,16 @@ void vdif_chain(
 #pragma HLS INTERFACE ap_ctrl_none port=return
 
     hls::stream<ap_uint<32>> packed_stream;
-#pragma HLS STREAM variable=packed_stream depth=8
+#pragma HLS STREAM variable=packed_stream depth=2048
 
-    hls::stream<axis_t> packetizer_in;
-#pragma HLS STREAM variable=packetizer_in depth=8
-
-    axis_t pkt;
+    hls::stream<ap_uint<32>> packetizer_in;
+#pragma HLS STREAM variable=packetizer_in depth=2048
 
     //--------------------------------------------------
     // Generate 4 payload words
     //--------------------------------------------------
 
-    for(int i=0;i<4;i++)
+    for(int i=0;i<payload_words;i++)
     {
         sample_packer(
             adc_in,
@@ -73,10 +74,9 @@ void vdif_chain(
             bits_per_sample
         );
 
-        pkt.data = packed_stream.read();
-        pkt.last = 0;
-
-        packetizer_in.write(pkt);
+        packetizer_in.write(
+    packed_stream.read()
+);
     }
 
     //--------------------------------------------------
@@ -84,13 +84,14 @@ void vdif_chain(
     //--------------------------------------------------
 
     packetizer(
-        packetizer_in,
-        out_stream,
-        epoch,
-        station_id,
-        thread_id,
-        bits_per_sample,
-        complex_data,
-        pps
-    );
+    packetizer_in,
+    out_stream,
+    epoch,
+    station_id,
+    thread_id,
+    bits_per_sample,
+    complex_data,
+    pps,
+    payload_words
+);
 }

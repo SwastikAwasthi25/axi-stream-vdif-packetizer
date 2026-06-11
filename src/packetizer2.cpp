@@ -135,8 +135,9 @@ ap_uint<32> pack_2bit(ap_uint<2> samples[16]);
 ap_uint<32> pack_4bit(ap_uint<4> samples[8]);
 
 ap_uint<32> pack_8bit(ap_uint<8> samples[4]);
+//ap_uint<16> payload_words; 
 void packetizer(
-    hls::stream<axis_t> &in_stream,
+    hls::stream<ap_uint<32>> &in_stream,
     hls::stream<axis_t> &out_stream,
 
     ap_uint<6> epoch,
@@ -144,10 +145,12 @@ void packetizer(
     ap_uint<10> thread_id,
     ap_uint<5> bits_per_sample,
     ap_uint<1> complex_data,
-    ap_uint<1> pps
+    ap_uint<1> pps,
+
+    ap_uint<16> payload_words
 )
 {
-#pragma HLS INTERFACE axis port=in_stream
+#pragma HLS INTERFACE ap_fifo port=in_stream
 #pragma HLS INTERFACE axis port=out_stream
 
 #pragma HLS INTERFACE ap_none port=epoch
@@ -164,8 +167,7 @@ void packetizer(
     //--------------------------------------------------
 
     hls::stream<ap_uint<32>> fifo;
-#pragma HLS STREAM variable=fifo depth=8
-
+#pragma HLS STREAM variable=fifo depth=2048
     axis_t packet;
 
     //--------------------------------------------------
@@ -189,14 +191,14 @@ void packetizer(
     // Read Payload From AXI Input
     //--------------------------------------------------
 
-    for(int i=0;i<4;i++)
-    {
+    for(int i=0;i<payload_words;i++)
+{
 #pragma HLS PIPELINE II=1
 
-        packet = in_stream.read();
-
-        fifo.write(packet.data);
-    }
+    fifo.write(
+        in_stream.read()
+    );
+}
 
     //--------------------------------------------------
     // VDIF Header
@@ -211,8 +213,8 @@ void packetizer(
 
     ap_uint<3> vdif_version = 1;
     ap_uint<5> log2_channels = 0;
-    ap_uint<24> frame_length = 8;
-
+    ap_uint<24> frame_length =
+    ((payload_words * 4) + 32) / 8;
     ap_uint<32> word2 =
         ((ap_uint<32>)vdif_version << 29) |
         ((ap_uint<32>)log2_channels << 24) |
@@ -224,6 +226,10 @@ void packetizer(
         ((ap_uint<32>)thread_id << 16) |
         station_id;
 
+        ap_uint<32> word4 = 0x01000000;
+ap_uint<32> word5 = 0xACABFEED;
+ap_uint<32> word6 = 0x00000000;
+ap_uint<32> word7 = 0x00000000;
     //--------------------------------------------------
     // Header Output
     //--------------------------------------------------
@@ -244,21 +250,36 @@ void packetizer(
     packet.last = 0;
     out_stream.write(packet);
 
+    packet.data = word4;
+    packet.last = 0;
+    out_stream.write(packet);
+
+    packet.data = word5;
+    packet.last = 0;
+    out_stream.write(packet);
+
+    packet.data = word6;
+    packet.last = 0;
+    out_stream.write(packet);
+
+    packet.data = word7;
+    packet.last = 0;
+    out_stream.write(packet);
+
     //--------------------------------------------------
     // Payload Output
     //--------------------------------------------------
 
-    for(int i=0;i<4;i++)
+    for(int i=0;i<payload_words;i++)
     {
 #pragma HLS PIPELINE II=1
 
         packet.data = fifo.read();
 
-        if(i == 3)
-            packet.last = 1;
-        else
-            packet.last = 0;
-
+        if(i == payload_words - 1)
+    packet.last = 1;
+else
+    packet.last = 0;
         out_stream.write(packet);
     }
 
