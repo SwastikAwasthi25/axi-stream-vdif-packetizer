@@ -1,0 +1,197 @@
+
+
+================================================================
+== Synthesis Summary Report of 'vdif_chain'
+================================================================
++ General Information: 
+    * Date:           Thu Jun 11 15:34:08 2026
+    * Version:        2025.2 (Build 6295257 on Nov 14 2025)
+    * Project:        vdif_chain
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: artix7
+    * Target device:  xc7a12t-cpg238-1
+    
+
+* Performance & Resource Estimates: 
++------------------------------------------+------+---------------+----------+---------+-------+----------+---------+-----------+------+----------+----+----------+------------+-----+
+|                  Modules                 | Issue|               | Iteration|         |  Trip |          |       Latency       |      |          |    |          |            |     |
+|                  & Loops                 | Type | Violation Type|  Latency | Interval| Count | Pipelined| (cycles)|    (ns)   | Slack|   BRAM   | DSP|    FF    |     LUT    | URAM|
++------------------------------------------+------+---------------+----------+---------+-------+----------+---------+-----------+------+----------+----+----------+------------+-----+
+|+ vdif_chain                              |     -|              -|         -|  1572853|      -|        no|  1572852|  1.573e+07|  0.29|  12 (30%)|   -|  942 (5%)|  1365 (17%)|    -|
+| + packetizer                             |     -|              -|         -|   131079|      -|        no|   131079|  1.311e+06|  0.29|   4 (10%)|   -|  346 (2%)|    665 (8%)|    -|
+|  + packetizer_Pipeline_VITIS_LOOP_194_1  |     -|              -|         -|        -|      -|       yes|    65537|  6.554e+05|  0.29|         -|   -|  19 (~0%)|    106 (1%)|    -|
+|   o VITIS_LOOP_194_1                     |     -|              -|         2|        1|  65535|       yes|    65535|  6.554e+05|  7.30|         -|   -|         -|           -|    -|
+|  + packetizer_Pipeline_VITIS_LOOP_253_2  |     -|              -|         -|        -|      -|       yes|    65537|  6.554e+05|  1.93|         -|   -|  20 (~0%)|    132 (1%)|    -|
+|   o VITIS_LOOP_253_2                     |     -|              -|         2|        1|  65535|       yes|    65535|  6.554e+05|  7.30|         -|   -|         -|           -|    -|
+| o VITIS_LOOP_69_1                        |     -|              -|        22|        -|  65535|        no|  1441770|  1.442e+07|  7.30|         -|   -|         -|           -|    -|
+|  + vdif_chain_Pipeline_VITIS_LOOP_46_3   |     -|              -|         -|        -|      -|       yes|        6|     60.000|  2.40|         -|   -|  40 (~0%)|    118 (1%)|    -|
+|   o VITIS_LOOP_46_3                      |     -|              -|         2|        1|      4|       yes|        4|     40.000|  7.30|         -|   -|         -|           -|    -|
+|  + vdif_chain_Pipeline_VITIS_LOOP_33_2   |     -|              -|         -|        -|      -|       yes|       10|    100.000|  2.30|         -|   -|  42 (~0%)|    120 (1%)|    -|
+|   o VITIS_LOOP_33_2                      |     -|              -|         2|        1|      8|       yes|        8|     80.000|  7.30|         -|   -|         -|           -|    -|
+|  + vdif_chain_Pipeline_VITIS_LOOP_20_1   |     -|              -|         -|        -|      -|       yes|       18|    180.000|  2.22|         -|   -|  45 (~0%)|    121 (1%)|    -|
+|   o VITIS_LOOP_20_1                      |     -|              -|         2|        1|     16|       yes|       16|    160.000|  7.30|         -|   -|         -|           -|    -|
++------------------------------------------+------+---------------+----------+---------+-------+----------+---------+-----------+------+----------+----+----------+------------+-----+
+    Name Prefix: '+' for module, 'o' for loop, '*' for dataflow
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AXIS
++------------+-----------+---------------+-------+-------+-------+--------+-------+--------+
+| Interface  | Direction | Register Mode | TDATA | TKEEP | TLAST | TREADY | TSTRB | TVALID |
++------------+-----------+---------------+-------+-------+-------+--------+-------+--------+
+| adc_in     | in        | both          | 8     |       |       | 1      |       | 1      |
+| out_stream | out       | both          | 32    | 4     | 1     | 1      | 4     | 1      |
++------------+-----------+---------------+-------+-------+-------+--------+-------+--------+
+
+* Other Ports
++-----------------+---------+-----------+----------+
+| Port            | Mode    | Direction | Bitwidth |
++-----------------+---------+-----------+----------+
+| bits_per_sample | ap_none | in        | 5        |
+| complex_data    | ap_none | in        | 1        |
+| epoch           | ap_none | in        | 6        |
+| payload_words   | ap_none | in        | 16       |
+| pps             | ap_none | in        | 1        |
+| station_id      | ap_none | in        | 16       |
+| thread_id       | ap_none | in        | 10       |
++-----------------+---------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+--------------+----------+
+| Interface | Type         | Ports    |
++-----------+--------------+----------+
+| ap_clk    | clock        | ap_clk   |
+| ap_rst_n  | reset        | ap_rst_n |
+| ap_ctrl   | ap_ctrl_none |          |
++-----------+--------------+----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++-----------------+-----------+------------------------------------------------------------------------------+
+| Argument        | Direction | Datatype                                                                     |
++-----------------+-----------+------------------------------------------------------------------------------+
+| adc_in          | in        | stream<ap_uint<8>, 0>&                                                       |
+| out_stream      | out       | stream<hls::axis<ap_uint<32>, 0UL, 0UL, 0UL, (unsigned char)'8', false>, 0>& |
+| epoch           | in        | ap_uint<6>                                                                   |
+| station_id      | in        | ap_uint<16>                                                                  |
+| thread_id       | in        | ap_uint<10>                                                                  |
+| bits_per_sample | in        | ap_uint<5>                                                                   |
+| complex_data    | in        | ap_uint<1>                                                                   |
+| pps             | in        | ap_uint<1>                                                                   |
+| payload_words   | in        | ap_uint<16>                                                                  |
++-----------------+-----------+------------------------------------------------------------------------------+
+
+* SW-to-HW Mapping
++-----------------+-----------------+-----------+
+| Argument        | HW Interface    | HW Type   |
++-----------------+-----------------+-----------+
+| adc_in          | adc_in          | interface |
+| out_stream      | out_stream      | interface |
+| epoch           | epoch           | port      |
+| station_id      | station_id      | port      |
+| thread_id       | thread_id       | port      |
+| bits_per_sample | bits_per_sample | port      |
+| complex_data    | complex_data    | port      |
+| pps             | pps             | port      |
+| payload_words   | payload_words   | port      |
++-----------------+-----------------+-----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++------------------------------------------+-----+--------+--------------+---------+--------+---------+
+| Name                                     | DSP | Pragma | Variable     | Op      | Impl   | Latency |
++------------------------------------------+-----+--------+--------------+---------+--------+---------+
+| + vdif_chain                             | 0   |        |              |         |        |         |
+|   icmp_ln69_fu_257_p2                    |     |        | icmp_ln69    | seteq   | auto   | 0       |
+|   i_7_fu_262_p2                          |     |        | i_7          | add     | fabric | 0       |
+|  + vdif_chain_Pipeline_VITIS_LOOP_46_3   | 0   |        |              |         |        |         |
+|    icmp_ln46_fu_76_p2                    |     |        | icmp_ln46    | seteq   | auto   | 0       |
+|    i_2_fu_82_p2                          |     |        | i_2          | add     | fabric | 0       |
+|    partset_32ns_32ns_8ns_5ns_32_1_1_U1   |     |        | word_1       | partset | auto   | 0       |
+|  + vdif_chain_Pipeline_VITIS_LOOP_33_2   | 0   |        |              |         |        |         |
+|    icmp_ln33_fu_78_p2                    |     |        | icmp_ln33    | seteq   | auto   | 0       |
+|    i_4_fu_84_p2                          |     |        | i_4          | add     | fabric | 0       |
+|    partset_32ns_32ns_4ns_5ns_32_1_1_U5   |     |        | word_2       | partset | auto   | 0       |
+|  + vdif_chain_Pipeline_VITIS_LOOP_20_1   | 0   |        |              |         |        |         |
+|    icmp_ln20_fu_74_p2                    |     |        | icmp_ln20    | seteq   | auto   | 0       |
+|    i_5_fu_80_p2                          |     |        | i_5          | add     | fabric | 0       |
+|    partset_32ns_32ns_2ns_5ns_32_1_1_U9   |     |        | word_1       | partset | auto   | 0       |
+|  + packetizer                            | 0   |        |              |         |        |         |
+|    add_ln186_fu_238_p2                   |     |        | add_ln186    | add     | fabric | 0       |
+|    frame_length_fu_293_p2                |     |        | frame_length | add     | fabric | 0       |
+|    add_ln226_fu_334_p2                   |     |        | add_ln226    | add     | fabric | 0       |
+|    word3_fu_358_p2                       |     |        | word3        | or      | auto   | 0       |
+|    add_ln259_fu_368_p2                   |     |        | add_ln259    | add     | fabric | 0       |
+|    add_ln266_fu_268_p2                   |     |        | add_ln266    | add     | fabric | 0       |
+|   + packetizer_Pipeline_VITIS_LOOP_194_1 | 0   |        |              |         |        |         |
+|     icmp_ln194_fu_74_p2                  |     |        | icmp_ln194   | seteq   | auto   | 0       |
+|     i_10_fu_80_p2                        |     |        | i_10         | add     | fabric | 0       |
+|   + packetizer_Pipeline_VITIS_LOOP_253_2 | 0   |        |              |         |        |         |
+|     icmp_ln253_fu_113_p2                 |     |        | icmp_ln253   | seteq   | auto   | 0       |
+|     i_9_fu_119_p2                        |     |        | i_9          | add     | fabric | 0       |
+|     icmp_ln259_fu_129_p2                 |     |        | icmp_ln259   | seteq   | auto   | 0       |
++------------------------------------------+-----+--------+--------------+---------+--------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++------------------------+------------+------+------+------+--------+---------------+--------+---------+------------------+
+| Name                   | Usage      | Type | BRAM | URAM | Pragma | Variable      | Impl   | Latency | Bitwidth, Depth, |
+|                        |            |      |      |      |        |               |        |         | Banks            |
++------------------------+------------+------+------+------+--------+---------------+--------+---------+------------------+
+| + vdif_chain           |            |      | 12   | 0    |        |               |        |         |                  |
+|   packed_stream_fifo_U | fifo array |      | 4    |      |        | packed_stream | memory | 0       | 32, 2048, 1      |
+|   packetizer_in_fifo_U | fifo array |      | 4    |      |        | packetizer_in | memory | 0       | 32, 2048, 1      |
+|  + packetizer          |            |      | 4    | 0    |        |               |        |         |                  |
+|    fifo_fifo_U         | fifo array |      | 4    |      |        | fifo          | memory | 0       | 32, 2048, 1      |
++------------------------+------------+------+------+------+--------+---------------+--------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------+-----------------------------------+--------------------------------------------------------------+
+| Type      | Options                           | Location                                                     |
++-----------+-----------------------------------+--------------------------------------------------------------+
+| INTERFACE | ap_fifo port=in_stream            | in packetizer (../src/packetizer2.cpp:153)                   |
+| INTERFACE | axis port=out_stream              | in packetizer (../src/packetizer2.cpp:154)                   |
+| INTERFACE | ap_none port=epoch                | in packetizer (../src/packetizer2.cpp:156)                   |
+| INTERFACE | ap_none port=station_id           | in packetizer (../src/packetizer2.cpp:157)                   |
+| INTERFACE | ap_none port=thread_id            | in packetizer (../src/packetizer2.cpp:158)                   |
+| INTERFACE | ap_none port=bits_per_sample      | in packetizer (../src/packetizer2.cpp:159)                   |
+| INTERFACE | ap_none port=complex_data         | in packetizer (../src/packetizer2.cpp:160)                   |
+| INTERFACE | ap_none port=pps                  | in packetizer (../src/packetizer2.cpp:161)                   |
+| INTERFACE | ap_ctrl_none port=return          | in packetizer (../src/packetizer2.cpp:163)                   |
+| STREAM    | variable=fifo depth=2048          | in packetizer (../src/packetizer2.cpp:170)                   |
+| PIPELINE  | ii=1                              | in packetizer (../src/packetizer2.cpp:196)                   |
+| PIPELINE  | ii=1                              | in packetizer (../src/packetizer2.cpp:255)                   |
+| INTERFACE | axis port=adc_in                  | in sample_packer (../src/sample_packer/sample_packer.cpp:10) |
+| INTERFACE | axis port=packed_out              | in sample_packer (../src/sample_packer/sample_packer.cpp:11) |
+| INTERFACE | ap_none port=bits_per_sample      | in sample_packer (../src/sample_packer/sample_packer.cpp:13) |
+| INTERFACE | ap_ctrl_none port=return          | in sample_packer (../src/sample_packer/sample_packer.cpp:14) |
+| PIPELINE  | ii=1                              | in sample_packer (../src/sample_packer/sample_packer.cpp:22) |
+| PIPELINE  | ii=1                              | in sample_packer (../src/sample_packer/sample_packer.cpp:35) |
+| PIPELINE  | ii=1                              | in sample_packer (../src/sample_packer/sample_packer.cpp:48) |
+| INTERFACE | axis port=adc_in                  | in vdif_chain (../src/vdif_chain.cpp:47)                     |
+| INTERFACE | axis port=out_stream              | in vdif_chain (../src/vdif_chain.cpp:48)                     |
+| INTERFACE | ap_none port=epoch                | in vdif_chain (../src/vdif_chain.cpp:50)                     |
+| INTERFACE | ap_none port=station_id           | in vdif_chain (../src/vdif_chain.cpp:51)                     |
+| INTERFACE | ap_none port=thread_id            | in vdif_chain (../src/vdif_chain.cpp:52)                     |
+| INTERFACE | ap_none port=bits_per_sample      | in vdif_chain (../src/vdif_chain.cpp:53)                     |
+| INTERFACE | ap_none port=complex_data         | in vdif_chain (../src/vdif_chain.cpp:54)                     |
+| INTERFACE | ap_none port=pps                  | in vdif_chain (../src/vdif_chain.cpp:55)                     |
+| INTERFACE | ap_ctrl_none port=return          | in vdif_chain (../src/vdif_chain.cpp:57)                     |
+| STREAM    | variable=packed_stream depth=2048 | in vdif_chain (../src/vdif_chain.cpp:60)                     |
+| STREAM    | variable=packetizer_in depth=2048 | in vdif_chain (../src/vdif_chain.cpp:63)                     |
++-----------+-----------------------------------+--------------------------------------------------------------+
+
+

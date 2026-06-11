@@ -10,6 +10,11 @@ struct VDIFHeader
     uint32_t word1;
     uint32_t word2;
     uint32_t word3;
+
+    uint32_t word4;
+    uint32_t word5;
+    uint32_t word6;
+    uint32_t word7;
 };
 
 VDIFHeader generate_vdif_header(
@@ -19,7 +24,8 @@ VDIFHeader generate_vdif_header(
     uint16_t station_id,
     uint8_t thread_id,
     uint8_t bits_per_sample,
-    bool complex_data
+    bool complex_data,
+    uint16_t payload_words
 );
 
 std::vector<uint32_t> golden_packetizer(
@@ -30,7 +36,8 @@ std::vector<uint32_t> golden_packetizer(
     uint8_t thread_id,
     uint8_t bits_per_sample,
     bool complex_data,
-    uint32_t payloads[4]
+    uint32_t *payloads,
+    uint16_t payload_words
 );
 
 #endif

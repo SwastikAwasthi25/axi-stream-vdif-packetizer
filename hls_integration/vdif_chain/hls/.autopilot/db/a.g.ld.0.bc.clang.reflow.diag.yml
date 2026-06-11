@@ -1,0 +1,136 @@
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 171, Column: 12 }
+Function:        _Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA_
+Args:            
+  - Callee:          'hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>::axis()'
+    DebugLoc:        { File: 'D:/2025.2/Vitis/common/technology/autopilot\ap_axi_sdata.h', 
+                       Line: 217, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 152, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 86, Column: 5 }
+Function:        _Z10vdif_chainRN3hls6streamI7ap_uintILi8EELi0EEERNS0_INS_4axisIS1_ILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESE_SB_
+Args:            
+  - Callee:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 152, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'vdif_chain(hls::stream<ap_uint<8>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 46, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 71, Column: 9 }
+Function:        _Z10vdif_chainRN3hls6streamI7ap_uintILi8EELi0EEERNS0_INS_4axisIS1_ILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESE_SB_
+Args:            
+  - Callee:          'sample_packer(hls::stream<ap_uint<8>, 0>&, hls::stream<ap_uint<32>, 0>&, ap_uint<5>)'
+    DebugLoc:        { File: ../src/sample_packer/sample_packer.cpp, Line: 9, 
+                       Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'vdif_chain(hls::stream<ap_uint<8>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 46, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 171, Column: 12 }
+Function:        _Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA_
+Args:            
+  - Callee:          'hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>::axis()'
+    DebugLoc:        { File: 'D:/2025.2/Vitis/common/technology/autopilot\ap_axi_sdata.h', 
+                       Line: 217, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 152, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 71, Column: 9 }
+Function:        _Z10vdif_chainRN3hls6streamI7ap_uintILi8EELi0EEERNS0_INS_4axisIS1_ILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESE_SB_
+Args:            
+  - Callee:          'sample_packer(hls::stream<ap_uint<8>, 0>&, hls::stream<ap_uint<32>, 0>&, ap_uint<5>)'
+    DebugLoc:        { File: ../src/sample_packer/sample_packer.cpp, Line: 9, 
+                       Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'vdif_chain(hls::stream<ap_uint<8>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 46, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 86, Column: 5 }
+Function:        _Z10vdif_chainRN3hls6streamI7ap_uintILi8EELi0EEERNS0_INS_4axisIS1_ILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESE_SB_
+Args:            
+  - Callee:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 152, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'vdif_chain(hls::stream<ap_uint<8>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 46, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+Function:        apatb_vdif_chain_ir
+Args:            
+  - Callee:          'vdif_chain(hls::stream<ap_uint<8>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 46, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          apatb_vdif_chain_ir
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 152, Column: 0 }
+Function:        _Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>::axis()'
+    DebugLoc:        { File: 'D:/2025.2/Vitis/common/technology/autopilot\ap_axi_sdata.h', 
+                       Line: 217, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 152, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 46, Column: 0 }
+Function:        _Z10vdif_chainRN3hls6streamI7ap_uintILi8EELi0EEERNS0_INS_4axisIS1_ILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESE_SB_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'sample_packer(hls::stream<ap_uint<8>, 0>&, hls::stream<ap_uint<32>, 0>&, ap_uint<5>)'
+    DebugLoc:        { File: ../src/sample_packer/sample_packer.cpp, Line: 9, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'vdif_chain(hls::stream<ap_uint<8>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 46, Column: 0 }
+  - String:          ''''
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 86, Column: 5 }
+Function:        _Z10vdif_chainRN3hls6streamI7ap_uintILi8EELi0EEERNS0_INS_4axisIS1_ILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESE_SB_
+Args:            
+  - Callee:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 152, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'vdif_chain(hls::stream<ap_uint<8>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 46, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...

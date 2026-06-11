@@ -7,7 +7,8 @@ VDIFHeader generate_vdif_header(
     uint16_t station_id,
     uint8_t thread_id,
     uint8_t bits_per_sample,
-    bool complex_data
+    bool complex_data,
+    uint16_t payload_words
 )
 {
     VDIFHeader header;
@@ -26,8 +27,9 @@ VDIFHeader generate_vdif_header(
 
     uint32_t vdif_version = 1;
     uint32_t log2_channels = 0;
-    uint32_t frame_length = 8;
 
+    uint32_t frame_length =
+    ((payload_words * 4) + 32) / 8;
     header.word2 =
         ((vdif_version & 0x7) << 29) |
         ((log2_channels & 0x1F) << 24) |
@@ -38,6 +40,17 @@ VDIFHeader generate_vdif_header(
         (((bits_per_sample - 1) & 0x1F) << 26) |
         ((thread_id & 0x3FF) << 16) |
         (station_id & 0xFFFF);
+        //------------------------------------------
+// Extended VDIF Header
+//------------------------------------------
+
+header.word4 = 0x01000000;   // EDV = 1
+
+header.word5 = 0xACABFEED;   // Sync Pattern
+
+header.word6 = 0x00000000;
+
+header.word7 = 0x00000000;
 
     return header;
 }
@@ -50,7 +63,8 @@ std::vector<uint32_t> golden_packetizer(
     uint8_t thread_id,
     uint8_t bits_per_sample,
     bool complex_data,
-    uint32_t payloads[4]
+    uint32_t *payloads,
+    uint16_t payload_words
 )
 {
     std::vector<uint32_t> packet;
@@ -63,15 +77,28 @@ std::vector<uint32_t> golden_packetizer(
             station_id,
             thread_id,
             bits_per_sample,
-            complex_data
+            complex_data,
+            payload_words
         );
 
-    packet.push_back(header.word0);
-    packet.push_back(header.word1);
-    packet.push_back(header.word2);
-    packet.push_back(header.word3);
+    //------------------------------------------
+    // Header
+    //------------------------------------------
 
-    for(int i=0;i<4;i++)
+    packet.push_back(header.word0);
+packet.push_back(header.word1);
+packet.push_back(header.word2);
+packet.push_back(header.word3);
+
+packet.push_back(header.word4);
+packet.push_back(header.word5);
+packet.push_back(header.word6);
+packet.push_back(header.word7);
+    //------------------------------------------
+    // Payload
+    //------------------------------------------
+
+    for(int i=0;i<payload_words;i++)
     {
         packet.push_back(payloads[i]);
     }

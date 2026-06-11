@@ -1,0 +1,33 @@
+{
+  "0": {
+    "basicblocks": 17,
+    "calls": "1",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "vdif_chain.cpp",
+    "fileloc": 33,
+    "instructions": 72,
+    "memory_accesses": 3,
+    "name": "vdif_chain",
+    "total_instructions": 263
+  },
+  "1": {
+    "basicblocks": 11,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 6,
+    "file": "packetizer2.cpp",
+    "fileloc": 139,
+    "instructions": 191,
+    "loads": {
+      "G": 3
+    },
+    "memory_accesses": 8,
+    "name": "packetizer",
+    "stores": {
+      "G": 3,
+      "L": 20
+    },
+    "total_instructions": 191
+  }
+}
