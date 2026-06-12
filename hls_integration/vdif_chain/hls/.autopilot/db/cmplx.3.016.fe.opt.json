@@ -15,7 +15,7 @@
     "stores": {
       "L": 4
     },
-    "total_instructions": 226
+    "total_instructions": 262
   },
   "1": {
     "basicblocks": 9,
@@ -24,7 +24,7 @@
     "def_use_depth": 5,
     "file": "packetizer2.cpp",
     "fileloc": 139,
-    "instructions": 117,
+    "instructions": 153,
     "loads": {
       "G": 3,
       "L": 2
@@ -33,8 +33,8 @@
     "name": "packetizer",
     "stores": {
       "G": 3,
-      "L": 21
+      "L": 37
     },
-    "total_instructions": 117
+    "total_instructions": 153
   }
 }

@@ -3,14 +3,14 @@ MainSourceFile:  'D:/IITK/project_1/hls_integration/vdif_chain/hls/.autopilot/db
 Diagnostics:
   - DiagnosticName:  xilinx-label-all-loops
     DiagnosticMessage:
-      Message:         'Added loop label VITIS_LOOP_86_1:  '
+      Message:         'Added loop label VITIS_LOOP_101_1:  '
       FilePath:        'D:\IITK\project_1\testbench\integration\golden_model.cpp'
-      FileOffset:      86
+      FileOffset:      101
       Replacements:
         - FilePath:        'D:\IITK\project_1\hls_integration\vdif_chain\hls\.autopilot\db\golden_model.pp.0.cpp'
-          Offset:          373200
+          Offset:          373512
           Length:          0
-          ReplacementText: 'VITIS_LOOP_86_1: '
+          ReplacementText: 'VITIS_LOOP_101_1: '
     Level:           Remark
     BuildDirectory:  'D:\IITK\project_1\hls_integration'
 ...

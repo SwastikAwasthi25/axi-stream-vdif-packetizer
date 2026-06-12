@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'vdif_chain'
 ================================================================
 + General Information: 
-    * Date:           Thu Jun 11 15:34:08 2026
+    * Date:           Fri Jun 12 11:20:15 2026
     * Version:        2025.2 (Build 6295257 on Nov 14 2025)
     * Project:        vdif_chain
     * Solution:       hls (Vivado IP Flow Target)
@@ -17,12 +17,12 @@
 |                  Modules                 | Issue|               | Iteration|         |  Trip |          |       Latency       |      |          |    |          |            |     |
 |                  & Loops                 | Type | Violation Type|  Latency | Interval| Count | Pipelined| (cycles)|    (ns)   | Slack|   BRAM   | DSP|    FF    |     LUT    | URAM|
 +------------------------------------------+------+---------------+----------+---------+-------+----------+---------+-----------+------+----------+----+----------+------------+-----+
-|+ vdif_chain                              |     -|              -|         -|  1572853|      -|        no|  1572852|  1.573e+07|  0.29|  12 (30%)|   -|  942 (5%)|  1365 (17%)|    -|
-| + packetizer                             |     -|              -|         -|   131079|      -|        no|   131079|  1.311e+06|  0.29|   4 (10%)|   -|  346 (2%)|    665 (8%)|    -|
+|+ vdif_chain                              |     -|              -|         -|  1572857|      -|        no|  1572856|  1.573e+07|  0.29|  12 (30%)|   -|  946 (5%)|  1393 (17%)|    -|
+| + packetizer                             |     -|              -|         -|   131083|      -|        no|   131083|  1.311e+06|  0.29|   4 (10%)|   -|  350 (2%)|    693 (8%)|    -|
 |  + packetizer_Pipeline_VITIS_LOOP_194_1  |     -|              -|         -|        -|      -|       yes|    65537|  6.554e+05|  0.29|         -|   -|  19 (~0%)|    106 (1%)|    -|
 |   o VITIS_LOOP_194_1                     |     -|              -|         2|        1|  65535|       yes|    65535|  6.554e+05|  7.30|         -|   -|         -|           -|    -|
-|  + packetizer_Pipeline_VITIS_LOOP_253_2  |     -|              -|         -|        -|      -|       yes|    65537|  6.554e+05|  1.93|         -|   -|  20 (~0%)|    132 (1%)|    -|
-|   o VITIS_LOOP_253_2                     |     -|              -|         2|        1|  65535|       yes|    65535|  6.554e+05|  7.30|         -|   -|         -|           -|    -|
+|  + packetizer_Pipeline_VITIS_LOOP_273_2  |     -|              -|         -|        -|      -|       yes|    65537|  6.554e+05|  1.93|         -|   -|  20 (~0%)|    132 (1%)|    -|
+|   o VITIS_LOOP_273_2                     |     -|              -|         2|        1|  65535|       yes|    65535|  6.554e+05|  7.30|         -|   -|         -|           -|    -|
 | o VITIS_LOOP_69_1                        |     -|              -|        22|        -|  65535|        no|  1441770|  1.442e+07|  7.30|         -|   -|         -|           -|    -|
 |  + vdif_chain_Pipeline_VITIS_LOOP_46_3   |     -|              -|         -|        -|      -|       yes|        6|     60.000|  2.40|         -|   -|  40 (~0%)|    118 (1%)|    -|
 |   o VITIS_LOOP_46_3                      |     -|              -|         2|        1|      4|       yes|        4|     40.000|  7.30|         -|   -|         -|           -|    -|
@@ -124,19 +124,19 @@
 |    i_5_fu_80_p2                          |     |        | i_5          | add     | fabric | 0       |
 |    partset_32ns_32ns_2ns_5ns_32_1_1_U9   |     |        | word_1       | partset | auto   | 0       |
 |  + packetizer                            | 0   |        |              |         |        |         |
-|    add_ln186_fu_238_p2                   |     |        | add_ln186    | add     | fabric | 0       |
-|    frame_length_fu_293_p2                |     |        | frame_length | add     | fabric | 0       |
-|    add_ln226_fu_334_p2                   |     |        | add_ln226    | add     | fabric | 0       |
-|    word3_fu_358_p2                       |     |        | word3        | or      | auto   | 0       |
-|    add_ln259_fu_368_p2                   |     |        | add_ln259    | add     | fabric | 0       |
-|    add_ln266_fu_268_p2                   |     |        | add_ln266    | add     | fabric | 0       |
+|    add_ln186_fu_245_p2                   |     |        | add_ln186    | add     | fabric | 0       |
+|    frame_length_fu_300_p2                |     |        | frame_length | add     | fabric | 0       |
+|    add_ln226_fu_341_p2                   |     |        | add_ln226    | add     | fabric | 0       |
+|    word3_fu_365_p2                       |     |        | word3        | or      | auto   | 0       |
+|    add_ln279_fu_375_p2                   |     |        | add_ln279    | add     | fabric | 0       |
+|    add_ln286_fu_275_p2                   |     |        | add_ln286    | add     | fabric | 0       |
 |   + packetizer_Pipeline_VITIS_LOOP_194_1 | 0   |        |              |         |        |         |
 |     icmp_ln194_fu_74_p2                  |     |        | icmp_ln194   | seteq   | auto   | 0       |
 |     i_10_fu_80_p2                        |     |        | i_10         | add     | fabric | 0       |
-|   + packetizer_Pipeline_VITIS_LOOP_253_2 | 0   |        |              |         |        |         |
-|     icmp_ln253_fu_113_p2                 |     |        | icmp_ln253   | seteq   | auto   | 0       |
+|   + packetizer_Pipeline_VITIS_LOOP_273_2 | 0   |        |              |         |        |         |
+|     icmp_ln273_fu_113_p2                 |     |        | icmp_ln273   | seteq   | auto   | 0       |
 |     i_9_fu_119_p2                        |     |        | i_9          | add     | fabric | 0       |
-|     icmp_ln259_fu_129_p2                 |     |        | icmp_ln259   | seteq   | auto   | 0       |
+|     icmp_ln279_fu_129_p2                 |     |        | icmp_ln279   | seteq   | auto   | 0       |
 +------------------------------------------+-----+--------+--------------+---------+--------+---------+
 
 
@@ -173,7 +173,7 @@
 | INTERFACE | ap_ctrl_none port=return          | in packetizer (../src/packetizer2.cpp:163)                   |
 | STREAM    | variable=fifo depth=2048          | in packetizer (../src/packetizer2.cpp:170)                   |
 | PIPELINE  | ii=1                              | in packetizer (../src/packetizer2.cpp:196)                   |
-| PIPELINE  | ii=1                              | in packetizer (../src/packetizer2.cpp:255)                   |
+| PIPELINE  | ii=1                              | in packetizer (../src/packetizer2.cpp:275)                   |
 | INTERFACE | axis port=adc_in                  | in sample_packer (../src/sample_packer/sample_packer.cpp:10) |
 | INTERFACE | axis port=packed_out              | in sample_packer (../src/sample_packer/sample_packer.cpp:11) |
 | INTERFACE | ap_none port=bits_per_sample      | in sample_packer (../src/sample_packer/sample_packer.cpp:13) |

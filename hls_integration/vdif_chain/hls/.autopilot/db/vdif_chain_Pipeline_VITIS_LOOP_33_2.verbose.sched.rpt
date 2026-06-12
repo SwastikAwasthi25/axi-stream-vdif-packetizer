@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'vdif_chain_Pipeline_VITIS_LOOP_33_2'
 ================================================================
-* Date:           Thu Jun 11 15:34:03 2026
+* Date:           Fri Jun 12 11:20:10 2026
 
 * Version:        2025.2 (Build 6295257 on Nov 14 2025)
 * Project:        vdif_chain
@@ -123,7 +123,7 @@ Target clock period: 10.000ns, clock uncertainty: 2.700ns.
 The critical path consists of the following:
 	'store' operation ('store_ln33', ../src/sample_packer/sample_packer.cpp:33->../src/vdif_chain.cpp:71) of constant 0 4 bit on local variable 'i', ../src/sample_packer/sample_packer.cpp:33->../src/vdif_chain.cpp:71 [6]  (1.610 ns)
 	'load' operation 4 bit ('i', ../src/sample_packer/sample_packer.cpp:33->../src/vdif_chain.cpp:71) on local variable 'i', ../src/sample_packer/sample_packer.cpp:33->../src/vdif_chain.cpp:71 [10]  (0.000 ns)
-	'add' operation 4 bit ('i', ../src/sample_packer/sample_packer.cpp:33->../src/vdif_chain.cpp:71) [12]  (1.777 ns)
+	'icmp' operation 1 bit ('icmp_ln33', ../src/sample_packer/sample_packer.cpp:33->../src/vdif_chain.cpp:71) [11]  (1.777 ns)
 	'store' operation ('store_ln33', ../src/sample_packer/sample_packer.cpp:33->../src/vdif_chain.cpp:71) of variable 'i', ../src/sample_packer/sample_packer.cpp:33->../src/vdif_chain.cpp:71 4 bit on local variable 'i', ../src/sample_packer/sample_packer.cpp:33->../src/vdif_chain.cpp:71 [24]  (1.610 ns)
 
  <State 2>: 3.283ns

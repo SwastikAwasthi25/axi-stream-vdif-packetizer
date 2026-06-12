@@ -50100,6 +50100,10 @@ void packetizer(
         ((ap_uint<32>)thread_id << 16) |
         station_id;
 
+        ap_uint<32> word4 = 0x01000000;
+ap_uint<32> word5 = 0xACABFEED;
+ap_uint<32> word6 = 0x00000000;
+ap_uint<32> word7 = 0x00000000;
 
 
 
@@ -50120,11 +50124,27 @@ void packetizer(
     packet.last = 0;
     out_stream.write(packet);
 
+    packet.data = word4;
+    packet.last = 0;
+    out_stream.write(packet);
+
+    packet.data = word5;
+    packet.last = 0;
+    out_stream.write(packet);
+
+    packet.data = word6;
+    packet.last = 0;
+    out_stream.write(packet);
+
+    packet.data = word7;
+    packet.last = 0;
+    out_stream.write(packet);
 
 
 
 
-    VITIS_LOOP_253_2: for(int i=0;i<payload_words;i++)
+
+    VITIS_LOOP_273_2: for(int i=0;i<payload_words;i++)
     {
 #pragma HLS PIPELINE II=1
 

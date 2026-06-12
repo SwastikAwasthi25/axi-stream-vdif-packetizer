@@ -13800,6 +13800,11 @@ struct VDIFHeader
     uint32_t word1;
     uint32_t word2;
     uint32_t word3;
+
+    uint32_t word4;
+    uint32_t word5;
+    uint32_t word6;
+    uint32_t word7;
 };
 
 VDIFHeader generate_vdif_header(
@@ -13867,6 +13872,17 @@ VDIFHeader generate_vdif_header(
         ((thread_id & 0x3FF) << 16) |
         (station_id & 0xFFFF);
 
+
+
+
+header.word4 = 0x01000000;
+
+header.word5 = 0xACABFEED;
+
+header.word6 = 0x00000000;
+
+header.word7 = 0x00000000;
+
     return header;
 }
 
@@ -13901,15 +13917,19 @@ std::vector<uint32_t> golden_packetizer(
 
 
     packet.push_back(header.word0);
-    packet.push_back(header.word1);
-    packet.push_back(header.word2);
-    packet.push_back(header.word3);
+packet.push_back(header.word1);
+packet.push_back(header.word2);
+packet.push_back(header.word3);
+
+packet.push_back(header.word4);
+packet.push_back(header.word5);
+packet.push_back(header.word6);
+packet.push_back(header.word7);
 
 
 
 
-
-    VITIS_LOOP_86_1: for(int i=0;i<payload_words;i++)
+    VITIS_LOOP_101_1: for(int i=0;i<payload_words;i++)
     {
         packet.push_back(payloads[i]);
     }

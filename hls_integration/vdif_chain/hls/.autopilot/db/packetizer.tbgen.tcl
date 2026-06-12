@@ -119,10 +119,10 @@ set ArgLastReadFirstWriteLatency {
 		payload_words {Type I LastRead 0 FirstWrite -1}
 		packetizer_in {Type I LastRead 1 FirstWrite -1}
 		fifo {Type O LastRead -1 FirstWrite 1}}
-	packetizer_Pipeline_VITIS_LOOP_253_2 {
+	packetizer_Pipeline_VITIS_LOOP_273_2 {
 		payload_words {Type I LastRead 0 FirstWrite -1}
 		fifo {Type I LastRead 1 FirstWrite -1}
-		add_ln259 {Type I LastRead 0 FirstWrite -1}
+		add_ln279 {Type I LastRead 0 FirstWrite -1}
 		out_stream_V_data_V {Type O LastRead -1 FirstWrite 1}
 		out_stream_V_keep_V {Type O LastRead -1 FirstWrite 1}
 		out_stream_V_strb_V {Type O LastRead -1 FirstWrite 1}
@@ -131,8 +131,8 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "9", "Max" : "131079"}
-	, {"Name" : "Interval", "Min" : "9", "Max" : "131079"}
+	{"Name" : "Latency", "Min" : "13", "Max" : "131083"}
+	, {"Name" : "Interval", "Min" : "13", "Max" : "131083"}
 ]}
 
 set PipelineEnableSignalInfo {[

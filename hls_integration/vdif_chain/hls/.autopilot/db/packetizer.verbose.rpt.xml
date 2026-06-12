@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'packetizer'" level="0">
-<item name = "Date">Thu Jun 11 15:34:07 2026
+<item name = "Date">Fri Jun 12 11:20:15 2026
 </item>
 <item name = "Version">2025.2 (Build 6295257 on Nov 14 2025)</item>
 <item name = "Project">vdif_chain</item>
@@ -24,15 +24,15 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">9, 131079, 90.000 ns, 1.311 ms, 9, 131079, no</column>
+<column name="">13, 131083, 0.130 us, 1.311 ms, 13, 131083, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_packetizer_Pipeline_VITIS_LOOP_194_1_fu_205">packetizer_Pipeline_VITIS_LOOP_194_1, 2, 65537, 20.000 ns, 0.655 ms, 0, 0, loop pipeline stp</column>
-<column name="grp_packetizer_Pipeline_VITIS_LOOP_253_2_fu_214">packetizer_Pipeline_VITIS_LOOP_253_2, 2, 65537, 20.000 ns, 0.655 ms, 0, 0, loop pipeline stp</column>
+<column name="grp_packetizer_Pipeline_VITIS_LOOP_194_1_fu_212">packetizer_Pipeline_VITIS_LOOP_194_1, 2, 65537, 20.000 ns, 0.655 ms, 0, 0, loop pipeline stp</column>
+<column name="grp_packetizer_Pipeline_VITIS_LOOP_273_2_fu_221">packetizer_Pipeline_VITIS_LOOP_273_2, 2, 65537, 20.000 ns, 0.655 ms, 0, 0, loop pipeline stp</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -53,8 +53,8 @@
 <column name="FIFO">4, -, 163, 82, -</column>
 <column name="Instance">-, -, 39, 236, -</column>
 <column name="Memory">-, -, -, -, -</column>
-<column name="Multiplexer">-, -, 0, 155, -</column>
-<column name="Register">-, -, 144, -, -</column>
+<column name="Multiplexer">-, -, 0, 183, -</column>
+<column name="Register">-, -, 148, -, -</column>
 <specialColumn name="Available">40, 40, 16000, 8000, 0</specialColumn>
 <specialColumn name="Utilization (%)">10, 0, 2, 8, 0</specialColumn>
 </table>
@@ -63,8 +63,8 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="grp_packetizer_Pipeline_VITIS_LOOP_194_1_fu_205">packetizer_Pipeline_VITIS_LOOP_194_1, 0, 0, 19, 106, 0</column>
-<column name="grp_packetizer_Pipeline_VITIS_LOOP_253_2_fu_214">packetizer_Pipeline_VITIS_LOOP_253_2, 0, 0, 20, 130, 0</column>
+<column name="grp_packetizer_Pipeline_VITIS_LOOP_194_1_fu_212">packetizer_Pipeline_VITIS_LOOP_194_1, 0, 0, 19, 106, 0</column>
+<column name="grp_packetizer_Pipeline_VITIS_LOOP_273_2_fu_221">packetizer_Pipeline_VITIS_LOOP_273_2, 0, 0, 20, 130, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -82,24 +82,24 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln186_fu_238_p2">+, 0, 0, 37, 30, 1</column>
-<column name="add_ln226_fu_334_p2">+, 0, 0, 39, 32, 28</column>
-<column name="add_ln259_fu_368_p2">+, 0, 0, 24, 17, 2</column>
-<column name="add_ln266_fu_268_p2">+, 0, 0, 31, 24, 1</column>
-<column name="frame_length_fu_293_p2">+, 0, 0, 23, 16, 3</column>
-<column name="grp_packetizer_Pipeline_VITIS_LOOP_253_2_fu_214_out_stream_TREADY">and, 0, 0, 2, 1, 1</column>
+<column name="add_ln186_fu_245_p2">+, 0, 0, 37, 30, 1</column>
+<column name="add_ln226_fu_341_p2">+, 0, 0, 39, 32, 28</column>
+<column name="add_ln279_fu_375_p2">+, 0, 0, 24, 17, 2</column>
+<column name="add_ln286_fu_275_p2">+, 0, 0, 31, 24, 1</column>
+<column name="frame_length_fu_300_p2">+, 0, 0, 23, 16, 3</column>
+<column name="grp_packetizer_Pipeline_VITIS_LOOP_273_2_fu_221_out_stream_TREADY">and, 0, 0, 2, 1, 1</column>
 <column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
-<column name="word3_fu_358_p2">or, 0, 0, 32, 32, 32</column>
+<column name="word3_fu_365_p2">or, 0, 0, 32, 32, 32</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="ap_NS_fsm">29, 7, 1, 7</column>
-<column name="ap_phi_mux_word0_phi_fu_188_p4">13, 3, 30, 90</column>
+<column name="ap_NS_fsm">45, 11, 1, 11</column>
+<column name="ap_phi_mux_word0_phi_fu_195_p4">13, 3, 30, 90</column>
 <column name="fifo_read">9, 2, 1, 2</column>
 <column name="fifo_write">9, 2, 1, 2</column>
-<column name="frame_no_loc_0_reg_194">9, 2, 24, 48</column>
-<column name="out_stream_TDATA">25, 6, 32, 192</column>
+<column name="frame_no_loc_0_reg_201">9, 2, 24, 48</column>
+<column name="out_stream_TDATA">37, 9, 32, 288</column>
 <column name="out_stream_TDATA_blk_n">9, 2, 1, 2</column>
 <column name="out_stream_TKEEP">13, 3, 4, 12</column>
 <column name="out_stream_TLAST">13, 3, 1, 3</column>
@@ -109,12 +109,12 @@
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="add_ln259_reg_420">17, 0, 17, 0</column>
-<column name="ap_CS_fsm">6, 0, 6, 0</column>
+<column name="add_ln279_reg_427">17, 0, 17, 0</column>
+<column name="ap_CS_fsm">10, 0, 10, 0</column>
 <column name="frame_no">24, 0, 24, 0</column>
-<column name="frame_no_loc_0_reg_194">24, 0, 24, 0</column>
-<column name="grp_packetizer_Pipeline_VITIS_LOOP_194_1_fu_205_ap_start_reg">1, 0, 1, 0</column>
-<column name="grp_packetizer_Pipeline_VITIS_LOOP_253_2_fu_214_ap_start_reg">1, 0, 1, 0</column>
+<column name="frame_no_loc_0_reg_201">24, 0, 24, 0</column>
+<column name="grp_packetizer_Pipeline_VITIS_LOOP_194_1_fu_212_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_packetizer_Pipeline_VITIS_LOOP_273_2_fu_221_ap_start_reg">1, 0, 1, 0</column>
 <column name="out_stream_TDATA_reg">32, 0, 32, 0</column>
 <column name="out_stream_TKEEP_reg">4, 0, 4, 0</column>
 <column name="out_stream_TLAST_reg">1, 0, 1, 0</column>

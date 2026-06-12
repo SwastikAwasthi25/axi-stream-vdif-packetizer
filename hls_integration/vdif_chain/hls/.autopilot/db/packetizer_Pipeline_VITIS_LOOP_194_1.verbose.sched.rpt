@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'packetizer_Pipeline_VITIS_LOOP_194_1'
 ================================================================
-* Date:           Thu Jun 11 15:34:03 2026
+* Date:           Fri Jun 12 11:20:11 2026
 
 * Version:        2025.2 (Build 6295257 on Nov 14 2025)
 * Project:        vdif_chain
@@ -116,7 +116,7 @@ Target clock period: 10.000ns, clock uncertainty: 2.700ns.
 The critical path consists of the following:
 	'store' operation ('store_ln194', ../src/packetizer2.cpp:194) of constant 0 16 bit on local variable 'i', ../src/packetizer2.cpp:194 [8]  (1.610 ns)
 	'load' operation 16 bit ('i', ../src/packetizer2.cpp:194) on local variable 'i', ../src/packetizer2.cpp:194 [11]  (0.000 ns)
-	'icmp' operation 1 bit ('icmp_ln194', ../src/packetizer2.cpp:194) [12]  (2.146 ns)
+	'add' operation 16 bit ('i', ../src/packetizer2.cpp:194) [13]  (2.146 ns)
 	'store' operation ('store_ln194', ../src/packetizer2.cpp:194) of variable 'i', ../src/packetizer2.cpp:194 16 bit on local variable 'i', ../src/packetizer2.cpp:194 [21]  (1.610 ns)
 
  <State 2>: 7.008ns

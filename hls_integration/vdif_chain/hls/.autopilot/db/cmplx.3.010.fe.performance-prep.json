@@ -9,7 +9,7 @@
     "instructions": 79,
     "memory_accesses": 3,
     "name": "vdif_chain",
-    "total_instructions": 486
+    "total_instructions": 762
   },
   "1": {
     "basicblocks": 11,
@@ -18,17 +18,17 @@
     "def_use_depth": 5,
     "file": "packetizer2.cpp",
     "fileloc": 139,
-    "instructions": 327,
+    "instructions": 539,
     "loads": {
       "G": 3,
-      "L": 20
+      "L": 36
     },
     "memory_accesses": 16,
     "name": "packetizer",
     "stores": {
       "G": 3,
-      "L": 40
+      "L": 72
     },
-    "total_instructions": 407
+    "total_instructions": 683
   }
 }

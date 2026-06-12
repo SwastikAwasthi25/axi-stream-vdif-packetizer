@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'vdif_chain'" level="0">
-<item name = "Date">Thu Jun 11 15:34:05 2026
+<item name = "Date">Fri Jun 12 11:20:13 2026
 </item>
 <item name = "Version">2025.2 (Build 6295257 on Nov 14 2025)</item>
 <item name = "Project">vdif_chain</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">12, 1572852, 0.120 us, 15.729 ms, 13, 1572853, no</column>
+<column name="">16, 1572856, 0.160 us, 15.729 ms, 17, 1572857, no</column>
 </table>
 </item>
 <item name = "Detail">

@@ -16,7 +16,7 @@ set SynModuleInfo {
     }
   }
   {SRCNAME packetizer_Pipeline_VITIS_LOOP_194_1 MODELNAME packetizer_Pipeline_VITIS_LOOP_194_1 RTLNAME vdif_chain_packetizer_Pipeline_VITIS_LOOP_194_1}
-  {SRCNAME packetizer_Pipeline_VITIS_LOOP_253_2 MODELNAME packetizer_Pipeline_VITIS_LOOP_253_2 RTLNAME vdif_chain_packetizer_Pipeline_VITIS_LOOP_253_2}
+  {SRCNAME packetizer_Pipeline_VITIS_LOOP_273_2 MODELNAME packetizer_Pipeline_VITIS_LOOP_273_2 RTLNAME vdif_chain_packetizer_Pipeline_VITIS_LOOP_273_2}
   {SRCNAME packetizer MODELNAME packetizer RTLNAME vdif_chain_packetizer
     SUBMODULES {
       {MODELNAME vdif_chain_fifo_w32_d2048_A RTLNAME vdif_chain_fifo_w32_d2048_A BINDTYPE storage TYPE fifo IMPL memory ALLOW_PRAGMA 1 INSTNAME fifo_U}

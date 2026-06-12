@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'vdif_chain'
 ================================================================
-* Date:           Thu Jun 11 15:34:05 2026
+* Date:           Fri Jun 12 11:20:13 2026
 
 * Version:        2025.2 (Build 6295257 on Nov 14 2025)
 * Project:        vdif_chain
@@ -29,7 +29,7 @@
     |  Latency (cycles) |  Latency (absolute)  |    Interval   | Pipeline|
     |   min   |   max   |    min   |    max    | min |   max   |   Type  |
     +---------+---------+----------+-----------+-----+---------+---------+
-    |       12|  1572852|  0.120 us|  15.729 ms|   13|  1572853|       no|
+    |       16|  1572856|  0.160 us|  15.729 ms|   17|  1572857|       no|
     +---------+---------+----------+-----------+-----+---------+---------+
 
     + Detail: 
@@ -196,8 +196,8 @@ The critical path consists of the following:
 
  <State 4>: 3.504ns
 The critical path consists of the following:
-	'load' operation 32 bit ('word_2_loc_load') on local variable 'word_2_loc' [74]  (0.000 ns)
-	fifo write operation ('write_ln41', ../src/sample_packer/sample_packer.cpp:41->../src/vdif_chain.cpp:71) on port 'packed_stream', ../src/vdif_chain.cpp:59 (../src/sample_packer/sample_packer.cpp:41->../src/vdif_chain.cpp:71) [75]  (3.504 ns)
+	'load' operation 32 bit ('word_loc_load') on local variable 'word_loc' [79]  (0.000 ns)
+	fifo write operation ('write_ln28', ../src/sample_packer/sample_packer.cpp:28->../src/vdif_chain.cpp:71) on port 'packed_stream', ../src/vdif_chain.cpp:59 (../src/sample_packer/sample_packer.cpp:28->../src/vdif_chain.cpp:71) [80]  (3.504 ns)
 
  <State 5>: 7.008ns
 The critical path consists of the following:

@@ -7,7 +7,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "12", "EstimateLatencyMax" : "1572852",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "16", "EstimateLatencyMax" : "1572856",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -127,7 +127,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "9", "EstimateLatencyMax" : "131079",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "13", "EstimateLatencyMax" : "131083",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -138,21 +138,21 @@ set RtlHierarchyInfo {[
 		"Port" : [
 			{"Name" : "packetizer_in", "Type" : "Fifo", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "11", "SubInstance" : "grp_packetizer_Pipeline_VITIS_LOOP_194_1_fu_205", "Port" : "packetizer_in", "Inst_start_state" : "1", "Inst_end_state" : "2"}]},
+					{"ID" : "11", "SubInstance" : "grp_packetizer_Pipeline_VITIS_LOOP_194_1_fu_212", "Port" : "packetizer_in", "Inst_start_state" : "1", "Inst_end_state" : "2"}]},
 			{"Name" : "out_stream_V_data_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "out_stream",
 				"BlockSignal" : [
 					{"Name" : "out_stream_TDATA_blk_n", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "13", "SubInstance" : "grp_packetizer_Pipeline_VITIS_LOOP_253_2_fu_214", "Port" : "out_stream_V_data_V", "Inst_start_state" : "5", "Inst_end_state" : "6"}]},
+					{"ID" : "13", "SubInstance" : "grp_packetizer_Pipeline_VITIS_LOOP_273_2_fu_221", "Port" : "out_stream_V_data_V", "Inst_start_state" : "9", "Inst_end_state" : "10"}]},
 			{"Name" : "out_stream_V_keep_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "out_stream",
 				"SubConnect" : [
-					{"ID" : "13", "SubInstance" : "grp_packetizer_Pipeline_VITIS_LOOP_253_2_fu_214", "Port" : "out_stream_V_keep_V", "Inst_start_state" : "5", "Inst_end_state" : "6"}]},
+					{"ID" : "13", "SubInstance" : "grp_packetizer_Pipeline_VITIS_LOOP_273_2_fu_221", "Port" : "out_stream_V_keep_V", "Inst_start_state" : "9", "Inst_end_state" : "10"}]},
 			{"Name" : "out_stream_V_strb_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "out_stream",
 				"SubConnect" : [
-					{"ID" : "13", "SubInstance" : "grp_packetizer_Pipeline_VITIS_LOOP_253_2_fu_214", "Port" : "out_stream_V_strb_V", "Inst_start_state" : "5", "Inst_end_state" : "6"}]},
+					{"ID" : "13", "SubInstance" : "grp_packetizer_Pipeline_VITIS_LOOP_273_2_fu_221", "Port" : "out_stream_V_strb_V", "Inst_start_state" : "9", "Inst_end_state" : "10"}]},
 			{"Name" : "out_stream_V_last_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "out_stream",
 				"SubConnect" : [
-					{"ID" : "13", "SubInstance" : "grp_packetizer_Pipeline_VITIS_LOOP_253_2_fu_214", "Port" : "out_stream_V_last_V", "Inst_start_state" : "5", "Inst_end_state" : "6"}]},
+					{"ID" : "13", "SubInstance" : "grp_packetizer_Pipeline_VITIS_LOOP_273_2_fu_221", "Port" : "out_stream_V_last_V", "Inst_start_state" : "9", "Inst_end_state" : "10"}]},
 			{"Name" : "epoch", "Type" : "None", "Direction" : "I"},
 			{"Name" : "station_id", "Type" : "None", "Direction" : "I"},
 			{"Name" : "thread_id", "Type" : "None", "Direction" : "I"},
@@ -162,7 +162,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "payload_words", "Type" : "None", "Direction" : "I"},
 			{"Name" : "seconds_from_epoch", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "frame_no", "Type" : "OVld", "Direction" : "IO"}]},
-	{"ID" : "11", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_packetizer_fu_225.grp_packetizer_Pipeline_VITIS_LOOP_194_1_fu_205", "Parent" : "10", "Child" : ["12"],
+	{"ID" : "11", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_packetizer_fu_225.grp_packetizer_Pipeline_VITIS_LOOP_194_1_fu_212", "Parent" : "10", "Child" : ["12"],
 		"CDFG" : "packetizer_Pipeline_VITIS_LOOP_194_1",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -187,9 +187,9 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_194_1", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter1", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter0", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "12", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_packetizer_fu_225.grp_packetizer_Pipeline_VITIS_LOOP_194_1_fu_205.flow_control_loop_pipe_sequential_init_U", "Parent" : "11"},
-	{"ID" : "13", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_packetizer_fu_225.grp_packetizer_Pipeline_VITIS_LOOP_253_2_fu_214", "Parent" : "10", "Child" : ["14"],
-		"CDFG" : "packetizer_Pipeline_VITIS_LOOP_253_2",
+	{"ID" : "12", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_packetizer_fu_225.grp_packetizer_Pipeline_VITIS_LOOP_194_1_fu_212.flow_control_loop_pipe_sequential_init_U", "Parent" : "11"},
+	{"ID" : "13", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_packetizer_fu_225.grp_packetizer_Pipeline_VITIS_LOOP_273_2_fu_221", "Parent" : "10", "Child" : ["14"],
+		"CDFG" : "packetizer_Pipeline_VITIS_LOOP_273_2",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
@@ -207,7 +207,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "fifo", "Type" : "Fifo", "Direction" : "I",
 				"BlockSignal" : [
 					{"Name" : "fifo_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "add_ln259", "Type" : "None", "Direction" : "I"},
+			{"Name" : "add_ln279", "Type" : "None", "Direction" : "I"},
 			{"Name" : "out_stream_V_data_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "out_stream",
 				"BlockSignal" : [
 					{"Name" : "out_stream_TDATA_blk_n", "Type" : "RtlSignal"}]},
@@ -215,9 +215,9 @@ set RtlHierarchyInfo {[
 			{"Name" : "out_stream_V_strb_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "out_stream"},
 			{"Name" : "out_stream_V_last_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "out_stream"}],
 		"Loop" : [
-			{"Name" : "VITIS_LOOP_253_2", "PipelineType" : "UPC",
+			{"Name" : "VITIS_LOOP_273_2", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter1", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter0", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "14", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_packetizer_fu_225.grp_packetizer_Pipeline_VITIS_LOOP_253_2_fu_214.flow_control_loop_pipe_sequential_init_U", "Parent" : "13"},
+	{"ID" : "14", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_packetizer_fu_225.grp_packetizer_Pipeline_VITIS_LOOP_273_2_fu_221.flow_control_loop_pipe_sequential_init_U", "Parent" : "13"},
 	{"ID" : "15", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_packetizer_fu_225.fifo_fifo_U", "Parent" : "10"},
 	{"ID" : "16", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.packed_stream_fifo_U", "Parent" : "0"},
 	{"ID" : "17", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.packetizer_in_fifo_U", "Parent" : "0"},

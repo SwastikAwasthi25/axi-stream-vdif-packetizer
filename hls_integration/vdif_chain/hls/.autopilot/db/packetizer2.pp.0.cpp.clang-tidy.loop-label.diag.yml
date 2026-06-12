@@ -63,14 +63,14 @@ Diagnostics:
     BuildDirectory:  'D:\IITK\project_1\hls_integration'
   - DiagnosticName:  xilinx-label-all-loops
     DiagnosticMessage:
-      Message:         'Added loop label VITIS_LOOP_253_2:  '
+      Message:         'Added loop label VITIS_LOOP_273_2:  '
       FilePath:        'D:\IITK\project_1\src\packetizer2.cpp'
-      FileOffset:      253
+      FileOffset:      273
       Replacements:
         - FilePath:        'D:\IITK\project_1\hls_integration\vdif_chain\hls\.autopilot\db\packetizer2.pp.0.cpp'
-          Offset:          2228014
+          Offset:          2228458
           Length:          0
-          ReplacementText: 'VITIS_LOOP_253_2: '
+          ReplacementText: 'VITIS_LOOP_273_2: '
     Level:           Remark
     BuildDirectory:  'D:\IITK\project_1\hls_integration'
 ...
