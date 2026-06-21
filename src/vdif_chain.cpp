@@ -31,6 +31,7 @@ void packetizer(
 //--------------------------------------------------
 
 void vdif_chain(
+    
     hls::stream<ap_uint<8>> &adc_in,
     hls::stream<axis_t> &out_stream,
 
@@ -46,6 +47,7 @@ void vdif_chain(
 {
 #pragma HLS INTERFACE axis port=adc_in
 #pragma HLS INTERFACE axis port=out_stream
+#pragma HLS DATAFLOW
 
 #pragma HLS INTERFACE ap_none port=epoch
 #pragma HLS INTERFACE ap_none port=station_id
@@ -54,8 +56,8 @@ void vdif_chain(
 #pragma HLS INTERFACE ap_none port=complex_data
 #pragma HLS INTERFACE ap_none port=pps
 
-#pragma HLS INTERFACE ap_ctrl_none port=return
-
+// #pragma HLS INTERFACE ap_ctrl_none port=return
+#pragma HLS INTERFACE ap_ctrl_hs port=return
     hls::stream<ap_uint<32>> packed_stream;
 #pragma HLS STREAM variable=packed_stream depth=2048
 

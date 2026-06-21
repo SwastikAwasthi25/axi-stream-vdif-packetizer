@@ -7,6 +7,7 @@ void sample_packer(
     ap_uint<5> bits_per_sample
 )
 {
+    #pragma HLS INLINE off
 #pragma HLS INTERFACE axis port=adc_in
 #pragma HLS INTERFACE axis port=packed_out
 

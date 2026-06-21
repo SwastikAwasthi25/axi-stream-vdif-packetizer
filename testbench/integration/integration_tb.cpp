@@ -130,11 +130,34 @@ std::vector<uint32_t> payloads(payload_words);
 
 for(int i=0;i<payload_words;i++)
 {
-    payloads[i] =
-        ((((4*i)+3) & 0xFF) << 24) |
-        ((((4*i)+2) & 0xFF) << 16) |
-        ((((4*i)+1) & 0xFF) << 8 ) |
-        (((4*i) & 0xFF));
+    uint32_t word = 0;
+
+    if(bits_per_sample == 2)
+    {
+        for(int j=0;j<16;j++)
+        {
+            uint32_t sample = (16*i + j) & 0x3;
+            word |= (sample << (2*j));
+        }
+    }
+    else if(bits_per_sample == 4)
+    {
+        for(int j=0;j<8;j++)
+        {
+            uint32_t sample = (8*i + j) & 0xF;
+            word |= (sample << (4*j));
+        }
+    }
+    else
+    {
+        word =
+            ((((4*i)+3) & 0xFF) << 24) |
+            ((((4*i)+2) & 0xFF) << 16) |
+            ((((4*i)+1) & 0xFF) << 8 ) |
+            (((4*i) & 0xFF));
+    }
+
+    payloads[i] = word;
 }
 
 std::vector<uint32_t> expected =
@@ -212,6 +235,9 @@ for(int i=0;i<(payload_words + 8);i++)
         << actual
         << " | Expected = 0x"
         << golden;
+        std::cout
+<< " | TLAST="
+<< pkt.last;
 
     if(actual != golden)
     {
@@ -419,20 +445,76 @@ void pps_test()
             << "\nPPS TEST FAILED\n";
     }
 }
+void complex_mode_test()
+{
+    hls::stream<ap_uint<8>> adc_stream;
+    hls::stream<axis_t> out_stream;
+
+    axis_t pkt;
+
+    for(int i=0;i<1024;i++)
+    {
+        adc_stream.write(i & 0xFF);
+    }
+
+    vdif_chain(
+        adc_stream,
+        out_stream,
+        52,
+        5,
+        0,
+        8,
+        1,      // complex mode
+        0,
+        256
+    );
+
+    // Skip word0, word1, word2
+    out_stream.read();
+    out_stream.read();
+    out_stream.read();
+
+    pkt = out_stream.read();
+
+    uint32_t word3 =
+        pkt.data.to_uint();
+
+    bool complex_bit =
+        (word3 >> 31) & 0x1;
+
+    if(complex_bit)
+        std::cout
+        << "\nCOMPLEX MODE TEST PASSED\n";
+    else
+        std::cout
+        << "\nCOMPLEX MODE TEST FAILED\n";
+        // Flush remaining packet data
+
+for(int i=0;i<260;i++)
+{
+    out_stream.read();
+}
+}
 int main()
 {
+    std::cout
+<< "\nExpected FSM Sequence:\n"
+<< "IDLE -> HEADER -> PAYLOAD -> IDLE\n";
     std::ofstream clear_file(
         "output.vdif",
         std::ios::binary | std::ios::trunc
     );
     clear_file.close();
 
-    run_test(8,0,256);
-    run_test(8,1,512);
-    run_test(8,2,1024);
-    run_test(8,3,2048);
+run_test(2,0,256);
+run_test(4,1,256);
+run_test(8,2,256);
 
-    pps_test();
+run_test(8,3,512);
+run_test(8,4,1024);
+run_test(8,5,2048);
 
+pps_test();
+complex_mode_test();
     return 0;
 }
