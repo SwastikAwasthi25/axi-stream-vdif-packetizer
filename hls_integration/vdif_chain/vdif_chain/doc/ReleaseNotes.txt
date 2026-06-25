@@ -1,0 +1,6 @@
+
+Family       : artix7
+Device       : xc7a12t
+Package      : -cpg238
+Speed Grade  : -1
+Clock Period : 10

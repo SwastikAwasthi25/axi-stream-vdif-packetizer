@@ -1,34 +1,187 @@
 {
   "0": {
-    "basicblocks": 17,
-    "calls": "1",
+    "basicblocks": 5,
+    "calls": "8 7 9",
     "control_depth": 0,
     "def_use_depth": 3,
     "file": "vdif_chain.cpp",
-    "fileloc": 33,
-    "instructions": 79,
-    "memory_accesses": 3,
+    "fileloc": 37,
+    "instructions": 46,
+    "memory_accesses": 0,
     "name": "vdif_chain",
-    "total_instructions": 762
+    "total_instructions": 397
   },
   "1": {
-    "basicblocks": 11,
+    "basicblocks": 6,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "packet_fsm.cpp",
+    "fileloc": 10,
+    "instructions": 11,
+    "memory_accesses": 0,
+    "name": "packet_fsm",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 11
+  },
+  "10": {
+    "basicblocks": 3,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "write_header.cpp",
+    "fileloc": 7,
+    "instructions": 61,
+    "loads": {
+      "L": 5
+    },
+    "memory_accesses": 14,
+    "name": "write_header",
+    "stores": {
+      "L": 8
+    },
+    "total_instructions": 77
+  },
+  "11": {
+    "basicblocks": 6,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "packet_fsm.cpp",
+    "fileloc": 10,
+    "instructions": 11,
+    "memory_accesses": 0,
+    "name": "packet_fsm",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 11
+  },
+  "2": {
+    "basicblocks": 5,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "write_payload.cpp",
+    "fileloc": 7,
+    "instructions": 69,
+    "loads": {
+      "L": 4
+    },
+    "memory_accesses": 14,
+    "name": "write_payload",
+    "stores": {
+      "L": 8
+    },
+    "total_instructions": 85
+  },
+  "3": {
+    "basicblocks": 5,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "read_payload.cpp",
+    "fileloc": 4,
+    "instructions": 12,
+    "memory_accesses": 2,
+    "name": "read_payload",
+    "total_instructions": 12
+  },
+  "4": {
+    "basicblocks": 6,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "packet_fsm.cpp",
+    "fileloc": 10,
+    "instructions": 11,
+    "memory_accesses": 0,
+    "name": "packet_fsm",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 11
+  },
+  "5": {
+    "basicblocks": 1,
     "calls": "",
     "control_depth": 0,
     "def_use_depth": 6,
-    "file": "packetizer2.cpp",
-    "fileloc": 139,
-    "instructions": 539,
-    "loads": {
-      "G": 3,
-      "L": 36
+    "file": "header_generator.cpp",
+    "fileloc": 3,
+    "instructions": 38,
+    "memory_accesses": 0,
+    "name": "header_generator",
+    "stores": {
+      "L": 8
     },
-    "memory_accesses": 16,
-    "name": "packetizer",
+    "total_instructions": 38
+  },
+  "6": {
+    "basicblocks": 3,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 2,
+    "file": "timestamp_engine.cpp",
+    "fileloc": 3,
+    "instructions": 17,
+    "loads": {
+      "G": 3
+    },
+    "memory_accesses": 0,
+    "name": "timestamp_engine",
     "stores": {
       "G": 3,
-      "L": 72
+      "L": 2
     },
-    "total_instructions": 683
+    "total_instructions": 17
+  },
+  "7": {
+    "basicblocks": 1,
+    "calls": "6 1 5 3 10 4 2 11",
+    "control_depth": 0,
+    "def_use_depth": 2,
+    "file": "packetizer2.cpp",
+    "fileloc": 48,
+    "instructions": 33,
+    "loads": {
+      "G": 3,
+      "L": 5
+    },
+    "memory_accesses": 0,
+    "name": "packetizer",
+    "stores": {
+      "G": 3
+    },
+    "total_instructions": 295
+  },
+  "8": {
+    "basicblocks": 13,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "sample_packer.cpp",
+    "fileloc": 4,
+    "instructions": 42,
+    "memory_accesses": 3,
+    "name": "sample_packer",
+    "total_instructions": 42
+  },
+  "9": {
+    "basicblocks": 5,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "axis_bram_writer.cpp",
+    "fileloc": 4,
+    "instructions": 14,
+    "memory_accesses": 2,
+    "name": "axis_bram_writer",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 14
   }
 }

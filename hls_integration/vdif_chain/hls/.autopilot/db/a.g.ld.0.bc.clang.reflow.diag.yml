@@ -1,34 +1,126 @@
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: ../src/packetizer2.cpp, Line: 171, Column: 12 }
-Function:        _Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA_
+DebugLoc:        { File: ../src/write_header.cpp, Line: 13, Column: 12 }
+Function:        _Z12write_headerP7ap_uintILi32EERN3hls6streamINS2_4axisIS0_Lm0ELm0ELm0ELh56ELb0EEELi0EEE
 Args:            
   - Callee:          'hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>::axis()'
     DebugLoc:        { File: 'D:/2025.2/Vitis/common/technology/autopilot\ap_axi_sdata.h', 
                        Line: 217, Column: 0 }
   - String:          ' not inlined into '
-  - Caller:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
-    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 152, Column: 0 }
+  - Caller:          'write_header(ap_uint<32>*, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)'
+    DebugLoc:        { File: ../src/write_header.cpp, Line: 11, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 86, Column: 5 }
+DebugLoc:        { File: ../src/write_payload.cpp, Line: 14, Column: 12 }
+Function:        _Z13write_payloadRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi16EE
+Args:            
+  - Callee:          'hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>::axis()'
+    DebugLoc:        { File: 'D:/2025.2/Vitis/common/technology/autopilot\ap_axi_sdata.h', 
+                       Line: 217, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'write_payload(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<16>)'
+    DebugLoc:        { File: ../src/write_payload.cpp, Line: 12, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 86, Column: 5 }
+Function:        _Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA_
+Args:            
+  - Callee:          'timestamp_engine(ap_uint<1>, ap_uint<30>&, ap_uint<24>&)'
+    DebugLoc:        { File: ../src/timestamp_engine.cpp, Line: 8, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 61, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 183, Column: 5 }
+Function:        _Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA_
+Args:            
+  - Callee:          'packet_fsm(ap_uint<2>, ap_uint<1>, ap_uint<1>, ap_uint<1>, ap_uint<2>&)'
+    DebugLoc:        { File: ../src/packet_fsm.cpp, Line: 17, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 61, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 173, Column: 3 }
+Function:        _Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA_
+Args:            
+  - Callee:          'write_payload(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<16>)'
+    DebugLoc:        { File: ../src/write_payload.cpp, Line: 12, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 61, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 152, Column: 5 }
+Function:        _Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA_
+Args:            
+  - Callee:          'write_header(ap_uint<32>*, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)'
+    DebugLoc:        { File: ../src/write_header.cpp, Line: 11, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 61, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 123, Column: 5 }
+Function:        _Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA_
+Args:            
+  - Callee:          'header_generator(ap_uint<30>, ap_uint<24>, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<16>, ap_uint<32>*)'
+    DebugLoc:        { File: ../src/header_generator.cpp, Line: 17, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 61, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 139, Column: 4 }
+Function:        _Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA_
+Args:            
+  - Callee:          'read_payload(hls::stream<ap_uint<32>, 0>&, hls::stream<ap_uint<32>, 0>&, ap_uint<16>)'
+    DebugLoc:        { File: ../src/read_payload.cpp, Line: 9, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 61, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 113, Column: 5 }
 Function:        _Z10vdif_chainRN3hls6streamI7ap_uintILi8EELi0EEERNS0_INS_4axisIS1_ILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESE_SB_
 Args:            
-  - Callee:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
-    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 152, Column: 0 }
+  - Callee:          'axis_bram_writer(hls::stream<ap_uint<32>, 0>&, ap_uint<32>*, ap_uint<16>)'
+    DebugLoc:        { File: axis_bram_writer.cpp, Line: 9, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'vdif_chain(hls::stream<ap_uint<8>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
-    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 46, Column: 0 }
+    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 51, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 71, Column: 9 }
+DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 84, Column: 9 }
 Function:        _Z10vdif_chainRN3hls6streamI7ap_uintILi8EELi0EEERNS0_INS_4axisIS1_ILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESE_SB_
 Args:            
   - Callee:          'sample_packer(hls::stream<ap_uint<8>, 0>&, hls::stream<ap_uint<32>, 0>&, ap_uint<5>)'
@@ -36,27 +128,132 @@ Args:
                        Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'vdif_chain(hls::stream<ap_uint<8>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
-    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 46, Column: 0 }
+    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 51, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: ../src/packetizer2.cpp, Line: 171, Column: 12 }
-Function:        _Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA_
+DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 102, Column: 5 }
+Function:        _Z10vdif_chainRN3hls6streamI7ap_uintILi8EELi0EEERNS0_INS_4axisIS1_ILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESE_SB_
+Args:            
+  - Callee:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 61, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'vdif_chain(hls::stream<ap_uint<8>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 51, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/write_header.cpp, Line: 13, Column: 12 }
+Function:        _Z12write_headerP7ap_uintILi32EERN3hls6streamINS2_4axisIS0_Lm0ELm0ELm0ELh56ELb0EEELi0EEE
 Args:            
   - Callee:          'hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>::axis()'
     DebugLoc:        { File: 'D:/2025.2/Vitis/common/technology/autopilot\ap_axi_sdata.h', 
                        Line: 217, Column: 0 }
   - String:          ' not inlined into '
-  - Caller:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
-    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 152, Column: 0 }
+  - Caller:          'write_header(ap_uint<32>*, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)'
+    DebugLoc:        { File: ../src/write_header.cpp, Line: 11, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 71, Column: 9 }
+DebugLoc:        { File: ../src/write_payload.cpp, Line: 14, Column: 12 }
+Function:        _Z13write_payloadRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi16EE
+Args:            
+  - Callee:          'hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>::axis()'
+    DebugLoc:        { File: 'D:/2025.2/Vitis/common/technology/autopilot\ap_axi_sdata.h', 
+                       Line: 217, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'write_payload(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<16>)'
+    DebugLoc:        { File: ../src/write_payload.cpp, Line: 12, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 86, Column: 5 }
+Function:        _Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA_
+Args:            
+  - Callee:          'timestamp_engine(ap_uint<1>, ap_uint<30>&, ap_uint<24>&)'
+    DebugLoc:        { File: ../src/timestamp_engine.cpp, Line: 8, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 61, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 101, Column: 1 }
+Function:        _Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA_
+Args:            
+  - Callee:          'packet_fsm(ap_uint<2>, ap_uint<1>, ap_uint<1>, ap_uint<1>, ap_uint<2>&)'
+    DebugLoc:        { File: ../src/packet_fsm.cpp, Line: 17, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 61, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 123, Column: 5 }
+Function:        _Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA_
+Args:            
+  - Callee:          'header_generator(ap_uint<30>, ap_uint<24>, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<16>, ap_uint<32>*)'
+    DebugLoc:        { File: ../src/header_generator.cpp, Line: 17, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 61, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 139, Column: 4 }
+Function:        _Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA_
+Args:            
+  - Callee:          'read_payload(hls::stream<ap_uint<32>, 0>&, hls::stream<ap_uint<32>, 0>&, ap_uint<16>)'
+    DebugLoc:        { File: ../src/read_payload.cpp, Line: 9, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 61, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 152, Column: 5 }
+Function:        _Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA_
+Args:            
+  - Callee:          'write_header(ap_uint<32>*, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)'
+    DebugLoc:        { File: ../src/write_header.cpp, Line: 11, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 61, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 173, Column: 3 }
+Function:        _Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA_
+Args:            
+  - Callee:          'write_payload(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<16>)'
+    DebugLoc:        { File: ../src/write_payload.cpp, Line: 12, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 61, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 84, Column: 9 }
 Function:        _Z10vdif_chainRN3hls6streamI7ap_uintILi8EELi0EEERNS0_INS_4axisIS1_ILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESE_SB_
 Args:            
   - Callee:          'sample_packer(hls::stream<ap_uint<8>, 0>&, hls::stream<ap_uint<32>, 0>&, ap_uint<5>)'
@@ -64,20 +261,33 @@ Args:
                        Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'vdif_chain(hls::stream<ap_uint<8>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
-    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 46, Column: 0 }
+    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 51, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 86, Column: 5 }
+DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 102, Column: 5 }
 Function:        _Z10vdif_chainRN3hls6streamI7ap_uintILi8EELi0EEERNS0_INS_4axisIS1_ILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESE_SB_
 Args:            
   - Callee:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
-    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 152, Column: 0 }
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 61, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'vdif_chain(hls::stream<ap_uint<8>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
-    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 46, Column: 0 }
+    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 51, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 113, Column: 5 }
+Function:        _Z10vdif_chainRN3hls6streamI7ap_uintILi8EELi0EEERNS0_INS_4axisIS1_ILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESE_SB_
+Args:            
+  - Callee:          'axis_bram_writer(hls::stream<ap_uint<32>, 0>&, ap_uint<32>*, ap_uint<16>)'
+    DebugLoc:        { File: axis_bram_writer.cpp, Line: 9, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'vdif_chain(hls::stream<ap_uint<8>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 51, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
@@ -86,7 +296,7 @@ Name:            NeverInline
 Function:        apatb_vdif_chain_ir
 Args:            
   - Callee:          'vdif_chain(hls::stream<ap_uint<8>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
-    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 46, Column: 0 }
+    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 51, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          apatb_vdif_chain_ir
   - String:          ' because it should never be inlined (cost=never)'
@@ -94,43 +304,253 @@ Args:
 --- !Passed
 Pass:            reflow-inliner
 Name:            Inline
-DebugLoc:        { File: ../src/packetizer2.cpp, Line: 152, Column: 0 }
-Function:        _Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA_
+DebugLoc:        { File: ../src/write_header.cpp, Line: 11, Column: 0 }
+Function:        _Z12write_headerP7ap_uintILi32EERN3hls6streamINS2_4axisIS0_Lm0ELm0ELm0ELh56ELb0EEELi0EEE
 Args:            
   - String:          'Inlining function '''
   - Callee:          'hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>::axis()'
     DebugLoc:        { File: 'D:/2025.2/Vitis/common/technology/autopilot\ap_axi_sdata.h', 
                        Line: 217, Column: 0 }
   - String:          ''' into '''
-  - Caller:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
-    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 152, Column: 0 }
+  - Caller:          'write_header(ap_uint<32>*, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)'
+    DebugLoc:        { File: ../src/write_header.cpp, Line: 11, Column: 0 }
   - String:          ''''
 ...
 --- !Passed
 Pass:            reflow-inliner
 Name:            Inline
-DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 46, Column: 0 }
-Function:        _Z10vdif_chainRN3hls6streamI7ap_uintILi8EELi0EEERNS0_INS_4axisIS1_ILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESE_SB_
+DebugLoc:        { File: ../src/write_payload.cpp, Line: 12, Column: 0 }
+Function:        _Z13write_payloadRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi16EE
 Args:            
   - String:          'Inlining function '''
-  - Callee:          'sample_packer(hls::stream<ap_uint<8>, 0>&, hls::stream<ap_uint<32>, 0>&, ap_uint<5>)'
-    DebugLoc:        { File: ../src/sample_packer/sample_packer.cpp, Line: 9, 
-                       Column: 0 }
+  - Callee:          'hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>::axis()'
+    DebugLoc:        { File: 'D:/2025.2/Vitis/common/technology/autopilot\ap_axi_sdata.h', 
+                       Line: 217, Column: 0 }
   - String:          ''' into '''
-  - Caller:          'vdif_chain(hls::stream<ap_uint<8>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
-    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 46, Column: 0 }
+  - Caller:          'write_payload(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<16>)'
+    DebugLoc:        { File: ../src/write_payload.cpp, Line: 12, Column: 0 }
   - String:          ''''
+...
+--- !Passed
+Pass:            reflow-extract-cfg-in-dataflow
+Name:            LoopExtractionForDataflow
+DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 79, Column: 22 }
+Function:        _Z10vdif_chainRN3hls6streamI7ap_uintILi8EELi0EEERNS0_INS_4axisIS1_ILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESE_SB_
+Args:            
+  - String:          'Changing loop '''
+  - LoopName:        Loop_VITIS_LOOP_79_1_proc
+  - String:          ''' ('
+  - LoopLoc:         '../src/vdif_chain.cpp:79:22'
+  - String:          ') to a process function for dataflow in function '''
+  - Name:            vdif_chain
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-dataflow-canon
+Name:            DataflowAggrMerge
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 61, Column: 0 }
+Function:        _Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA_
+Args:            
+  - String:          'Merging processes '
+  - String:          '''write_payload'' and ''write_header'''
+  - String:          ' in function '''
+  - FName:           packetizer
+  - String:          ''' '
+  - String:          'due to writes on ''out_stream_V_data_V'''
+...
+--- !Failure
+Pass:            reflow-dataflow-canon
+Name:            DataflowAggrMerge
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 61, Column: 0 }
+Function:        _Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA_
+Args:            
+  - String:          'Merging processes '
+  - String:          '''packet_fsm'', ''packet_fsm'' and ''packet_fsm'''
+  - String:          ' in function '''
+  - FName:           packetizer
+  - String:          ''' '
+  - String:          'due to feedback on ''packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)::fsm_state'''
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 86, Column: 5 }
+DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 84, Column: 9 }
+Function:        Loop_VITIS_LOOP_79_1_proc
+Args:            
+  - Callee:          'sample_packer(hls::stream<ap_uint<8>, 0>&, hls::stream<ap_uint<32>, 0>&, ap_uint<5>) (.1)'
+    DebugLoc:        { File: ../src/sample_packer/sample_packer.cpp, Line: 9, 
+                       Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          Loop_VITIS_LOOP_79_1_proc
+    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 0, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 101, Column: 1 }
+Function:        packetizer_Block_entry_fsm_state_fb_proc
+Args:            
+  - Callee:          'packet_fsm(ap_uint<2>, ap_uint<1>, ap_uint<1>, ap_uint<1>, ap_uint<2>&) (.116.1)'
+    DebugLoc:        { File: ../src/packet_fsm.cpp, Line: 17, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          packetizer_Block_entry_fsm_state_fb_proc
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 0, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 159, Column: 1 }
+Function:        packetizer_Block_entry_fsm_state_fb_proc
+Args:            
+  - Callee:          'packet_fsm(ap_uint<2>, ap_uint<1>, ap_uint<1>, ap_uint<1>, ap_uint<2>&) (.117)'
+    DebugLoc:        { File: ../src/packet_fsm.cpp, Line: 17, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          packetizer_Block_entry_fsm_state_fb_proc
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 0, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 183, Column: 5 }
+Function:        packetizer_Block_entry_fsm_state_fb_proc
+Args:            
+  - Callee:          'packet_fsm(ap_uint<2>, ap_uint<1>, ap_uint<1>, ap_uint<1>, ap_uint<2>&)'
+    DebugLoc:        { File: ../src/packet_fsm.cpp, Line: 17, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          packetizer_Block_entry_fsm_state_fb_proc
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 0, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 152, Column: 5 }
+Function:        packetizer_Block_entry_out_stream_V_data_V_wr_proc
+Args:            
+  - Callee:          'write_header(ap_uint<32>*, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&) (.1)'
+    DebugLoc:        { File: ../src/write_header.cpp, Line: 11, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          packetizer_Block_entry_out_stream_V_data_V_wr_proc
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 0, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 173, Column: 3 }
+Function:        packetizer_Block_entry_out_stream_V_data_V_wr_proc
+Args:            
+  - Callee:          'write_payload(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<16>)'
+    DebugLoc:        { File: ../src/write_payload.cpp, Line: 12, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          packetizer_Block_entry_out_stream_V_data_V_wr_proc
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 0, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 86, Column: 5 }
+Function:        _Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA_
+Args:            
+  - Callee:          'timestamp_engine(ap_uint<1>, ap_uint<30>&, ap_uint<24>&)'
+    DebugLoc:        { File: ../src/timestamp_engine.cpp, Line: 8, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 61, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 100, Column: 1 }
+Function:        _Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA_
+Args:            
+  - Callee:          packetizer_Block_entry_fsm_state_fb_proc
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 0, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 61, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 124, Column: 9 }
+Function:        _Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA_
+Args:            
+  - Callee:          'header_generator(ap_uint<30>, ap_uint<24>, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<16>, ap_uint<32>*)'
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 0, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 61, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 139, Column: 4 }
+Function:        _Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA_
+Args:            
+  - Callee:          'read_payload(hls::stream<ap_uint<32>, 0>&, hls::stream<ap_uint<32>, 0>&, ap_uint<16>)'
+    DebugLoc:        { File: ../src/read_payload.cpp, Line: 9, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 61, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/packetizer2.cpp, Line: 152, Column: 5 }
+Function:        _Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA_
+Args:            
+  - Callee:          packetizer_Block_entry_out_stream_V_data_V_wr_proc
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 0, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 61, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 69, Column: 1 }
+Function:        _Z10vdif_chainRN3hls6streamI7ap_uintILi8EELi0EEERNS0_INS_4axisIS1_ILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESE_SB_
+Args:            
+  - Callee:          Loop_VITIS_LOOP_79_1_proc
+    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 0, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'vdif_chain(hls::stream<ap_uint<8>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 51, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 102, Column: 5 }
 Function:        _Z10vdif_chainRN3hls6streamI7ap_uintILi8EELi0EEERNS0_INS_4axisIS1_ILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESE_SB_
 Args:            
   - Callee:          'packetizer(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
-    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 152, Column: 0 }
+    DebugLoc:        { File: ../src/packetizer2.cpp, Line: 61, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'vdif_chain(hls::stream<ap_uint<8>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
-    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 46, Column: 0 }
+    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 51, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 76, Column: 1 }
+Function:        _Z10vdif_chainRN3hls6streamI7ap_uintILi8EELi0EEERNS0_INS_4axisIS1_ILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESE_SB_
+Args:            
+  - Callee:          'axis_bram_writer(hls::stream<ap_uint<32>, 0>&, ap_uint<32>*, ap_uint<16>)'
+    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 0, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'vdif_chain(hls::stream<ap_uint<8>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<6>, ap_uint<16>, ap_uint<10>, ap_uint<5>, ap_uint<1>, ap_uint<1>, ap_uint<16>)'
+    DebugLoc:        { File: ../src/vdif_chain.cpp, Line: 51, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...

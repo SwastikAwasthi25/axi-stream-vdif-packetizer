@@ -1,33 +1,184 @@
 {
   "0": {
-    "basicblocks": 16,
-    "calls": "1",
+    "basicblocks": 4,
+    "calls": "8 7 9",
     "control_depth": 0,
     "def_use_depth": 3,
     "file": "vdif_chain.cpp",
-    "fileloc": 33,
-    "instructions": 75,
-    "memory_accesses": 3,
+    "fileloc": 37,
+    "instructions": 45,
+    "memory_accesses": 0,
     "name": "vdif_chain",
-    "total_instructions": 382
+    "total_instructions": 321
   },
   "1": {
-    "basicblocks": 9,
+    "basicblocks": 6,
     "calls": "",
     "control_depth": 0,
-    "def_use_depth": 7,
-    "file": "packetizer2.cpp",
-    "fileloc": 139,
-    "instructions": 266,
+    "def_use_depth": 1,
+    "file": "packet_fsm.cpp",
+    "fileloc": 10,
+    "instructions": 11,
+    "memory_accesses": 0,
+    "name": "packet_fsm",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 11
+  },
+  "10": {
+    "basicblocks": 3,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 4,
+    "file": "write_header.cpp",
+    "fileloc": 7,
+    "instructions": 33,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 6,
+    "name": "write_header",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 42
+  },
+  "11": {
+    "basicblocks": 6,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "packet_fsm.cpp",
+    "fileloc": 10,
+    "instructions": 11,
+    "memory_accesses": 0,
+    "name": "packet_fsm",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 11
+  },
+  "2": {
+    "basicblocks": 4,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 5,
+    "file": "write_payload.cpp",
+    "fileloc": 7,
+    "instructions": 41,
+    "memory_accesses": 6,
+    "name": "write_payload",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 50
+  },
+  "3": {
+    "basicblocks": 4,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "read_payload.cpp",
+    "fileloc": 4,
+    "instructions": 11,
+    "memory_accesses": 2,
+    "name": "read_payload",
+    "total_instructions": 11
+  },
+  "4": {
+    "basicblocks": 6,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "packet_fsm.cpp",
+    "fileloc": 10,
+    "instructions": 11,
+    "memory_accesses": 0,
+    "name": "packet_fsm",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 11
+  },
+  "5": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 5,
+    "file": "header_generator.cpp",
+    "fileloc": 3,
+    "instructions": 38,
+    "memory_accesses": 0,
+    "name": "header_generator",
+    "stores": {
+      "L": 8
+    },
+    "total_instructions": 38
+  },
+  "6": {
+    "basicblocks": 3,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 2,
+    "file": "timestamp_engine.cpp",
+    "fileloc": 3,
+    "instructions": 17,
     "loads": {
       "G": 3
     },
-    "memory_accesses": 8,
-    "name": "packetizer",
+    "memory_accesses": 0,
+    "name": "timestamp_engine",
     "stores": {
       "G": 3,
-      "L": 36
+      "L": 2
     },
-    "total_instructions": 307
+    "total_instructions": 17
+  },
+  "7": {
+    "basicblocks": 1,
+    "calls": "6 1 5 3 10 4 2 11",
+    "control_depth": 0,
+    "def_use_depth": 2,
+    "file": "packetizer2.cpp",
+    "fileloc": 48,
+    "instructions": 33,
+    "loads": {
+      "G": 3,
+      "L": 5
+    },
+    "memory_accesses": 0,
+    "name": "packetizer",
+    "stores": {
+      "G": 3
+    },
+    "total_instructions": 224
+  },
+  "8": {
+    "basicblocks": 13,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "sample_packer.cpp",
+    "fileloc": 4,
+    "instructions": 39,
+    "memory_accesses": 3,
+    "name": "sample_packer",
+    "total_instructions": 39
+  },
+  "9": {
+    "basicblocks": 4,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "axis_bram_writer.cpp",
+    "fileloc": 4,
+    "instructions": 13,
+    "memory_accesses": 2,
+    "name": "axis_bram_writer",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 13
   }
 }

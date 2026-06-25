@@ -1,0 +1,84 @@
+<stg><name>packet_fsm.1</name>
+
+
+<trans_list>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="2" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="2" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+entry:0 %current_state_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %current_state
+
+]]></Node>
+<StgValue><ssdm name="current_state_read"/></StgValue>
+</operation>
+
+<operation id="3" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="3" bw="2" op_0_bw="1">
+<![CDATA[
+entry:1 %zext_ln18 = zext i1 %current_state_read
+
+]]></Node>
+<StgValue><ssdm name="zext_ln18"/></StgValue>
+</operation>
+
+<operation id="4" st_id="1" stage="1" lat="1">
+<core>BinarySparseMux_HasDef</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="4" bw="1" op_0_bw="1" op_1_bw="2" op_2_bw="1" op_3_bw="2" op_4_bw="1" op_5_bw="1" op_6_bw="2">
+<![CDATA[
+entry:2 %next_state_write_assign = sparsemux i1 @_ssdm_op_SparseMux.ap_auto.2i1.i1.i2, i2 0, i1 1, i2 1, i1 1, i1 0, i2 %zext_ln18
+
+]]></Node>
+<StgValue><ssdm name="next_state_write_assign"/></StgValue>
+</operation>
+
+<operation id="5" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="5" bw="0" op_0_bw="1">
+<![CDATA[
+entry:3 %ret_ln54 = ret i1 %next_state_write_assign
+
+]]></Node>
+<StgValue><ssdm name="ret_ln54"/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+</ports>
+
+
+<dataflows>
+</dataflows>
+
+
+</stg>

@@ -51,14 +51,14 @@ Diagnostics:
     BuildDirectory:  'D:\IITK\project_1\hls_integration'
   - DiagnosticName:  xilinx-label-all-loops
     DiagnosticMessage:
-      Message:         'Added loop label VITIS_LOOP_69_1:  '
+      Message:         'Added loop label VITIS_LOOP_79_1:  '
       FilePath:        'D:\IITK\project_1\src\vdif_chain.cpp'
-      FileOffset:      69
+      FileOffset:      79
       Replacements:
         - FilePath:        'D:\IITK\project_1\hls_integration\vdif_chain\hls\.autopilot\db\vdif_chain.pp.0.cpp'
-          Offset:          2227235
+          Offset:          2228250
           Length:          0
-          ReplacementText: 'VITIS_LOOP_69_1: '
+          ReplacementText: 'VITIS_LOOP_79_1: '
     Level:           Remark
     BuildDirectory:  'D:\IITK\project_1\hls_integration'
 ...

@@ -1,0 +1,64 @@
+---
+MainSourceFile:  'D:/IITK/project_1/hls_integration/vdif_chain/hls/.autopilot/db/write_header.pp.0.cpp'
+Diagnostics:
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_676_1:  '
+      FilePath:        'D:\2025.2\Vitis\common\technology\autopilot\etc\ap_int_ref.h'
+      FileOffset:      676
+      Replacements:
+        - FilePath:        'D:\IITK\project_1\hls_integration\vdif_chain\hls\.autopilot\db\write_header.pp.0.cpp'
+          Offset:          283098
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_676_1: '
+    Level:           Remark
+    BuildDirectory:  'D:\IITK\project_1\hls_integration'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_690_1:  '
+      FilePath:        'D:\2025.2\Vitis\common\technology\autopilot\etc\ap_int_ref.h'
+      FileOffset:      690
+      Replacements:
+        - FilePath:        'D:\IITK\project_1\hls_integration\vdif_chain\hls\.autopilot\db\write_header.pp.0.cpp'
+          Offset:          283569
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_690_1: '
+    Level:           Remark
+    BuildDirectory:  'D:\IITK\project_1\hls_integration'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_704_1:  '
+      FilePath:        'D:\2025.2\Vitis\common\technology\autopilot\etc\ap_int_ref.h'
+      FileOffset:      704
+      Replacements:
+        - FilePath:        'D:\IITK\project_1\hls_integration\vdif_chain\hls\.autopilot\db\write_header.pp.0.cpp'
+          Offset:          284041
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_704_1: '
+    Level:           Remark
+    BuildDirectory:  'D:\IITK\project_1\hls_integration'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_1251_1:  '
+      FilePath:        'D:\2025.2\Vitis\common\technology\autopilot\etc\ap_fixed_base.h'
+      FileOffset:      1251
+      Replacements:
+        - FilePath:        'D:\IITK\project_1\hls_integration\vdif_chain\hls\.autopilot\db\write_header.pp.0.cpp'
+          Offset:          628612
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_1251_1: '
+    Level:           Remark
+    BuildDirectory:  'D:\IITK\project_1\hls_integration'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_15_1:  '
+      FilePath:        'D:\IITK\project_1\src\write_header.cpp'
+      FileOffset:      15
+      Replacements:
+        - FilePath:        'D:\IITK\project_1\hls_integration\vdif_chain\hls\.autopilot\db\write_header.pp.0.cpp'
+          Offset:          2225922
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_15_1: '
+    Level:           Remark
+    BuildDirectory:  'D:\IITK\project_1\hls_integration'
+...

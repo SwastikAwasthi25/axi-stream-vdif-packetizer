@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'vdif_chain'" level="0">
-<item name = "Date">Fri Jun 12 11:20:13 2026
+<item name = "Date">Wed Jun 24 16:57:23 2026
 </item>
 <item name = "Version">2025.2 (Build 6295257 on Nov 14 2025)</item>
 <item name = "Project">vdif_chain</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 7.008 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 7.406 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,22 +24,21 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">16, 1572856, 0.160 us, 15.729 ms, 17, 1572857, no</column>
+<column name="">1028, 1507306, 10.280 us, 15.073 ms, 1025, 1507307, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_vdif_chain_Pipeline_VITIS_LOOP_46_3_fu_204">vdif_chain_Pipeline_VITIS_LOOP_46_3, 6, 6, 60.000 ns, 60.000 ns, 0, 0, loop pipeline stp</column>
-<column name="grp_vdif_chain_Pipeline_VITIS_LOOP_33_2_fu_211">vdif_chain_Pipeline_VITIS_LOOP_33_2, 10, 10, 0.100 us, 0.100 us, 0, 0, loop pipeline stp</column>
-<column name="grp_vdif_chain_Pipeline_VITIS_LOOP_20_1_fu_218">vdif_chain_Pipeline_VITIS_LOOP_20_1, 18, 18, 0.180 us, 0.180 us, 0, 0, loop pipeline stp</column>
-<column name="grp_packetizer_fu_225">packetizer, 13, 131083, 0.130 us, 1.311 ms, 13, 131083, no</column>
+<column name="grp_Loop_VITIS_LOOP_79_1_proc_fu_204">Loop_VITIS_LOOP_79_1_proc, 1, 1507306, 10.000 ns, 15.073 ms, 1, 1507306, no</column>
+<column name="call_ln57_entry_proc7_fu_219">entry_proc7, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
+<column name="grp_packetizer_fu_238">packetizer, 1027, 65558, 10.270 us, 0.656 ms, 1025, 65553, dataflow</column>
+<column name="grp_axis_bram_writer_fu_264">axis_bram_writer, 4, 65539, 40.000 ns, 0.655 ms, 4, 65539, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_69_1">0, 1441770, 3 ~ 22, -, -, 0 ~ 65535, no</column>
 </table>
 </item>
 </section>

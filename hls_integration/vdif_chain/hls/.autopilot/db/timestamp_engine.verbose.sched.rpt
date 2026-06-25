@@ -1,0 +1,130 @@
+
+
+================================================================
+== Vitis HLS Report for 'timestamp_engine'
+================================================================
+* Date:           Wed Jun 24 16:57:15 2026
+
+* Version:        2025.2 (Build 6295257 on Nov 14 2025)
+* Project:        vdif_chain
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: artix7
+* Target device:  xc7a12t-cpg238-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  5.260 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        1|        1|  10.000 ns|  10.000 ns|    1|    1|       no|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 5.26>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %pps, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 3 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] ( I:3.65ns O:3.65ns )   --->   "%pps_1 = read i1 @_ssdm_op_Read.ap_fifo.i1P0A, i1 %pps" [../src/timestamp_engine.cpp:9]   --->   Operation 4 'read' 'pps_1' <Predicate = true> <Delay = 3.65> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.90> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 1> <Depth = 3> <FIFO>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%second_counter_load = load i30 %second_counter" [../src/timestamp_engine.cpp:16]   --->   Operation 5 'load' 'second_counter_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%frame_counter_load = load i24 %frame_counter" [../src/timestamp_engine.cpp:21]   --->   Operation 6 'load' 'frame_counter_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (1.61ns)   --->   "%br_ln14 = br i1 %pps_1, void %if.end, void %if.then" [../src/timestamp_engine.cpp:14]   --->   Operation 7 'br' 'br_ln14' <Predicate = true> <Delay = 1.61>
+ST_1 : Operation 8 [1/1] (2.63ns)   --->   "%add_ln16 = add i30 %second_counter_load, i30 1" [../src/timestamp_engine.cpp:16]   --->   Operation 8 'add' 'add_ln16' <Predicate = (pps_1)> <Delay = 2.63> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%store_ln16 = store i30 %add_ln16, i30 %second_counter" [../src/timestamp_engine.cpp:16]   --->   Operation 9 'store' 'store_ln16' <Predicate = (pps_1)> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (1.61ns)   --->   "%br_ln18 = br void %if.end" [../src/timestamp_engine.cpp:18]   --->   Operation 10 'br' 'br_ln18' <Predicate = (pps_1)> <Delay = 1.61>
+
+State 2 <SV = 1> <Delay = 2.42>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%seconds_from_epoch_write_assign = phi i30 %add_ln16, void %if.then, i30 %second_counter_load, void %entry" [../src/timestamp_engine.cpp:16]   --->   Operation 11 'phi' 'seconds_from_epoch_write_assign' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%frame_no_write_assign = phi i24 0, void %if.then, i24 %frame_counter_load, void %entry" [../src/timestamp_engine.cpp:21]   --->   Operation 12 'phi' 'frame_no_write_assign' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (2.42ns)   --->   "%add_ln23 = add i24 %frame_no_write_assign, i24 1" [../src/timestamp_engine.cpp:23]   --->   Operation 13 'add' 'add_ln23' <Predicate = true> <Delay = 2.42> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.42> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%store_ln17 = store i24 %add_ln23, i24 %frame_counter" [../src/timestamp_engine.cpp:17]   --->   Operation 14 'store' 'store_ln17' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%mrv = insertvalue i54 <undef>, i30 %seconds_from_epoch_write_assign" [../src/timestamp_engine.cpp:24]   --->   Operation 15 'insertvalue' 'mrv' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%mrv_1 = insertvalue i54 %mrv, i24 %frame_no_write_assign" [../src/timestamp_engine.cpp:24]   --->   Operation 16 'insertvalue' 'mrv_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%ret_ln24 = ret i54 %mrv_1" [../src/timestamp_engine.cpp:24]   --->   Operation 17 'ret' 'ret_ln24' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 5.260ns
+The critical path consists of the following:
+	fifo read operation ('pps', ../src/timestamp_engine.cpp:9) on port 'pps' (../src/timestamp_engine.cpp:9) [5]  (3.650 ns)
+	multiplexor before 'phi' operation 30 bit ('seconds_from_epoch', ../src/timestamp_engine.cpp:16) with incoming values : ('second_counter_load', ../src/timestamp_engine.cpp:16) ('add_ln16', ../src/timestamp_engine.cpp:16) [14]  (1.610 ns)
+	'br' operation ('br_ln18', ../src/timestamp_engine.cpp:18) [12]  (1.610 ns)
+
+ <State 2>: 2.424ns
+The critical path consists of the following:
+	'phi' operation 24 bit ('frame_no', ../src/timestamp_engine.cpp:21) with incoming values : ('frame_counter_load', ../src/timestamp_engine.cpp:21) [15]  (0.000 ns)
+	'add' operation 24 bit ('add_ln23', ../src/timestamp_engine.cpp:23) [16]  (2.424 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

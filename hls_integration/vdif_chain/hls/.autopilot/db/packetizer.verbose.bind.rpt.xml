@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'packetizer'" level="0">
-<item name = "Date">Fri Jun 12 11:20:11 2026
+<item name = "Date">Wed Jun 24 16:57:21 2026
 </item>
 <item name = "Version">2025.2 (Build 6295257 on Nov 14 2025)</item>
 <item name = "Project">vdif_chain</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 7.008 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 7.406 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,15 +24,19 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">13, 131083, 0.130 us, 1.311 ms, 13, 131083, no</column>
+<column name="">1027, 65558, 10.270 us, 0.656 ms, 1025, 65553, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_packetizer_Pipeline_VITIS_LOOP_194_1_fu_212">packetizer_Pipeline_VITIS_LOOP_194_1, 2, 65537, 20.000 ns, 0.655 ms, 0, 0, loop pipeline stp</column>
-<column name="grp_packetizer_Pipeline_VITIS_LOOP_273_2_fu_221">packetizer_Pipeline_VITIS_LOOP_273_2, 2, 65537, 20.000 ns, 0.655 ms, 0, 0, loop pipeline stp</column>
+<column name="call_ln62_entry_proc_fu_136">entry_proc, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
+<column name="grp_timestamp_engine_fu_159">timestamp_engine, 1, 1, 10.000 ns, 10.000 ns, 1, 1, no</column>
+<column name="grp_read_payload_fu_169">read_payload, 1026, 65537, 10.260 us, 0.655 ms, 1025, 65536, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_header_generator_fu_177">header_generator, 3, 3, 30.000 ns, 30.000 ns, 3, 3, no</column>
+<column name="grp_packetizer_Block_entry_out_stream_V_data_V_wr_proc_fu_190">packetizer_Block_entry_out_stream_V_data_V_wr_proc, 17, 65552, 0.170 us, 0.656 ms, 17, 65552, no</column>
+<column name="call_ln100_packetizer_Block_entry_fsm_state_fb_proc_fu_205">packetizer_Block_entry_fsm_state_fb_proc, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

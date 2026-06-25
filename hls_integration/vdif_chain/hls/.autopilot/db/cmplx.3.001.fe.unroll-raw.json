@@ -1,37 +1,133 @@
 {
   "0": {
-    "basicblocks": 7,
-    "calls": "2 1",
+    "basicblocks": 11,
+    "calls": "8 5 7",
     "control_depth": 0,
-    "def_use_depth": 3,
+    "def_use_depth": 2,
     "file": "vdif_chain.cpp",
-    "fileloc": 33,
-    "instructions": 40,
+    "fileloc": 37,
+    "instructions": 57,
     "memory_accesses": 0,
     "name": "vdif_chain",
-    "total_instructions": 538
+    "total_instructions": 464
   },
   "1": {
-    "basicblocks": 20,
+    "basicblocks": 15,
     "calls": "",
-    "control_depth": 2,
-    "def_use_depth": 6,
-    "file": "packetizer2.cpp",
-    "fileloc": 139,
-    "instructions": 441,
+    "control_depth": 0,
+    "def_use_depth": 2,
+    "file": "packet_fsm.cpp",
+    "fileloc": 10,
+    "instructions": 29,
     "loads": {
-      "G": 4,
-      "L": 34
+      "L": 3
     },
-    "memory_accesses": 10,
-    "name": "packetizer",
+    "memory_accesses": 0,
+    "name": "packet_fsm",
     "stores": {
-      "G": 3,
-      "L": 54
+      "L": 4
     },
-    "total_instructions": 445
+    "total_instructions": 29
   },
   "2": {
+    "basicblocks": 5,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "write_header.cpp",
+    "fileloc": 7,
+    "instructions": 57,
+    "loads": {
+      "L": 3
+    },
+    "memory_accesses": 6,
+    "name": "write_header",
+    "stores": {
+      "L": 6
+    },
+    "total_instructions": 61
+  },
+  "3": {
+    "basicblocks": 7,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "read_payload.cpp",
+    "fileloc": 4,
+    "instructions": 16,
+    "memory_accesses": 3,
+    "name": "read_payload",
+    "total_instructions": 16
+  },
+  "4": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 6,
+    "file": "header_generator.cpp",
+    "fileloc": 3,
+    "instructions": 40,
+    "memory_accesses": 0,
+    "name": "header_generator",
+    "stores": {
+      "L": 8
+    },
+    "total_instructions": 40
+  },
+  "5": {
+    "basicblocks": 2,
+    "calls": "6 1 4 3 2 1 9 1",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "packetizer2.cpp",
+    "fileloc": 48,
+    "instructions": 38,
+    "loads": {
+      "G": 3,
+      "L": 5
+    },
+    "memory_accesses": 0,
+    "name": "packetizer",
+    "stores": {
+      "G": 3
+    },
+    "total_instructions": 336
+  },
+  "6": {
+    "basicblocks": 5,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 2,
+    "file": "timestamp_engine.cpp",
+    "fileloc": 3,
+    "instructions": 20,
+    "loads": {
+      "G": 4
+    },
+    "memory_accesses": 0,
+    "name": "timestamp_engine",
+    "stores": {
+      "G": 3,
+      "L": 2
+    },
+    "total_instructions": 20
+  },
+  "7": {
+    "basicblocks": 7,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "axis_bram_writer.cpp",
+    "fileloc": 4,
+    "instructions": 18,
+    "memory_accesses": 3,
+    "name": "axis_bram_writer",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 18
+  },
+  "8": {
     "basicblocks": 21,
     "calls": "",
     "control_depth": 0,
@@ -42,5 +138,23 @@
     "memory_accesses": 3,
     "name": "sample_packer",
     "total_instructions": 53
+  },
+  "9": {
+    "basicblocks": 10,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 3,
+    "file": "write_payload.cpp",
+    "fileloc": 7,
+    "instructions": 70,
+    "loads": {
+      "L": 2
+    },
+    "memory_accesses": 7,
+    "name": "write_payload",
+    "stores": {
+      "L": 6
+    },
+    "total_instructions": 74
   }
 }

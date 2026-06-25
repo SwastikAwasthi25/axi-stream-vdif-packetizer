@@ -1,40 +1,241 @@
 {
   "0": {
-    "basicblocks": 19,
-    "calls": "1",
+    "basicblocks": 1,
+    "calls": "3 10 1",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "vdif_chain.cpp",
+    "fileloc": 37,
+    "instructions": 36,
+    "memory_accesses": 0,
+    "name": "vdif_chain",
+    "total_instructions": 339
+  },
+  "1": {
+    "basicblocks": 4,
+    "calls": "",
     "control_depth": 1,
     "def_use_depth": 2,
     "file": "vdif_chain.cpp",
-    "fileloc": 33,
-    "instructions": 109,
-    "loads": {
-      "L": 4
-    },
-    "memory_accesses": 6,
-    "name": "vdif_chain",
+    "fileloc": 0,
+    "instructions": 17,
+    "memory_accesses": 1,
+    "name": "_Z10vdif_chainRN3hls6streamI7ap_uintILi8EELi0EEERNS0_INS_4axisIS1_ILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESE_SB__",
+    "total_instructions": 17
+  },
+  "10": {
+    "basicblocks": 1,
+    "calls": "7 8 4 5 12",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "packetizer2.cpp",
+    "fileloc": 48,
+    "instructions": 15,
+    "memory_accesses": 0,
+    "name": "packetizer",
+    "total_instructions": 196
+  },
+  "11": {
+    "basicblocks": 6,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "packet_fsm.cpp",
+    "fileloc": 10,
+    "instructions": 12,
+    "memory_accesses": 0,
+    "name": "packet_fsm",
     "stores": {
       "L": 4
     },
-    "total_instructions": 262
+    "total_instructions": 12
   },
-  "1": {
-    "basicblocks": 9,
+  "12": {
+    "basicblocks": 1,
+    "calls": "14 2",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "packetizer2.cpp",
+    "fileloc": 0,
+    "instructions": 5,
+    "memory_accesses": 0,
+    "name": "_Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA__",
+    "total_instructions": 56
+  },
+  "13": {
+    "basicblocks": 6,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "packet_fsm.cpp",
+    "fileloc": 10,
+    "instructions": 12,
+    "memory_accesses": 0,
+    "name": "packet_fsm",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 12
+  },
+  "14": {
+    "basicblocks": 4,
     "calls": "",
     "control_depth": 1,
+    "def_use_depth": 2,
+    "file": "write_header.cpp",
+    "fileloc": 7,
+    "instructions": 22,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 6,
+    "name": "write_header",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 22
+  },
+  "2": {
+    "basicblocks": 4,
+    "calls": "",
+    "control_depth": 1,
+    "def_use_depth": 3,
+    "file": "write_payload.cpp",
+    "fileloc": 7,
+    "instructions": 29,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 7,
+    "name": "write_payload",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 29
+  },
+  "3": {
+    "basicblocks": 4,
+    "calls": "9",
+    "control_depth": 0,
+    "def_use_depth": 2,
+    "file": "vdif_chain.cpp",
+    "fileloc": 0,
+    "instructions": 25,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 0,
+    "name": "_Z10vdif_chainRN3hls6streamI7ap_uintILi8EELi0EEERNS0_INS_4axisIS1_ILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESE_SB__",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 90
+  },
+  "4": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
     "def_use_depth": 5,
     "file": "packetizer2.cpp",
-    "fileloc": 139,
-    "instructions": 153,
+    "fileloc": 0,
+    "instructions": 41,
     "loads": {
+      "L": 2
+    },
+    "memory_accesses": 0,
+    "name": "_Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA__entry.aft.aft.aft",
+    "stores": {
+      "L": 8
+    },
+    "total_instructions": 41
+  },
+  "5": {
+    "basicblocks": 4,
+    "calls": "",
+    "control_depth": 1,
+    "def_use_depth": 2,
+    "file": "read_payload.cpp",
+    "fileloc": 4,
+    "instructions": 18,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 4,
+    "name": "read_payload",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 18
+  },
+  "6": {
+    "basicblocks": 6,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "packet_fsm.cpp",
+    "fileloc": 10,
+    "instructions": 12,
+    "memory_accesses": 0,
+    "name": "packet_fsm",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 12
+  },
+  "7": {
+    "basicblocks": 3,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 2,
+    "file": "timestamp_engine.cpp",
+    "fileloc": 3,
+    "instructions": 18,
+    "loads": {
+      "G": 3
+    },
+    "memory_accesses": 0,
+    "name": "timestamp_engine",
+    "stores": {
       "G": 3,
       "L": 2
     },
-    "memory_accesses": 11,
-    "name": "packetizer",
-    "stores": {
-      "G": 3,
-      "L": 37
+    "total_instructions": 18
+  },
+  "8": {
+    "basicblocks": 1,
+    "calls": "11 13 6",
+    "control_depth": 0,
+    "def_use_depth": 2,
+    "file": "packetizer2.cpp",
+    "fileloc": 0,
+    "instructions": 12,
+    "loads": {
+      "G": 1,
+      "L": 3
     },
-    "total_instructions": 153
+    "memory_accesses": 0,
+    "name": "_Z10packetizerRN3hls6streamI7ap_uintILi32EELi0EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESD_SA__",
+    "stores": {
+      "G": 1
+    },
+    "total_instructions": 48
+  },
+  "9": {
+    "basicblocks": 16,
+    "calls": "",
+    "control_depth": 1,
+    "def_use_depth": 2,
+    "file": "sample_packer.cpp",
+    "fileloc": 4,
+    "instructions": 65,
+    "loads": {
+      "L": 3
+    },
+    "memory_accesses": 6,
+    "name": "sample_packer",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 65
   }
 }

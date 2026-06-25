@@ -9,10 +9,10 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "06/11/26 18:16:23",
- "timestampMillis": "1781181983629",
+ "dateTimestamp": "06/24/26 16:54:00",
+ "timestampMillis": "1782300240965",
  "buildStep": {
-  "cmdId": "0d6f6d51-3d85-4d9f-b26b-90e794913d00",
+  "cmdId": "c50125fc-3dac-40c8-88c3-cd53d2f8077a",
   "name": "vitis-run",
   "logFile": "D:/IITK\\project_1\\hls_integration\\vdif_chain\\logs\\vdif_chain.steps.log",
   "commandLine": "D:/2025.2/Vitis/bin/unwrapped/win64.o/vitis-run.exe  --mode hls --csim --config D:\\IITK\\project_1\\hls_integration\\hls_config.cfg --work_dir vdif_chain ",
@@ -33,10 +33,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "06/11/26 18:16:23",
- "timestampMillis": "1781181983629",
+ "dateTimestamp": "06/24/26 16:54:00",
+ "timestampMillis": "1782300240965",
  "status": {
-  "cmdId": "0d6f6d51-3d85-4d9f-b26b-90e794913d00",
+  "cmdId": "c50125fc-3dac-40c8-88c3-cd53d2f8077a",
   "state": "CS_RUNNING"
  }
 }
@@ -44,8 +44,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
- "dateTimestamp": "06/11/26 18:16:28",
- "timestampMillis": "1781181988011",
+ "dateTimestamp": "06/24/26 16:54:04",
+ "timestampMillis": "1782300244486",
  "buildSummary": {
   "hardwarePlatform": "",
   "hardwareDsa": "",
@@ -67,7 +67,15 @@
      "D:/IITK\\project_1\\src\\packetizer2.cpp",
      "D:/IITK\\project_1\\src\\sample_packer\\sample_packer.cpp",
      "D:/IITK\\project_1\\src\\vdif_chain.cpp",
-     "D:/IITK\\project_1\\testbench\\integration\\golden_model.cpp"
+     "D:/IITK\\project_1\\testbench\\integration\\golden_model.cpp",
+     "D:/IITK\\project_1\\src\\header_generator.cpp",
+     "D:/IITK\\project_1\\src\\timestamp_engine.cpp",
+     "D:/IITK\\project_1\\src\\packet_fsm.cpp",
+     "D:/IITK\\project_1\\src\\read_payload.cpp",
+     "D:/IITK\\project_1\\src\\write_header.cpp",
+     "D:/IITK\\project_1\\src\\write_payload.cpp",
+     "D:/IITK\\project_1\\hls_integration\\axis_bram_writer.cpp",
+     "D:/IITK\\project_1\\hls_integration\\axis_bram_writer.h"
     ],
     "psSources": [],
     "cuNames": [],
@@ -83,10 +91,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "06/11/26 18:16:28",
- "timestampMillis": "1781181988012",
+ "dateTimestamp": "06/24/26 16:54:04",
+ "timestampMillis": "1782300244487",
  "buildStep": {
-  "cmdId": "dbd57400-8075-4e0a-b15d-0dfe425bda25",
+  "cmdId": "dc8d5351-f997-49e6-bfe2-176504e39b30",
   "name": "",
   "logFile": "D:/IITK\\project_1\\hls_integration\\vdif_chain\\hls\\hls.log",
   "commandLine": "",
@@ -99,10 +107,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "06/11/26 18:16:28",
- "timestampMillis": "1781181988012",
+ "dateTimestamp": "06/24/26 16:54:04",
+ "timestampMillis": "1782300244487",
  "status": {
-  "cmdId": "dbd57400-8075-4e0a-b15d-0dfe425bda25",
+  "cmdId": "dc8d5351-f997-49e6-bfe2-176504e39b30",
   "state": "CS_RUNNING"
  }
 }
@@ -110,10 +118,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "06/11/26 18:16:34",
- "timestampMillis": "1781181994968",
+ "dateTimestamp": "06/24/26 16:54:18",
+ "timestampMillis": "1782300258332",
  "status": {
-  "cmdId": "dbd57400-8075-4e0a-b15d-0dfe425bda25",
+  "cmdId": "dc8d5351-f997-49e6-bfe2-176504e39b30",
   "state": "CS_PASSED"
  }
 }
@@ -121,10 +129,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "06/11/26 18:16:35",
- "timestampMillis": "1781181995067",
+ "dateTimestamp": "06/24/26 16:54:18",
+ "timestampMillis": "1782300258446",
  "status": {
-  "cmdId": "0d6f6d51-3d85-4d9f-b26b-90e794913d00",
+  "cmdId": "c50125fc-3dac-40c8-88c3-cd53d2f8077a",
   "state": "CS_PASSED"
  }
 }
@@ -132,8 +140,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "06/11/26 18:16:35",
- "timestampMillis": "1781181995067",
+ "dateTimestamp": "06/24/26 16:54:18",
+ "timestampMillis": "1782300258447",
  "report": {
   "path": "",
   "name": "",
@@ -146,8 +154,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "06/11/26 18:16:35",
- "timestampMillis": "1781181995067",
+ "dateTimestamp": "06/24/26 16:54:18",
+ "timestampMillis": "1782300258447",
  "report": {
   "path": "",
   "name": "",

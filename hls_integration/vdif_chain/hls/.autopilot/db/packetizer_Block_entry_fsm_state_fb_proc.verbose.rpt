@@ -1,0 +1,435 @@
+
+
+================================================================
+== Vitis HLS Report for 'packetizer_Block_entry_fsm_state_fb_proc'
+================================================================
+* Date:           Wed Jun 24 16:57:25 2026
+
+* Version:        2025.2 (Build 6295257 on Nov 14 2025)
+* Project:        vdif_chain
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: artix7
+* Target device:  xc7a12t-cpg238-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  4.862 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    0|    0|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +----------------------------------------+--------------+---------+---------+----------+----------+-----+-----+---------+
+        |                                        |              |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+        |                Instance                |    Module    |   min   |   max   |    min   |    max   | min | max |   Type  |
+        +----------------------------------------+--------------+---------+---------+----------+----------+-----+-----+---------+
+        |next_state_assign_4_packet_fsm_1_fu_18  |packet_fsm_1  |        0|        0|      0 ns|      0 ns|    0|    0|       no|
+        |next_state_assign_3_packet_fsm_2_fu_23  |packet_fsm_2  |        0|        0|      0 ns|      0 ns|    0|    0|       no|
+        |next_state_assign_2_packet_fsm_fu_29    |packet_fsm    |        0|        0|      0 ns|      0 ns|    0|    0|       no|
+        +----------------------------------------+--------------+---------+---------+----------+----------+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+----+-------+------+-----+
+|       Name      | BRAM_18K| DSP|   FF  |  LUT | URAM|
++-----------------+---------+----+-------+------+-----+
+|DSP              |        -|   -|      -|     -|    -|
+|Expression       |        -|   -|      0|     2|    -|
+|FIFO             |        -|   -|      -|     -|    -|
+|Instance         |        -|   -|      0|    31|    -|
+|Memory           |        -|   -|      -|     -|    -|
+|Multiplexer      |        -|   -|      0|     9|    -|
+|Register         |        -|   -|      3|     -|    -|
++-----------------+---------+----+-------+------+-----+
+|Total            |        0|   0|      3|    42|    0|
++-----------------+---------+----+-------+------+-----+
+|Available        |       40|  40|  16000|  8000|    0|
++-----------------+---------+----+-------+------+-----+
+|Utilization (%)  |        0|   0|     ~0|    ~0|    0|
++-----------------+---------+----+-------+------+-----+
+
++ Detail: 
+    * Instance: 
+    +----------------------------------------+--------------+---------+----+---+----+-----+
+    |                Instance                |    Module    | BRAM_18K| DSP| FF| LUT| URAM|
+    +----------------------------------------+--------------+---------+----+---+----+-----+
+    |next_state_assign_2_packet_fsm_fu_29    |packet_fsm    |        0|   0|  0|  13|    0|
+    |next_state_assign_4_packet_fsm_1_fu_18  |packet_fsm_1  |        0|   0|  0|   9|    0|
+    |next_state_assign_3_packet_fsm_2_fu_23  |packet_fsm_2  |        0|   0|  0|   9|    0|
+    +----------------------------------------+--------------+---------+----+---+----+-----+
+    |Total                                   |              |        0|   0|  0|  31|    0|
+    +----------------------------------------+--------------+---------+----+---+----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------+----------+----+---+----+------------+------------+
+    |  Variable Name  | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |ap_block_state1  |        or|   0|  0|   2|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |Total            |          |   0|  0|   2|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------+----+-----------+-----+-----------+
+    |   Name  | LUT| Input Size| Bits| Total Bits|
+    +---------+----+-----------+-----+-----------+
+    |ap_done  |   9|          2|    1|          2|
+    +---------+----+-----------+-----+-----------+
+    |Total    |   9|          2|    1|          2|
+    +---------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------+---+----+-----+-----------+
+    |     Name    | FF| LUT| Bits| Const Bits|
+    +-------------+---+----+-----+-----------+
+    |ap_CS_fsm    |  1|   0|    1|          0|
+    |ap_done_reg  |  1|   0|    1|          0|
+    |fsm_state    |  1|   0|    1|          0|
+    +-------------+---+----+-----+-----------+
+    |Total        |  3|   0|    3|          0|
+    +-------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------+-----+-----+------------+------------------------------------------+--------------+
+|  RTL Ports  | Dir | Bits|  Protocol  |               Source Object              |    C Type    |
++-------------+-----+-----+------------+------------------------------------------+--------------+
+|ap_clk       |   in|    1|  ap_ctrl_hs|  packetizer_Block_entry_fsm_state_fb_proc|  return value|
+|ap_rst       |   in|    1|  ap_ctrl_hs|  packetizer_Block_entry_fsm_state_fb_proc|  return value|
+|ap_start     |   in|    1|  ap_ctrl_hs|  packetizer_Block_entry_fsm_state_fb_proc|  return value|
+|ap_done      |  out|    1|  ap_ctrl_hs|  packetizer_Block_entry_fsm_state_fb_proc|  return value|
+|ap_continue  |   in|    1|  ap_ctrl_hs|  packetizer_Block_entry_fsm_state_fb_proc|  return value|
+|ap_idle      |  out|    1|  ap_ctrl_hs|  packetizer_Block_entry_fsm_state_fb_proc|  return value|
+|ap_ready     |  out|    1|  ap_ctrl_hs|  packetizer_Block_entry_fsm_state_fb_proc|  return value|
++-------------+-----+-----+------------+------------------------------------------+--------------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 0
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 4.86>
+ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_5, i32 0, i32 0, void @empty_11, i32 0, i32 0, void @empty_11, void @empty_11, void @empty_11, i32 0, i32 0, i32 0, i32 0, void @empty_11, void @empty_11, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 2 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%fsm_state_load = load i1 %fsm_state" [../src/packetizer2.cpp:102->../src/packetizer2.cpp:102]   --->   Operation 3 'load' 'fsm_state_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (1.61ns)   --->   "%next_state_assign_4 = call i1 @packet_fsm.1, i1 %fsm_state_load" [../src/packetizer2.cpp:101->../src/packetizer2.cpp:101->../src/packetizer2.cpp:102]   --->   Operation 4 'call' 'next_state_assign_4' <Predicate = true> <Delay = 1.61> <CoreType = "Generic">   --->   Generic Core
+ST_1 : Operation 5 [1/1] (1.61ns)   --->   "%next_state_assign_3 = call i2 @packet_fsm.2, i1 %next_state_assign_4" [../src/packetizer2.cpp:159->../src/packetizer2.cpp:101->../src/packetizer2.cpp:102]   --->   Operation 5 'call' 'next_state_assign_3' <Predicate = true> <Delay = 1.61> <CoreType = "Generic">   --->   Generic Core
+ST_1 : Operation 6 [1/1] (1.64ns)   --->   "%next_state_assign_2 = call i1 @packet_fsm, i2 %next_state_assign_3" [../src/packetizer2.cpp:183->../src/packetizer2.cpp:101->../src/packetizer2.cpp:102]   --->   Operation 6 'call' 'next_state_assign_2' <Predicate = true> <Delay = 1.64> <CoreType = "Generic">   --->   Generic Core
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%store_ln191 = store i1 %next_state_assign_2, i1 %fsm_state" [../src/packetizer2.cpp:191->../src/packetizer2.cpp:101->../src/packetizer2.cpp:102]   --->   Operation 7 'store' 'store_ln191' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 8 'ret' 'ret_ln0' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 1
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ fsm_state]:  wired=0; compound=0; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=1; IO mode=ap_ovld:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+specinterface_ln0   (specinterface) [ 00]
+fsm_state_load      (load         ) [ 00]
+next_state_assign_4 (call         ) [ 00]
+next_state_assign_3 (call         ) [ 00]
+next_state_assign_2 (call         ) [ 00]
+store_ln191         (store        ) [ 00]
+ret_ln0             (ret          ) [ 00]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="fsm_state">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="fsm_state"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1001" name="const_2">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1001" name="const_4">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1001" name="const_6">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_5"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1001" name="const_8">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_11"/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1001" name="const_10">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="packet_fsm.1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="packet_fsm.2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="packet_fsm"/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1004" name="next_state_assign_4_packet_fsm_1_fu_18">
+<pin_list>
+<pin id="19" dir="0" index="0" bw="1" slack="0"/>
+<pin id="20" dir="0" index="1" bw="1" slack="0"/>
+<pin id="21" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="next_state_assign_4/1 "/>
+</bind>
+</comp>
+
+<comp id="23" class="1004" name="next_state_assign_3_packet_fsm_2_fu_23">
+<pin_list>
+<pin id="24" dir="0" index="0" bw="2" slack="0"/>
+<pin id="25" dir="0" index="1" bw="1" slack="0"/>
+<pin id="26" dir="1" index="2" bw="2" slack="0"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="next_state_assign_3/1 "/>
+</bind>
+</comp>
+
+<comp id="29" class="1004" name="next_state_assign_2_packet_fsm_fu_29">
+<pin_list>
+<pin id="30" dir="0" index="0" bw="1" slack="0"/>
+<pin id="31" dir="0" index="1" bw="2" slack="0"/>
+<pin id="32" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="next_state_assign_2/1 "/>
+</bind>
+</comp>
+
+<comp id="35" class="1004" name="fsm_state_load_load_fu_35">
+<pin_list>
+<pin id="36" dir="0" index="0" bw="1" slack="0"/>
+<pin id="37" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="fsm_state_load/1 "/>
+</bind>
+</comp>
+
+<comp id="40" class="1004" name="store_ln191_store_fu_40">
+<pin_list>
+<pin id="41" dir="0" index="0" bw="1" slack="0"/>
+<pin id="42" dir="0" index="1" bw="1" slack="0"/>
+<pin id="43" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln191/1 "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="22"><net_src comp="12" pin="0"/><net_sink comp="18" pin=0"/></net>
+
+<net id="27"><net_src comp="14" pin="0"/><net_sink comp="23" pin=0"/></net>
+
+<net id="28"><net_src comp="18" pin="2"/><net_sink comp="23" pin=1"/></net>
+
+<net id="33"><net_src comp="16" pin="0"/><net_sink comp="29" pin=0"/></net>
+
+<net id="34"><net_src comp="23" pin="2"/><net_sink comp="29" pin=1"/></net>
+
+<net id="38"><net_src comp="0" pin="0"/><net_sink comp="35" pin=0"/></net>
+
+<net id="39"><net_src comp="35" pin="1"/><net_sink comp="18" pin=1"/></net>
+
+<net id="44"><net_src comp="29" pin="2"/><net_sink comp="40" pin=0"/></net>
+
+<net id="45"><net_src comp="0" pin="0"/><net_sink comp="40" pin=1"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: fsm_state | {1 }
+ - Input state : 
+	Port: packetizer_Block_entry_fsm_state_fb_proc : fsm_state | {1 }
+  - Chain level:
+	State 1
+		next_state_assign_4 : 1
+		next_state_assign_3 : 2
+		next_state_assign_2 : 3
+		store_ln191 : 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|----------------------------------------|---------|---------|
+| Operation|             Functional Unit            |    FF   |   LUT   |
+|----------|----------------------------------------|---------|---------|
+|          | next_state_assign_4_packet_fsm_1_fu_18 |    0    |    9    |
+|   call   | next_state_assign_3_packet_fsm_2_fu_23 |    0    |    9    |
+|          |  next_state_assign_2_packet_fsm_fu_29  |    0    |    13   |
+|----------|----------------------------------------|---------|---------|
+|   Total  |                                        |    0    |    31   |
+|----------|----------------------------------------|---------|---------|
+
+Memories:
+N/A
+
+* Register list:
+N/A
+
+* Multiplexer (MUX) list: 
+|--------|------|------|------|--------|
+|  Comp  |  Pin | Size |  BW  | S x BW |
+|--------|------|------|------|--------|
+|  Total |      |      |      |    0   |
+|--------|------|------|------|--------|
+
+
+
+* Summary:
++-----------+--------+--------+
+|           |   FF   |   LUT  |
++-----------+--------+--------+
+|  Function |    0   |   31   |
+|   Memory  |    -   |    -   |
+|Multiplexer|    -   |    -   |
+|  Register |    -   |    -   |
++-----------+--------+--------+
+|   Total   |    0   |   31   |
++-----------+--------+--------+

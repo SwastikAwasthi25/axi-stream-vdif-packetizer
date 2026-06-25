@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'packetizer'" level="0">
-<item name = "Date">Fri Jun 12 11:20:11 2026
+<item name = "Date">Wed Jun 24 16:57:21 2026
 </item>
 <item name = "Version">2025.2 (Build 6295257 on Nov 14 2025)</item>
 <item name = "Project">vdif_chain</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 7.008 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 7.406 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">13, 131083, 0.130 us, 1.311 ms, 13, 131083, no</column>
+<column name="">1027, 65558, 10.270 us, 0.656 ms, 1025, 65553, dataflow</column>
 </table>
 </item>
 <item name = "Detail">

@@ -1,0 +1,165 @@
+<ENTRY>
+{
+ "thisFile": "D:/IITK\\project_1\\hls_integration\\vdif_chain\\vdif_chain.hlsrun_package_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "06/23/26 17:36:04",
+ "timestampMillis": "1782216364005",
+ "buildStep": {
+  "cmdId": "d035c7dd-15d9-47e7-b291-e150d00acd39",
+  "name": "vitis-run",
+  "logFile": "D:/IITK\\project_1\\hls_integration\\vdif_chain\\logs\\vdif_chain.steps.log",
+  "commandLine": "D:/2025.2/Vitis/bin/unwrapped/win64.o/vitis-run.exe  --mode hls --package --config D:\\IITK\\project_1\\hls_integration\\hls_config.cfg --work_dir vdif_chain ",
+  "args": [
+   "--mode",
+   "hls",
+   "--package",
+   "--config",
+   "D:\\IITK\\project_1\\hls_integration\\hls_config.cfg",
+   "--work_dir",
+   "vdif_chain"
+  ],
+  "iniFiles": [],
+  "cwd": "D:\\IITK\\project_1\\hls_integration"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "06/23/26 17:36:04",
+ "timestampMillis": "1782216364005",
+ "status": {
+  "cmdId": "d035c7dd-15d9-47e7-b291-e150d00acd39",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "06/23/26 17:36:09",
+ "timestampMillis": "1782216369466",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_IP",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "vdif_chain",
+     "file": "D:/IITK\\project_1\\hls_integration\\vdif_chain\\vdif_chain.zip",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "D:/IITK\\project_1\\src\\packetizer2.cpp",
+     "D:/IITK\\project_1\\src\\sample_packer\\sample_packer.cpp",
+     "D:/IITK\\project_1\\src\\vdif_chain.cpp",
+     "D:/IITK\\project_1\\testbench\\integration\\golden_model.cpp",
+     "D:/IITK\\project_1\\src\\header_generator.cpp",
+     "D:/IITK\\project_1\\src\\timestamp_engine.cpp",
+     "D:/IITK\\project_1\\src\\packet_fsm.cpp",
+     "D:/IITK\\project_1\\src\\read_payload.cpp",
+     "D:/IITK\\project_1\\src\\write_header.cpp",
+     "D:/IITK\\project_1\\src\\write_payload.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2025.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "06/23/26 17:36:09",
+ "timestampMillis": "1782216369468",
+ "buildStep": {
+  "cmdId": "591d2010-a762-4e13-a9b5-7a995d78d569",
+  "name": "",
+  "logFile": "D:/IITK\\project_1\\hls_integration\\vdif_chain\\hls\\hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "D:\\IITK\\project_1\\hls_integration"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "06/23/26 17:36:09",
+ "timestampMillis": "1782216369468",
+ "status": {
+  "cmdId": "591d2010-a762-4e13-a9b5-7a995d78d569",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "06/23/26 17:36:22",
+ "timestampMillis": "1782216382416",
+ "status": {
+  "cmdId": "591d2010-a762-4e13-a9b5-7a995d78d569",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "06/23/26 17:36:22",
+ "timestampMillis": "1782216382533",
+ "status": {
+  "cmdId": "d035c7dd-15d9-47e7-b291-e150d00acd39",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "06/23/26 17:36:22",
+ "timestampMillis": "1782216382533",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "06/23/26 17:36:22",
+ "timestampMillis": "1782216382533",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

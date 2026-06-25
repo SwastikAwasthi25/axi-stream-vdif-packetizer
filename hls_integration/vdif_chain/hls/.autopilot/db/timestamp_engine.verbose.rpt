@@ -1,0 +1,682 @@
+
+
+================================================================
+== Vitis HLS Report for 'timestamp_engine'
+================================================================
+* Date:           Wed Jun 24 16:57:25 2026
+
+* Version:        2025.2 (Build 6295257 on Nov 14 2025)
+* Project:        vdif_chain
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: artix7
+* Target device:  xc7a12t-cpg238-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  5.260 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        1|        1|  10.000 ns|  10.000 ns|    1|    1|       no|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+----+-------+------+-----+
+|       Name      | BRAM_18K| DSP|   FF  |  LUT | URAM|
++-----------------+---------+----+-------+------+-----+
+|DSP              |        -|   -|      -|     -|    -|
+|Expression       |        -|   -|      0|    70|    -|
+|FIFO             |        -|   -|      -|     -|    -|
+|Instance         |        -|   -|      -|     -|    -|
+|Memory           |        -|   -|      -|     -|    -|
+|Multiplexer      |        -|   -|      0|    49|    -|
+|Register         |        -|   -|    111|     -|    -|
++-----------------+---------+----+-------+------+-----+
+|Total            |        0|   0|    111|   119|    0|
++-----------------+---------+----+-------+------+-----+
+|Available        |       40|  40|  16000|  8000|    0|
++-----------------+---------+----+-------+------+-----+
+|Utilization (%)  |        0|   0|     ~0|     1|    0|
++-----------------+---------+----+-------+------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-------------------+----------+----+---+----+------------+------------+
+    |   Variable Name   | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-------------------+----------+----+---+----+------------+------------+
+    |add_ln16_fu_66_p2  |         +|   0|  0|  37|          30|           1|
+    |add_ln23_fu_78_p2  |         +|   0|  0|  31|          24|           1|
+    |ap_block_state1    |        or|   0|  0|   2|           1|           1|
+    +-------------------+----------+----+---+----+------------+------------+
+    |Total              |          |   0|  0|  70|          55|           3|
+    +-------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------------------+----+-----------+-----+-----------+
+    |                  Name                  | LUT| Input Size| Bits| Total Bits|
+    +----------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                               |  13|          3|    1|          3|
+    |ap_done                                 |   9|          2|    1|          2|
+    |frame_no_write_assign_reg_47            |   9|          2|   24|         48|
+    |pps_blk_n                               |   9|          2|    1|          2|
+    |seconds_from_epoch_write_assign_reg_38  |   9|          2|   30|         60|
+    +----------------------------------------+----+-----------+-----+-----------+
+    |Total                                   |  49|         11|   57|        115|
+    +----------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------------+----+----+-----+-----------+
+    |                  Name                  | FF | LUT| Bits| Const Bits|
+    +----------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                               |   2|   0|    2|          0|
+    |ap_done_reg                             |   1|   0|    1|          0|
+    |frame_counter                           |  24|   0|   24|          0|
+    |frame_no_write_assign_reg_47            |  24|   0|   24|          0|
+    |second_counter                          |  30|   0|   30|          0|
+    |seconds_from_epoch_write_assign_reg_38  |  30|   0|   30|          0|
+    +----------------------------------------+----+----+-----+-----------+
+    |Total                                   | 111|   0|  111|          0|
+    +----------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------+-----+-----+------------+------------------+--------------+
+|      RTL Ports     | Dir | Bits|  Protocol  |   Source Object  |    C Type    |
++--------------------+-----+-----+------------+------------------+--------------+
+|ap_clk              |   in|    1|  ap_ctrl_hs|  timestamp_engine|  return value|
+|ap_rst              |   in|    1|  ap_ctrl_hs|  timestamp_engine|  return value|
+|ap_start            |   in|    1|  ap_ctrl_hs|  timestamp_engine|  return value|
+|ap_done             |  out|    1|  ap_ctrl_hs|  timestamp_engine|  return value|
+|ap_continue         |   in|    1|  ap_ctrl_hs|  timestamp_engine|  return value|
+|ap_idle             |  out|    1|  ap_ctrl_hs|  timestamp_engine|  return value|
+|ap_ready            |  out|    1|  ap_ctrl_hs|  timestamp_engine|  return value|
+|ap_return_0         |  out|   30|  ap_ctrl_hs|  timestamp_engine|  return value|
+|ap_return_1         |  out|   24|  ap_ctrl_hs|  timestamp_engine|  return value|
+|pps_dout            |   in|    1|     ap_fifo|               pps|       pointer|
+|pps_empty_n         |   in|    1|     ap_fifo|               pps|       pointer|
+|pps_read            |  out|    1|     ap_fifo|               pps|       pointer|
+|pps_num_data_valid  |   in|    3|     ap_fifo|               pps|       pointer|
+|pps_fifo_cap        |   in|    3|     ap_fifo|               pps|       pointer|
++--------------------+-----+-----+------------+------------------+--------------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 5.26>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %pps, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 3 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] ( I:3.65ns O:3.65ns )   --->   "%pps_1 = read i1 @_ssdm_op_Read.ap_fifo.i1P0A, i1 %pps" [../src/timestamp_engine.cpp:9]   --->   Operation 4 'read' 'pps_1' <Predicate = true> <Delay = 3.65> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.90> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 1> <Depth = 3> <FIFO>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%second_counter_load = load i30 %second_counter" [../src/timestamp_engine.cpp:16]   --->   Operation 5 'load' 'second_counter_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%frame_counter_load = load i24 %frame_counter" [../src/timestamp_engine.cpp:21]   --->   Operation 6 'load' 'frame_counter_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (1.61ns)   --->   "%br_ln14 = br i1 %pps_1, void %if.end, void %if.then" [../src/timestamp_engine.cpp:14]   --->   Operation 7 'br' 'br_ln14' <Predicate = true> <Delay = 1.61>
+ST_1 : Operation 8 [1/1] (2.63ns)   --->   "%add_ln16 = add i30 %second_counter_load, i30 1" [../src/timestamp_engine.cpp:16]   --->   Operation 8 'add' 'add_ln16' <Predicate = (pps_1)> <Delay = 2.63> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%store_ln16 = store i30 %add_ln16, i30 %second_counter" [../src/timestamp_engine.cpp:16]   --->   Operation 9 'store' 'store_ln16' <Predicate = (pps_1)> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (1.61ns)   --->   "%br_ln18 = br void %if.end" [../src/timestamp_engine.cpp:18]   --->   Operation 10 'br' 'br_ln18' <Predicate = (pps_1)> <Delay = 1.61>
+
+State 2 <SV = 1> <Delay = 2.42>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%seconds_from_epoch_write_assign = phi i30 %add_ln16, void %if.then, i30 %second_counter_load, void %entry" [../src/timestamp_engine.cpp:16]   --->   Operation 11 'phi' 'seconds_from_epoch_write_assign' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%frame_no_write_assign = phi i24 0, void %if.then, i24 %frame_counter_load, void %entry" [../src/timestamp_engine.cpp:21]   --->   Operation 12 'phi' 'frame_no_write_assign' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (2.42ns)   --->   "%add_ln23 = add i24 %frame_no_write_assign, i24 1" [../src/timestamp_engine.cpp:23]   --->   Operation 13 'add' 'add_ln23' <Predicate = true> <Delay = 2.42> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.42> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%store_ln17 = store i24 %add_ln23, i24 %frame_counter" [../src/timestamp_engine.cpp:17]   --->   Operation 14 'store' 'store_ln17' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%mrv = insertvalue i54 <undef>, i30 %seconds_from_epoch_write_assign" [../src/timestamp_engine.cpp:24]   --->   Operation 15 'insertvalue' 'mrv' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%mrv_1 = insertvalue i54 %mrv, i24 %frame_no_write_assign" [../src/timestamp_engine.cpp:24]   --->   Operation 16 'insertvalue' 'mrv_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%ret_ln24 = ret i54 %mrv_1" [../src/timestamp_engine.cpp:24]   --->   Operation 17 'ret' 'ret_ln24' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ pps]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ second_counter]:  wired=0; compound=0; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=1; IO mode=ap_ovld:ce=0
+Port [ frame_counter]:  wired=0; compound=0; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=1; IO mode=ap_ovld:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+specinterface_ln0               (specinterface) [ 000]
+pps_1                           (read         ) [ 010]
+second_counter_load             (load         ) [ 011]
+frame_counter_load              (load         ) [ 011]
+br_ln14                         (br           ) [ 011]
+add_ln16                        (add          ) [ 011]
+store_ln16                      (store        ) [ 000]
+br_ln18                         (br           ) [ 011]
+seconds_from_epoch_write_assign (phi          ) [ 001]
+frame_no_write_assign           (phi          ) [ 001]
+add_ln23                        (add          ) [ 000]
+store_ln17                      (store        ) [ 000]
+mrv                             (insertvalue  ) [ 000]
+mrv_1                           (insertvalue  ) [ 000]
+ret_ln24                        (ret          ) [ 000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="pps">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="pps"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="second_counter">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="second_counter"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="frame_counter">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="frame_counter"/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1001" name="const_6">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1001" name="const_8">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="ap_fifo_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1001" name="const_10">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1001" name="const_18">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="ScalarProp_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1001" name="const_20">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_fifo.i1P0A"/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1001" name="const_26">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1001" name="const_28">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1001" name="const_30">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1004" name="pps_1_read_fu_32">
+<pin_list>
+<pin id="33" dir="0" index="0" bw="1" slack="0"/>
+<pin id="34" dir="0" index="1" bw="1" slack="0"/>
+<pin id="35" dir="1" index="2" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="pps_1/1 "/>
+</bind>
+</comp>
+
+<comp id="38" class="1005" name="seconds_from_epoch_write_assign_reg_38">
+<pin_list>
+<pin id="39" dir="0" index="0" bw="30" slack="2147483647"/>
+<pin id="40" dir="1" index="1" bw="30" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="seconds_from_epoch_write_assign (phireg) "/>
+</bind>
+</comp>
+
+<comp id="41" class="1004" name="seconds_from_epoch_write_assign_phi_fu_41">
+<pin_list>
+<pin id="42" dir="0" index="0" bw="30" slack="1"/>
+<pin id="43" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="44" dir="0" index="2" bw="30" slack="1"/>
+<pin id="45" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="46" dir="1" index="4" bw="30" slack="0"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="seconds_from_epoch_write_assign/2 "/>
+</bind>
+</comp>
+
+<comp id="47" class="1005" name="frame_no_write_assign_reg_47">
+<pin_list>
+<pin id="48" dir="0" index="0" bw="24" slack="1"/>
+<pin id="49" dir="1" index="1" bw="24" slack="1"/>
+</pin_list>
+<bind>
+<opset="frame_no_write_assign (phireg) "/>
+</bind>
+</comp>
+
+<comp id="51" class="1004" name="frame_no_write_assign_phi_fu_51">
+<pin_list>
+<pin id="52" dir="0" index="0" bw="1" slack="1"/>
+<pin id="53" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="54" dir="0" index="2" bw="24" slack="2147483647"/>
+<pin id="55" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="56" dir="1" index="4" bw="24" slack="0"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="frame_no_write_assign/2 "/>
+</bind>
+</comp>
+
+<comp id="58" class="1004" name="second_counter_load_load_fu_58">
+<pin_list>
+<pin id="59" dir="0" index="0" bw="30" slack="0"/>
+<pin id="60" dir="1" index="1" bw="30" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="second_counter_load/1 "/>
+</bind>
+</comp>
+
+<comp id="62" class="1004" name="frame_counter_load_load_fu_62">
+<pin_list>
+<pin id="63" dir="0" index="0" bw="24" slack="0"/>
+<pin id="64" dir="1" index="1" bw="24" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="frame_counter_load/1 "/>
+</bind>
+</comp>
+
+<comp id="66" class="1004" name="add_ln16_fu_66">
+<pin_list>
+<pin id="67" dir="0" index="0" bw="30" slack="0"/>
+<pin id="68" dir="0" index="1" bw="1" slack="0"/>
+<pin id="69" dir="1" index="2" bw="30" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="add_ln16/1 "/>
+</bind>
+</comp>
+
+<comp id="72" class="1004" name="store_ln16_store_fu_72">
+<pin_list>
+<pin id="73" dir="0" index="0" bw="30" slack="0"/>
+<pin id="74" dir="0" index="1" bw="30" slack="0"/>
+<pin id="75" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln16/1 "/>
+</bind>
+</comp>
+
+<comp id="78" class="1004" name="add_ln23_fu_78">
+<pin_list>
+<pin id="79" dir="0" index="0" bw="24" slack="0"/>
+<pin id="80" dir="0" index="1" bw="1" slack="0"/>
+<pin id="81" dir="1" index="2" bw="24" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="add_ln23/2 "/>
+</bind>
+</comp>
+
+<comp id="84" class="1004" name="store_ln17_store_fu_84">
+<pin_list>
+<pin id="85" dir="0" index="0" bw="24" slack="0"/>
+<pin id="86" dir="0" index="1" bw="24" slack="0"/>
+<pin id="87" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln17/2 "/>
+</bind>
+</comp>
+
+<comp id="90" class="1004" name="mrv_fu_90">
+<pin_list>
+<pin id="91" dir="0" index="0" bw="54" slack="0"/>
+<pin id="92" dir="0" index="1" bw="30" slack="0"/>
+<pin id="93" dir="1" index="2" bw="54" slack="0"/>
+</pin_list>
+<bind>
+<opcode="insertvalue(57) " fcode="insertvalue"/>
+<opset="mrv/2 "/>
+</bind>
+</comp>
+
+<comp id="96" class="1004" name="mrv_1_fu_96">
+<pin_list>
+<pin id="97" dir="0" index="0" bw="54" slack="0"/>
+<pin id="98" dir="0" index="1" bw="24" slack="0"/>
+<pin id="99" dir="1" index="2" bw="54" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="insertvalue(57) " fcode="insertvalue"/>
+<opset="mrv_1/2 "/>
+</bind>
+</comp>
+
+<comp id="105" class="1005" name="second_counter_load_reg_105">
+<pin_list>
+<pin id="106" dir="0" index="0" bw="30" slack="1"/>
+<pin id="107" dir="1" index="1" bw="30" slack="1"/>
+</pin_list>
+<bind>
+<opset="second_counter_load "/>
+</bind>
+</comp>
+
+<comp id="113" class="1005" name="add_ln16_reg_113">
+<pin_list>
+<pin id="114" dir="0" index="0" bw="30" slack="1"/>
+<pin id="115" dir="1" index="1" bw="30" slack="1"/>
+</pin_list>
+<bind>
+<opset="add_ln16 "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="36"><net_src comp="22" pin="0"/><net_sink comp="32" pin=0"/></net>
+
+<net id="37"><net_src comp="0" pin="0"/><net_sink comp="32" pin=1"/></net>
+
+<net id="50"><net_src comp="26" pin="0"/><net_sink comp="47" pin=0"/></net>
+
+<net id="57"><net_src comp="47" pin="1"/><net_sink comp="51" pin=0"/></net>
+
+<net id="61"><net_src comp="2" pin="0"/><net_sink comp="58" pin=0"/></net>
+
+<net id="65"><net_src comp="4" pin="0"/><net_sink comp="62" pin=0"/></net>
+
+<net id="70"><net_src comp="58" pin="1"/><net_sink comp="66" pin=0"/></net>
+
+<net id="71"><net_src comp="24" pin="0"/><net_sink comp="66" pin=1"/></net>
+
+<net id="76"><net_src comp="66" pin="2"/><net_sink comp="72" pin=0"/></net>
+
+<net id="77"><net_src comp="2" pin="0"/><net_sink comp="72" pin=1"/></net>
+
+<net id="82"><net_src comp="51" pin="4"/><net_sink comp="78" pin=0"/></net>
+
+<net id="83"><net_src comp="28" pin="0"/><net_sink comp="78" pin=1"/></net>
+
+<net id="88"><net_src comp="78" pin="2"/><net_sink comp="84" pin=0"/></net>
+
+<net id="89"><net_src comp="4" pin="0"/><net_sink comp="84" pin=1"/></net>
+
+<net id="94"><net_src comp="30" pin="0"/><net_sink comp="90" pin=0"/></net>
+
+<net id="95"><net_src comp="41" pin="4"/><net_sink comp="90" pin=1"/></net>
+
+<net id="100"><net_src comp="90" pin="2"/><net_sink comp="96" pin=0"/></net>
+
+<net id="101"><net_src comp="51" pin="4"/><net_sink comp="96" pin=1"/></net>
+
+<net id="108"><net_src comp="58" pin="1"/><net_sink comp="105" pin=0"/></net>
+
+<net id="109"><net_src comp="105" pin="1"/><net_sink comp="41" pin=2"/></net>
+
+<net id="116"><net_src comp="66" pin="2"/><net_sink comp="113" pin=0"/></net>
+
+<net id="117"><net_src comp="113" pin="1"/><net_sink comp="41" pin=0"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: pps | {}
+	Port: second_counter | {1 }
+	Port: frame_counter | {2 }
+ - Input state : 
+	Port: timestamp_engine : pps | {1 }
+	Port: timestamp_engine : second_counter | {1 }
+	Port: timestamp_engine : frame_counter | {1 }
+  - Chain level:
+	State 1
+		add_ln16 : 1
+		store_ln16 : 2
+	State 2
+		add_ln23 : 1
+		store_ln17 : 2
+		mrv : 1
+		mrv_1 : 2
+		ret_ln24 : 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|------------------|---------|---------|
+| Operation|  Functional Unit |    FF   |   LUT   |
+|----------|------------------|---------|---------|
+|    add   |  add_ln16_fu_66  |    0    |    37   |
+|          |  add_ln23_fu_78  |    0    |    31   |
+|----------|------------------|---------|---------|
+|   read   | pps_1_read_fu_32 |    0    |    0    |
+|----------|------------------|---------|---------|
+|insertvalue|     mrv_fu_90    |    0    |    0    |
+|          |    mrv_1_fu_96   |    0    |    0    |
+|----------|------------------|---------|---------|
+|   Total  |                  |    0    |    68   |
+|----------|------------------|---------|---------|
+
+Memories:
+N/A
+
+* Register list:
++--------------------------------------+--------+
+|                                      |   FF   |
++--------------------------------------+--------+
+|           add_ln16_reg_113           |   30   |
+|     frame_no_write_assign_reg_47     |   24   |
+|      second_counter_load_reg_105     |   30   |
+|seconds_from_epoch_write_assign_reg_38|   30   |
++--------------------------------------+--------+
+|                 Total                |   114  |
++--------------------------------------+--------+
+
+* Multiplexer (MUX) list: 
+|--------|------|------|------|--------|
+|  Comp  |  Pin | Size |  BW  | S x BW |
+|--------|------|------|------|--------|
+|  Total |      |      |      |    0   |
+|--------|------|------|------|--------|
+
+
+
+* Summary:
++-----------+--------+--------+
+|           |   FF   |   LUT  |
++-----------+--------+--------+
+|  Function |    0   |   68   |
+|   Memory  |    -   |    -   |
+|Multiplexer|    -   |    -   |
+|  Register |   114  |    -   |
++-----------+--------+--------+
+|   Total   |   114  |   68   |
++-----------+--------+--------+

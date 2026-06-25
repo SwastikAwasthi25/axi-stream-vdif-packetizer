@@ -1,33 +1,181 @@
 {
   "0": {
-    "basicblocks": 16,
-    "calls": "1",
+    "basicblocks": 4,
+    "calls": "7 4 5",
     "control_depth": 0,
     "def_use_depth": 3,
     "file": "vdif_chain.cpp",
-    "fileloc": 33,
-    "instructions": 80,
-    "memory_accesses": 3,
+    "fileloc": 37,
+    "instructions": 49,
+    "memory_accesses": 0,
     "name": "vdif_chain",
-    "total_instructions": 342
+    "total_instructions": 305
   },
   "1": {
-    "basicblocks": 9,
+    "basicblocks": 6,
     "calls": "",
     "control_depth": 0,
-    "def_use_depth": 7,
+    "def_use_depth": 1,
+    "file": "packet_fsm.cpp",
+    "fileloc": 10,
+    "instructions": 11,
+    "memory_accesses": 0,
+    "name": "packet_fsm",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 11
+  },
+  "10": {
+    "basicblocks": 4,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 5,
+    "file": "write_payload.cpp",
+    "fileloc": 7,
+    "instructions": 40,
+    "memory_accesses": 6,
+    "name": "write_payload",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 40
+  },
+  "11": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 5,
+    "file": "header_generator.cpp",
+    "fileloc": 3,
+    "instructions": 38,
+    "memory_accesses": 0,
+    "name": "header_generator",
+    "stores": {
+      "L": 8
+    },
+    "total_instructions": 38
+  },
+  "2": {
+    "basicblocks": 4,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "read_payload.cpp",
+    "fileloc": 4,
+    "instructions": 11,
+    "memory_accesses": 2,
+    "name": "read_payload",
+    "total_instructions": 11
+  },
+  "3": {
+    "basicblocks": 6,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "packet_fsm.cpp",
+    "fileloc": 10,
+    "instructions": 11,
+    "memory_accesses": 0,
+    "name": "packet_fsm",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 11
+  },
+  "4": {
+    "basicblocks": 1,
+    "calls": "8 3 11 2 6 9 10 1",
+    "control_depth": 0,
+    "def_use_depth": 2,
     "file": "packetizer2.cpp",
-    "fileloc": 139,
-    "instructions": 262,
+    "fileloc": 48,
+    "instructions": 34,
+    "loads": {
+      "G": 3,
+      "L": 5
+    },
+    "memory_accesses": 0,
+    "name": "packetizer",
+    "stores": {
+      "G": 3
+    },
+    "total_instructions": 204
+  },
+  "5": {
+    "basicblocks": 4,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "vdif_chain.cpp",
+    "fileloc": 0,
+    "instructions": 13,
+    "memory_accesses": 1,
+    "name": "_Z10vdif_chainRN3hls6streamI7ap_uintILi8EELi0EEERNS0_INS_4axisIS1_ILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEES1_ILi6EES1_ILi16EES1_ILi10EES1_ILi5EES1_ILi1EESE_SB__",
+    "total_instructions": 13
+  },
+  "6": {
+    "basicblocks": 3,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 4,
+    "file": "write_header.cpp",
+    "fileloc": 7,
+    "instructions": 31,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 6,
+    "name": "write_header",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 31
+  },
+  "7": {
+    "basicblocks": 13,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "sample_packer.cpp",
+    "fileloc": 4,
+    "instructions": 39,
+    "memory_accesses": 3,
+    "name": "sample_packer",
+    "total_instructions": 39
+  },
+  "8": {
+    "basicblocks": 3,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 2,
+    "file": "timestamp_engine.cpp",
+    "fileloc": 3,
+    "instructions": 17,
     "loads": {
       "G": 3
     },
-    "memory_accesses": 8,
-    "name": "packetizer",
+    "memory_accesses": 0,
+    "name": "timestamp_engine",
     "stores": {
       "G": 3,
-      "L": 36
+      "L": 2
     },
-    "total_instructions": 262
+    "total_instructions": 17
+  },
+  "9": {
+    "basicblocks": 6,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "packet_fsm.cpp",
+    "fileloc": 10,
+    "instructions": 11,
+    "memory_accesses": 0,
+    "name": "packet_fsm",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 11
   }
 }

@@ -1,0 +1,134 @@
+[
+  {
+    "directory": "D:\\IITK\\project_1\\hls_component3",
+    "arguments": [
+      "D:\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=D:\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls",
+      "-hls-syn-headers-dir=D:\\2025.2\\Vitis\\common\\technology\\autopilot",
+      "-c",
+      "D:\\IITK\\project_1\\src\\header_generator.cpp"
+    ],
+    "file": "D:\\IITK\\project_1\\src\\header_generator.cpp"
+  },
+  {
+    "directory": "D:\\IITK\\project_1\\hls_component3",
+    "arguments": [
+      "D:\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=D:\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls",
+      "-hls-syn-headers-dir=D:\\2025.2\\Vitis\\common\\technology\\autopilot",
+      "-c",
+      "D:\\IITK\\project_1\\src\\packetizer2.cpp"
+    ],
+    "file": "D:\\IITK\\project_1\\src\\packetizer2.cpp"
+  },
+  {
+    "directory": "D:\\IITK\\project_1\\hls_component3",
+    "arguments": [
+      "D:\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=D:\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls",
+      "-hls-syn-headers-dir=D:\\2025.2\\Vitis\\common\\technology\\autopilot",
+      "-c",
+      "D:\\IITK\\project_1\\src\\sample_packer\\sample_packer.cpp"
+    ],
+    "file": "D:\\IITK\\project_1\\src\\sample_packer\\sample_packer.cpp"
+  },
+  {
+    "directory": "D:\\IITK\\project_1\\hls_component3",
+    "arguments": [
+      "D:\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=D:\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls",
+      "-hls-syn-headers-dir=D:\\2025.2\\Vitis\\common\\technology\\autopilot",
+      "-c",
+      "D:\\IITK\\project_1\\src\\write_payload.cpp"
+    ],
+    "file": "D:\\IITK\\project_1\\src\\write_payload.cpp"
+  },
+  {
+    "directory": "D:\\IITK\\project_1\\hls_component3",
+    "arguments": [
+      "D:\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=D:\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls",
+      "-hls-syn-headers-dir=D:\\2025.2\\Vitis\\common\\technology\\autopilot",
+      "-c",
+      "D:\\IITK\\project_1\\src\\vdif_chain.cpp"
+    ],
+    "file": "D:\\IITK\\project_1\\src\\vdif_chain.cpp"
+  },
+  {
+    "directory": "D:\\IITK\\project_1\\hls_component3",
+    "arguments": [
+      "D:\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=D:\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls",
+      "-hls-syn-headers-dir=D:\\2025.2\\Vitis\\common\\technology\\autopilot",
+      "-c",
+      "D:\\IITK\\project_1\\src\\timestamp_engine.cpp"
+    ],
+    "file": "D:\\IITK\\project_1\\src\\timestamp_engine.cpp"
+  },
+  {
+    "directory": "D:\\IITK\\project_1\\hls_component3",
+    "arguments": [
+      "D:\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=D:\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls",
+      "-hls-syn-headers-dir=D:\\2025.2\\Vitis\\common\\technology\\autopilot",
+      "-c",
+      "D:\\IITK\\project_1\\src\\read_payload.cpp"
+    ],
+    "file": "D:\\IITK\\project_1\\src\\read_payload.cpp"
+  },
+  {
+    "directory": "D:\\IITK\\project_1\\hls_component3",
+    "arguments": [
+      "D:\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=D:\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls",
+      "-hls-syn-headers-dir=D:\\2025.2\\Vitis\\common\\technology\\autopilot",
+      "-c",
+      "D:\\IITK\\project_1\\src\\packet_fsm.cpp"
+    ],
+    "file": "D:\\IITK\\project_1\\src\\packet_fsm.cpp"
+  },
+  {
+    "directory": "D:\\IITK\\project_1\\hls_component3",
+    "arguments": [
+      "D:\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=D:\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls",
+      "-hls-syn-headers-dir=D:\\2025.2\\Vitis\\common\\technology\\autopilot",
+      "-c",
+      "D:\\IITK\\project_1\\src\\write_header.cpp"
+    ],
+    "file": "D:\\IITK\\project_1\\src\\write_header.cpp"
+  },
+  {
+    "directory": "D:\\IITK\\project_1\\hls_component3",
+    "arguments": [
+      "D:\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=D:\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls",
+      "-hls-syn-headers-dir=D:\\2025.2\\Vitis\\common\\technology\\autopilot",
+      "-c",
+      "D:\\IITK\\project_1\\testbench\\integration\\golden_model.cpp"
+    ],
+    "file": "D:\\IITK\\project_1\\testbench\\integration\\golden_model.cpp"
+  },
+  {
+    "directory": "D:\\IITK\\project_1\\hls_component3",
+    "arguments": [
+      "D:\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=D:\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls-tb",
+      "-hls-sim-headers-dir=D:\\2025.2\\Vitis\\include",
+      "-c",
+      "D:\\IITK\\project_1\\testbench\\integration_tb.cpp"
+    ],
+    "file": "D:\\IITK\\project_1\\testbench\\integration_tb.cpp"
+  }
+]

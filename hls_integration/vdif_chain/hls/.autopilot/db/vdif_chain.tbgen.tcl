@@ -3,9 +3,9 @@ set isTopModule 1
 set isCombinational 0
 set isDatapathOnly 0
 set isPipelined 1
-set isPipelined_legacy 0
-set pipeline_type none
-set FunctionProtocol ap_ctrl_none
+set isPipelined_legacy 1
+set pipeline_type dataflow
+set FunctionProtocol ap_ctrl_hs
 set restart_counter_num 0
 set isOneStateSeq 0
 set ProfileFlag 0
@@ -15,7 +15,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 9
+set cdfgNum 24
 set C_modelName {vdif_chain}
 set C_modelType { void 0 }
 set ap_memory_interface_dict [dict create]
@@ -50,16 +50,10 @@ set C_modelArgMapList {[
  	{ "Name" : "pps", "interface" : "wire", "bitwidth" : 1, "direction" : "READONLY"} , 
  	{ "Name" : "payload_words", "interface" : "wire", "bitwidth" : 16, "direction" : "READONLY"} ]}
 # RTL Port declarations: 
-set portNum 18
+set portNum 22
 set portList { 
-	{ ap_clk sc_in sc_logic 1 clock -1 } 
-	{ ap_rst_n sc_in sc_logic 1 reset -1 active_low_sync } 
 	{ adc_in_TDATA sc_in sc_lv 8 signal 0 } 
-	{ adc_in_TVALID sc_in sc_logic 1 invld 0 } 
-	{ adc_in_TREADY sc_out sc_logic 1 inacc 0 } 
 	{ out_stream_TDATA sc_out sc_lv 32 signal 1 } 
-	{ out_stream_TVALID sc_out sc_logic 1 outvld 4 } 
-	{ out_stream_TREADY sc_in sc_logic 1 outacc 4 } 
 	{ out_stream_TKEEP sc_out sc_lv 4 signal 2 } 
 	{ out_stream_TSTRB sc_out sc_lv 4 signal 3 } 
 	{ out_stream_TLAST sc_out sc_lv 1 signal 4 } 
@@ -70,16 +64,20 @@ set portList {
 	{ complex_data sc_in sc_lv 1 signal 9 } 
 	{ pps sc_in sc_lv 1 signal 10 } 
 	{ payload_words sc_in sc_lv 16 signal 11 } 
+	{ ap_clk sc_in sc_logic 1 clock -1 } 
+	{ ap_rst_n sc_in sc_logic 1 reset -1 active_low_sync } 
+	{ ap_start sc_in sc_logic 1 start -1 } 
+	{ adc_in_TVALID sc_in sc_logic 1 invld 0 } 
+	{ adc_in_TREADY sc_out sc_logic 1 inacc 0 } 
+	{ out_stream_TVALID sc_out sc_logic 1 outvld 4 } 
+	{ out_stream_TREADY sc_in sc_logic 1 outacc 4 } 
+	{ ap_done sc_out sc_logic 1 predone -1 } 
+	{ ap_ready sc_out sc_logic 1 ready -1 } 
+	{ ap_idle sc_out sc_logic 1 done -1 } 
 }
 set NewPortList {[ 
-	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
- 	{ "name": "ap_rst_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "reset", "bundle":{"name": "ap_rst_n", "role": "default" }} , 
- 	{ "name": "adc_in_TDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "adc_in", "role": "TDATA" }} , 
- 	{ "name": "adc_in_TVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "invld", "bundle":{"name": "adc_in", "role": "TVALID" }} , 
- 	{ "name": "adc_in_TREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "inacc", "bundle":{"name": "adc_in", "role": "TREADY" }} , 
+	{ "name": "adc_in_TDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "adc_in", "role": "TDATA" }} , 
  	{ "name": "out_stream_TDATA", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "out_stream_V_data_V", "role": "default" }} , 
- 	{ "name": "out_stream_TVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "out_stream_V_last_V", "role": "default" }} , 
- 	{ "name": "out_stream_TREADY", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "outacc", "bundle":{"name": "out_stream_V_last_V", "role": "default" }} , 
  	{ "name": "out_stream_TKEEP", "direction": "out", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "out_stream_V_keep_V", "role": "default" }} , 
  	{ "name": "out_stream_TSTRB", "direction": "out", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "out_stream_V_strb_V", "role": "default" }} , 
  	{ "name": "out_stream_TLAST", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "out_stream_V_last_V", "role": "default" }} , 
@@ -89,39 +87,74 @@ set NewPortList {[
  	{ "name": "bits_per_sample", "direction": "in", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "bits_per_sample", "role": "default" }} , 
  	{ "name": "complex_data", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "complex_data", "role": "default" }} , 
  	{ "name": "pps", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "pps", "role": "default" }} , 
- 	{ "name": "payload_words", "direction": "in", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "payload_words", "role": "default" }}  ]}
+ 	{ "name": "payload_words", "direction": "in", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "payload_words", "role": "default" }} , 
+ 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
+ 	{ "name": "ap_rst_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "reset", "bundle":{"name": "ap_rst_n", "role": "default" }} , 
+ 	{ "name": "ap_start", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "start", "bundle":{"name": "ap_start", "role": "default" }} , 
+ 	{ "name": "adc_in_TVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "invld", "bundle":{"name": "adc_in", "role": "TVALID" }} , 
+ 	{ "name": "adc_in_TREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "inacc", "bundle":{"name": "adc_in", "role": "TREADY" }} , 
+ 	{ "name": "out_stream_TVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "out_stream_V_last_V", "role": "default" }} , 
+ 	{ "name": "out_stream_TREADY", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "outacc", "bundle":{"name": "out_stream_V_last_V", "role": "default" }} , 
+ 	{ "name": "ap_done", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "predone", "bundle":{"name": "ap_done", "role": "default" }} , 
+ 	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
+ 	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }}  ]}
 
 set ArgLastReadFirstWriteLatency {
 	vdif_chain {
 		adc_in {Type I LastRead 1 FirstWrite -1}
-		out_stream_V_data_V {Type O LastRead -1 FirstWrite 0}
-		out_stream_V_keep_V {Type O LastRead -1 FirstWrite 0}
-		out_stream_V_strb_V {Type O LastRead -1 FirstWrite 0}
-		out_stream_V_last_V {Type O LastRead -1 FirstWrite 0}
+		out_stream_V_data_V {Type O LastRead -1 FirstWrite 1}
+		out_stream_V_keep_V {Type O LastRead -1 FirstWrite 1}
+		out_stream_V_strb_V {Type O LastRead -1 FirstWrite 1}
+		out_stream_V_last_V {Type O LastRead -1 FirstWrite 1}
+		epoch {Type I LastRead 2 FirstWrite -1}
+		station_id {Type I LastRead 2 FirstWrite -1}
+		thread_id {Type I LastRead 2 FirstWrite -1}
+		bits_per_sample {Type I LastRead 1 FirstWrite -1}
+		complex_data {Type I LastRead 2 FirstWrite -1}
+		pps {Type I LastRead 2 FirstWrite -1}
+		payload_words {Type I LastRead 1 FirstWrite -1}
+		second_counter {Type IO LastRead -1 FirstWrite -1}
+		frame_counter {Type IO LastRead -1 FirstWrite -1}
+		fsm_state {Type IO LastRead -1 FirstWrite -1}}
+	entry_proc7 {
 		epoch {Type I LastRead 0 FirstWrite -1}
+		epoch_c {Type O LastRead -1 FirstWrite 0}
 		station_id {Type I LastRead 0 FirstWrite -1}
+		station_id_c {Type O LastRead -1 FirstWrite 0}
 		thread_id {Type I LastRead 0 FirstWrite -1}
-		bits_per_sample {Type I LastRead 0 FirstWrite -1}
+		thread_id_c {Type O LastRead -1 FirstWrite 0}
 		complex_data {Type I LastRead 0 FirstWrite -1}
+		complex_data_c {Type O LastRead -1 FirstWrite 0}
 		pps {Type I LastRead 0 FirstWrite -1}
+		pps_c {Type O LastRead -1 FirstWrite 0}}
+	Loop_VITIS_LOOP_79_1_proc {
 		payload_words {Type I LastRead 0 FirstWrite -1}
-		seconds_from_epoch {Type IO LastRead -1 FirstWrite -1}
-		frame_no {Type IO LastRead -1 FirstWrite -1}}
-	vdif_chain_Pipeline_VITIS_LOOP_46_3 {
+		adc_in {Type I LastRead 1 FirstWrite -1}
+		bits_per_sample {Type I LastRead 0 FirstWrite -1}
+		packetizer_in {Type O LastRead -1 FirstWrite 3}
+		bram_stream {Type O LastRead -1 FirstWrite 3}
+		bits_per_sample_c {Type O LastRead -1 FirstWrite 0}
+		payload_words_c {Type O LastRead -1 FirstWrite 0}
+		payload_words_c1 {Type O LastRead -1 FirstWrite 0}}
+	sample_packer {
+		adc_in {Type I LastRead 1 FirstWrite -1}
+		packed_stream {Type O LastRead -1 FirstWrite 2}
+		bits_per_sample {Type I LastRead 0 FirstWrite -1}}
+	sample_packer_Pipeline_VITIS_LOOP_47_3 {
 		adc_in {Type I LastRead 1 FirstWrite -1}
 		word_4_out {Type O LastRead -1 FirstWrite 0}}
-	vdif_chain_Pipeline_VITIS_LOOP_33_2 {
+	sample_packer_Pipeline_VITIS_LOOP_34_2 {
 		adc_in {Type I LastRead 1 FirstWrite -1}
 		word_2_out {Type O LastRead -1 FirstWrite 0}}
-	vdif_chain_Pipeline_VITIS_LOOP_20_1 {
+	sample_packer_Pipeline_VITIS_LOOP_21_1 {
 		adc_in {Type I LastRead 1 FirstWrite -1}
 		word_out {Type O LastRead -1 FirstWrite 0}}
 	packetizer {
 		packetizer_in {Type I LastRead 1 FirstWrite -1}
-		out_stream_V_data_V {Type O LastRead -1 FirstWrite 0}
-		out_stream_V_keep_V {Type O LastRead -1 FirstWrite 0}
-		out_stream_V_strb_V {Type O LastRead -1 FirstWrite 0}
-		out_stream_V_last_V {Type O LastRead -1 FirstWrite 0}
+		out_stream_V_data_V {Type O LastRead -1 FirstWrite 1}
+		out_stream_V_keep_V {Type O LastRead -1 FirstWrite 1}
+		out_stream_V_strb_V {Type O LastRead -1 FirstWrite 1}
+		out_stream_V_last_V {Type O LastRead -1 FirstWrite 1}
 		epoch {Type I LastRead 0 FirstWrite -1}
 		station_id {Type I LastRead 0 FirstWrite -1}
 		thread_id {Type I LastRead 0 FirstWrite -1}
@@ -129,26 +162,90 @@ set ArgLastReadFirstWriteLatency {
 		complex_data {Type I LastRead 0 FirstWrite -1}
 		pps {Type I LastRead 0 FirstWrite -1}
 		payload_words {Type I LastRead 0 FirstWrite -1}
-		seconds_from_epoch {Type IO LastRead -1 FirstWrite -1}
-		frame_no {Type IO LastRead -1 FirstWrite -1}}
-	packetizer_Pipeline_VITIS_LOOP_194_1 {
+		second_counter {Type IO LastRead -1 FirstWrite -1}
+		frame_counter {Type IO LastRead -1 FirstWrite -1}
+		fsm_state {Type IO LastRead -1 FirstWrite -1}}
+	entry_proc {
+		return_r {Type O LastRead -1 FirstWrite 0}
+		epoch {Type I LastRead 0 FirstWrite -1}
+		epoch_c {Type O LastRead -1 FirstWrite 0}
+		station_id {Type I LastRead 0 FirstWrite -1}
+		station_id_c {Type O LastRead -1 FirstWrite 0}
+		thread_id {Type I LastRead 0 FirstWrite -1}
+		thread_id_c {Type O LastRead -1 FirstWrite 0}
+		bits_per_sample {Type I LastRead 0 FirstWrite -1}
+		bits_per_sample_c {Type O LastRead -1 FirstWrite 0}
+		complex_data {Type I LastRead 0 FirstWrite -1}
+		complex_data_c {Type O LastRead -1 FirstWrite 0}
 		payload_words {Type I LastRead 0 FirstWrite -1}
+		payload_words_c1 {Type O LastRead -1 FirstWrite 0}}
+	timestamp_engine {
+		pps {Type I LastRead 0 FirstWrite -1}
+		second_counter {Type IO LastRead -1 FirstWrite -1}
+		frame_counter {Type IO LastRead -1 FirstWrite -1}}
+	packetizer_Block_entry_fsm_state_fb_proc {
+		fsm_state {Type IO LastRead -1 FirstWrite -1}}
+	packet_fsm_1 {
+		current_state {Type I LastRead 0 FirstWrite -1}}
+	packet_fsm_2 {
+		current_state {Type I LastRead 0 FirstWrite -1}}
+	packet_fsm {
+		current_state {Type I LastRead 0 FirstWrite -1}}
+	header_generator {
+		p_read {Type I LastRead 0 FirstWrite -1}
+		p_read1 {Type I LastRead 0 FirstWrite -1}
+		epoch {Type I LastRead 0 FirstWrite -1}
+		station_id {Type I LastRead 0 FirstWrite -1}
+		thread_id {Type I LastRead 0 FirstWrite -1}
+		bits_per_sample {Type I LastRead 0 FirstWrite -1}
+		complex_data {Type I LastRead 0 FirstWrite -1}
+		payload_words {Type I LastRead 0 FirstWrite -1}
+		header {Type O LastRead -1 FirstWrite 0}}
+	read_payload {
 		packetizer_in {Type I LastRead 1 FirstWrite -1}
-		fifo {Type O LastRead -1 FirstWrite 1}}
-	packetizer_Pipeline_VITIS_LOOP_273_2 {
-		payload_words {Type I LastRead 0 FirstWrite -1}
-		fifo {Type I LastRead 1 FirstWrite -1}
-		add_ln279 {Type I LastRead 0 FirstWrite -1}
+		fifo {Type O LastRead -1 FirstWrite 1}
+		payload_words {Type I LastRead 0 FirstWrite -1}}
+	packetizer_Block_entry_out_stream_V_data_V_wr_proc {
+		header {Type I LastRead 0 FirstWrite -1}
 		out_stream_V_data_V {Type O LastRead -1 FirstWrite 1}
 		out_stream_V_keep_V {Type O LastRead -1 FirstWrite 1}
 		out_stream_V_strb_V {Type O LastRead -1 FirstWrite 1}
-		out_stream_V_last_V {Type O LastRead -1 FirstWrite 1}}}
+		out_stream_V_last_V {Type O LastRead -1 FirstWrite 1}
+		fifo {Type I LastRead 1 FirstWrite -1}
+		p_read {Type I LastRead 1 FirstWrite -1}}
+	write_header {
+		header {Type I LastRead 0 FirstWrite -1}
+		out_stream_V_data_V {Type O LastRead -1 FirstWrite 1}
+		out_stream_V_keep_V {Type O LastRead -1 FirstWrite 1}
+		out_stream_V_strb_V {Type O LastRead -1 FirstWrite 1}
+		out_stream_V_last_V {Type O LastRead -1 FirstWrite 1}}
+	write_payload {
+		fifo {Type I LastRead 1 FirstWrite -1}
+		out_stream_V_data_V {Type O LastRead -1 FirstWrite 1}
+		out_stream_V_keep_V {Type O LastRead -1 FirstWrite 1}
+		out_stream_V_strb_V {Type O LastRead -1 FirstWrite 1}
+		out_stream_V_last_V {Type O LastRead -1 FirstWrite 1}
+		payload_words {Type I LastRead 0 FirstWrite -1}}
+	write_payload_Pipeline_VITIS_LOOP_16_1 {
+		payload_words {Type I LastRead 0 FirstWrite -1}
+		fifo {Type I LastRead 1 FirstWrite -1}
+		add_ln22 {Type I LastRead 0 FirstWrite -1}
+		out_stream_V_data_V {Type O LastRead -1 FirstWrite 1}
+		out_stream_V_keep_V {Type O LastRead -1 FirstWrite 1}
+		out_stream_V_strb_V {Type O LastRead -1 FirstWrite 1}
+		out_stream_V_last_V {Type O LastRead -1 FirstWrite 1}}
+	axis_bram_writer {
+		bram_stream {Type I LastRead 1 FirstWrite -1}
+		payload_words_0_0_0 {Type I LastRead 0 FirstWrite -1}}
+	axis_bram_writer_Pipeline_VITIS_LOOP_15_1 {
+		payload_words {Type I LastRead 0 FirstWrite -1}
+		bram_stream {Type I LastRead 1 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "16", "Max" : "1572856"}
-	, {"Name" : "Interval", "Min" : "17", "Max" : "1572857"}
+	{"Name" : "Latency", "Min" : "1028", "Max" : "1507306"}
+	, {"Name" : "Interval", "Min" : "1025", "Max" : "1507307"}
 ]}
 
 set PipelineEnableSignalInfo {[
@@ -159,7 +256,7 @@ set Spec2ImplPortList {
 	out_stream_V_data_V { axis {  { out_stream_TDATA out_data 1 32 } } }
 	out_stream_V_keep_V { axis {  { out_stream_TKEEP out_data 1 4 } } }
 	out_stream_V_strb_V { axis {  { out_stream_TSTRB out_data 1 4 } } }
-	out_stream_V_last_V { axis {  { out_stream_TVALID out_vld 1 1 }  { out_stream_TREADY out_acc 0 1 }  { out_stream_TLAST out_data 1 1 } } }
+	out_stream_V_last_V { axis {  { out_stream_TLAST out_data 1 1 }  { out_stream_TVALID out_vld 1 1 }  { out_stream_TREADY out_acc 0 1 } } }
 	epoch { ap_none {  { epoch in_data 0 6 } } }
 	station_id { ap_none {  { station_id in_data 0 16 } } }
 	thread_id { ap_none {  { thread_id in_data 0 10 } } }

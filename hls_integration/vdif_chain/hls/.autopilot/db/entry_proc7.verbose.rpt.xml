@@ -1,0 +1,151 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'entry_proc7'" level="0">
+<item name = "Date">Wed Jun 24 16:57:23 2026
+</item>
+<item name = "Version">2025.2 (Build 6295257 on Nov 14 2025)</item>
+<item name = "Project">vdif_chain</item>
+<item name = "Solution">hls (Vivado IP Flow Target)</item>
+<item name = "Product family">artix7</item>
+<item name = "Target device">xc7a12t-cpg238-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 3.650 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">0, 0, 0 ns, 0 ns, 0, 0, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 2, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, -, -, -, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, 0, 63, -</column>
+<column name="Register">-, -, 3, -, -</column>
+<specialColumn name="Available">40, 40, 16000, 8000, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_done">9, 2, 1, 2</column>
+<column name="complex_data_c_blk_n">9, 2, 1, 2</column>
+<column name="epoch_c_blk_n">9, 2, 1, 2</column>
+<column name="pps_c_blk_n">9, 2, 1, 2</column>
+<column name="real_start">9, 2, 1, 2</column>
+<column name="station_id_c_blk_n">9, 2, 1, 2</column>
+<column name="thread_id_c_blk_n">9, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">1, 0, 1, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="start_once_reg">1, 0, 1, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, entry_proc7, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, entry_proc7, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, entry_proc7, return value</column>
+<column name="start_full_n">in, 1, ap_ctrl_hs, entry_proc7, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, entry_proc7, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, entry_proc7, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, entry_proc7, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, entry_proc7, return value</column>
+<column name="start_out">out, 1, ap_ctrl_hs, entry_proc7, return value</column>
+<column name="start_write">out, 1, ap_ctrl_hs, entry_proc7, return value</column>
+<column name="epoch">in, 6, ap_none, epoch, scalar</column>
+<column name="epoch_c_din">out, 6, ap_fifo, epoch_c, pointer</column>
+<column name="epoch_c_full_n">in, 1, ap_fifo, epoch_c, pointer</column>
+<column name="epoch_c_write">out, 1, ap_fifo, epoch_c, pointer</column>
+<column name="epoch_c_num_data_valid">in, 3, ap_fifo, epoch_c, pointer</column>
+<column name="epoch_c_fifo_cap">in, 3, ap_fifo, epoch_c, pointer</column>
+<column name="station_id">in, 16, ap_none, station_id, scalar</column>
+<column name="station_id_c_din">out, 16, ap_fifo, station_id_c, pointer</column>
+<column name="station_id_c_full_n">in, 1, ap_fifo, station_id_c, pointer</column>
+<column name="station_id_c_write">out, 1, ap_fifo, station_id_c, pointer</column>
+<column name="station_id_c_num_data_valid">in, 3, ap_fifo, station_id_c, pointer</column>
+<column name="station_id_c_fifo_cap">in, 3, ap_fifo, station_id_c, pointer</column>
+<column name="thread_id">in, 10, ap_none, thread_id, scalar</column>
+<column name="thread_id_c_din">out, 10, ap_fifo, thread_id_c, pointer</column>
+<column name="thread_id_c_full_n">in, 1, ap_fifo, thread_id_c, pointer</column>
+<column name="thread_id_c_write">out, 1, ap_fifo, thread_id_c, pointer</column>
+<column name="thread_id_c_num_data_valid">in, 3, ap_fifo, thread_id_c, pointer</column>
+<column name="thread_id_c_fifo_cap">in, 3, ap_fifo, thread_id_c, pointer</column>
+<column name="complex_data">in, 1, ap_none, complex_data, scalar</column>
+<column name="complex_data_c_din">out, 1, ap_fifo, complex_data_c, pointer</column>
+<column name="complex_data_c_full_n">in, 1, ap_fifo, complex_data_c, pointer</column>
+<column name="complex_data_c_write">out, 1, ap_fifo, complex_data_c, pointer</column>
+<column name="complex_data_c_num_data_valid">in, 3, ap_fifo, complex_data_c, pointer</column>
+<column name="complex_data_c_fifo_cap">in, 3, ap_fifo, complex_data_c, pointer</column>
+<column name="pps">in, 1, ap_none, pps, scalar</column>
+<column name="pps_c_din">out, 1, ap_fifo, pps_c, pointer</column>
+<column name="pps_c_full_n">in, 1, ap_fifo, pps_c, pointer</column>
+<column name="pps_c_write">out, 1, ap_fifo, pps_c, pointer</column>
+<column name="pps_c_num_data_valid">in, 3, ap_fifo, pps_c, pointer</column>
+<column name="pps_c_fifo_cap">in, 3, ap_fifo, pps_c, pointer</column>
+</table>
+</item>
+</section>
+</profile>

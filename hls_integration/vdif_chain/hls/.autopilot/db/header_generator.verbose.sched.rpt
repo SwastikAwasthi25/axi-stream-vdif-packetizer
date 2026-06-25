@@ -1,0 +1,180 @@
+
+
+================================================================
+== Vitis HLS Report for 'header_generator'
+================================================================
+* Date:           Wed Jun 24 16:57:17 2026
+
+* Version:        2025.2 (Build 6295257 on Nov 14 2025)
+* Project:        vdif_chain
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: artix7
+* Target device:  xc7a12t-cpg238-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  5.814 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        3|        3|  30.000 ns|  30.000 ns|    3|    3|       no|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 5.80>
+ST_1 : Operation 5 [1/1] (3.65ns)   --->   "%p_read_2 = read i24 @_ssdm_op_Read.ap_auto.i24, i24 %p_read1"   --->   Operation 5 'read' 'p_read_2' <Predicate = true> <Delay = 3.65> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.90> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 24> <Depth = 2> <FIFO>
+ST_1 : Operation 6 [1/1] (3.65ns)   --->   "%p_read_3 = read i30 @_ssdm_op_Read.ap_auto.i30, i30 %p_read"   --->   Operation 6 'read' 'p_read_3' <Predicate = true> <Delay = 3.65> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.90> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 30> <Depth = 2> <FIFO>
+ST_1 : Operation 7 [1/1] ( I:3.65ns O:3.65ns )   --->   "%payload_words_1 = read i16 @_ssdm_op_Read.ap_fifo.i16P0A, i16 %payload_words"   --->   Operation 7 'read' 'payload_words_1' <Predicate = true> <Delay = 3.65> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.90> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 3> <FIFO>
+ST_1 : Operation 8 [1/1] ( I:3.65ns O:3.65ns )   --->   "%complex_data_1 = read i1 @_ssdm_op_Read.ap_fifo.i1P0A, i1 %complex_data"   --->   Operation 8 'read' 'complex_data_1' <Predicate = true> <Delay = 3.65> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.90> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 1> <Depth = 3> <FIFO>
+ST_1 : Operation 9 [1/1] ( I:3.65ns O:3.65ns )   --->   "%bits_per_sample_1 = read i5 @_ssdm_op_Read.ap_fifo.i5P0A, i5 %bits_per_sample"   --->   Operation 9 'read' 'bits_per_sample_1' <Predicate = true> <Delay = 3.65> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.90> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 5> <Depth = 3> <FIFO>
+ST_1 : Operation 10 [1/1] ( I:3.65ns O:3.65ns )   --->   "%thread_id_1 = read i10 @_ssdm_op_Read.ap_fifo.i10P0A, i10 %thread_id"   --->   Operation 10 'read' 'thread_id_1' <Predicate = true> <Delay = 3.65> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.90> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 3> <FIFO>
+ST_1 : Operation 11 [1/1] ( I:3.65ns O:3.65ns )   --->   "%station_id_1 = read i16 @_ssdm_op_Read.ap_fifo.i16P0A, i16 %station_id"   --->   Operation 11 'read' 'station_id_1' <Predicate = true> <Delay = 3.65> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.90> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 3> <FIFO>
+ST_1 : Operation 12 [1/1] ( I:3.65ns O:3.65ns )   --->   "%epoch_1 = read i6 @_ssdm_op_Read.ap_fifo.i6P0A, i6 %epoch" [../src/packetizer2.cpp:124]   --->   Operation 12 'read' 'epoch_1' <Predicate = true> <Delay = 3.65> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.90> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 6> <Depth = 3> <FIFO>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%header_addr = getelementptr i32 %header, i64 0, i64 0" [../src/header_generator.cpp:13->../src/packetizer2.cpp:123]   --->   Operation 13 'getelementptr' 'header_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%zext_ln21 = zext i30 %p_read_3" [../src/header_generator.cpp:21->../src/packetizer2.cpp:123]   --->   Operation 14 'zext' 'zext_ln21' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] ( I:2.15ns O:2.15ns )   --->   "%store_ln20 = store i32 %zext_ln21, i3 %header_addr" [../src/header_generator.cpp:20->../src/packetizer2.cpp:123]   --->   Operation 15 'store' 'store_ln20' <Predicate = true> <Delay = 2.15> <CoreInst = "RAM">   --->   Core 81 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%tmp = bitconcatenate i30 @_ssdm_op_BitConcatenate.i30.i6.i24, i6 %epoch_1, i24 %p_read_2" [../src/header_generator.cpp:24->../src/packetizer2.cpp:123]   --->   Operation 16 'bitconcatenate' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%zext_ln24 = zext i30 %tmp" [../src/header_generator.cpp:24->../src/packetizer2.cpp:123]   --->   Operation 17 'zext' 'zext_ln24' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%header_addr_1 = getelementptr i32 %header, i64 0, i64 1" [../src/header_generator.cpp:23->../src/packetizer2.cpp:123]   --->   Operation 18 'getelementptr' 'header_addr_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] ( I:2.15ns O:2.15ns )   --->   "%store_ln23 = store i32 %zext_ln24, i3 %header_addr_1" [../src/header_generator.cpp:23->../src/packetizer2.cpp:123]   --->   Operation 19 'store' 'store_ln23' <Predicate = true> <Delay = 2.15> <CoreInst = "RAM">   --->   Core 81 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%lshr_ln = partselect i15 @_ssdm_op_PartSelect.i15.i16.i32.i32, i16 %payload_words_1, i32 1, i32 15" [../src/header_generator.cpp:28->../src/packetizer2.cpp:123]   --->   Operation 20 'partselect' 'lshr_ln' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 5.81>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%zext_ln28 = zext i15 %lshr_ln" [../src/header_generator.cpp:28->../src/packetizer2.cpp:123]   --->   Operation 21 'zext' 'zext_ln28' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (2.14ns)   --->   "%frame_length = add i16 %zext_ln28, i16 4" [../src/header_generator.cpp:28->../src/packetizer2.cpp:123]   --->   Operation 22 'add' 'frame_length' <Predicate = true> <Delay = 2.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%zext_ln31 = zext i16 %frame_length" [../src/header_generator.cpp:31->../src/packetizer2.cpp:123]   --->   Operation 23 'zext' 'zext_ln31' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%zext_ln30_cast = bitconcatenate i30 @_ssdm_op_BitConcatenate.i30.i1.i29, i1 1, i29 %zext_ln31" [../src/header_generator.cpp:30->../src/packetizer2.cpp:123]   --->   Operation 24 'bitconcatenate' 'zext_ln30_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%zext_ln30 = zext i30 %zext_ln30_cast" [../src/header_generator.cpp:30->../src/packetizer2.cpp:123]   --->   Operation 25 'zext' 'zext_ln30' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%header_addr_2 = getelementptr i32 %header, i64 0, i64 2" [../src/header_generator.cpp:30->../src/packetizer2.cpp:123]   --->   Operation 26 'getelementptr' 'header_addr_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] ( I:2.15ns O:2.15ns )   --->   "%store_ln30 = store i32 %zext_ln30, i3 %header_addr_2" [../src/header_generator.cpp:30->../src/packetizer2.cpp:123]   --->   Operation 27 'store' 'store_ln30' <Predicate = true> <Delay = 2.15> <CoreInst = "RAM">   --->   Core 81 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%shl_ln = bitconcatenate i32 @_ssdm_op_BitConcatenate.i32.i1.i31, i1 %complex_data_1, i31 0" [../src/header_generator.cpp:35->../src/packetizer2.cpp:123]   --->   Operation 28 'bitconcatenate' 'shl_ln' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%shl_ln3 = bitconcatenate i31 @_ssdm_op_BitConcatenate.i31.i5.i26, i5 %bits_per_sample_1, i26 0" [../src/header_generator.cpp:36->../src/packetizer2.cpp:123]   --->   Operation 29 'bitconcatenate' 'shl_ln3' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%zext_ln37 = zext i31 %shl_ln3" [../src/header_generator.cpp:37->../src/packetizer2.cpp:123]   --->   Operation 30 'zext' 'zext_ln37' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 31 [1/1] (2.66ns)   --->   "%add_ln37 = add i32 %zext_ln37, i32 4227858432" [../src/header_generator.cpp:37->../src/packetizer2.cpp:123]   --->   Operation 31 'add' 'add_ln37' <Predicate = true> <Delay = 2.66> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%tmp_1 = partselect i6 @_ssdm_op_PartSelect.i6.i32.i32.i32, i32 %add_ln37, i32 26, i32 31" [../src/header_generator.cpp:37->../src/packetizer2.cpp:123]   --->   Operation 32 'partselect' 'tmp_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%or_ln37_1 = bitconcatenate i32 @_ssdm_op_BitConcatenate.i32.i6.i10.i16, i6 %tmp_1, i10 %thread_id_1, i16 %station_id_1" [../src/header_generator.cpp:37->../src/packetizer2.cpp:123]   --->   Operation 33 'bitconcatenate' 'or_ln37_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (0.99ns)   --->   "%or_ln37 = or i32 %or_ln37_1, i32 %shl_ln" [../src/header_generator.cpp:37->../src/packetizer2.cpp:123]   --->   Operation 34 'or' 'or_ln37' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%header_addr_3 = getelementptr i32 %header, i64 0, i64 3" [../src/header_generator.cpp:34->../src/packetizer2.cpp:123]   --->   Operation 35 'getelementptr' 'header_addr_3' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] ( I:2.15ns O:2.15ns )   --->   "%store_ln34 = store i32 %or_ln37, i3 %header_addr_3" [../src/header_generator.cpp:34->../src/packetizer2.cpp:123]   --->   Operation 36 'store' 'store_ln34' <Predicate = true> <Delay = 2.15> <CoreInst = "RAM">   --->   Core 81 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+
+State 3 <SV = 2> <Delay = 2.15>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%header_addr_4 = getelementptr i32 %header, i64 0, i64 4" [../src/header_generator.cpp:40->../src/packetizer2.cpp:123]   --->   Operation 37 'getelementptr' 'header_addr_4' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 38 [1/1] ( I:2.15ns O:2.15ns )   --->   "%store_ln40 = store i32 16777216, i3 %header_addr_4" [../src/header_generator.cpp:40->../src/packetizer2.cpp:123]   --->   Operation 38 'store' 'store_ln40' <Predicate = true> <Delay = 2.15> <CoreInst = "RAM">   --->   Core 81 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%header_addr_5 = getelementptr i32 %header, i64 0, i64 5" [../src/header_generator.cpp:41->../src/packetizer2.cpp:123]   --->   Operation 39 'getelementptr' 'header_addr_5' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 40 [1/1] ( I:2.15ns O:2.15ns )   --->   "%store_ln41 = store i32 2896953069, i3 %header_addr_5" [../src/header_generator.cpp:41->../src/packetizer2.cpp:123]   --->   Operation 40 'store' 'store_ln41' <Predicate = true> <Delay = 2.15> <CoreInst = "RAM">   --->   Core 81 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+
+State 4 <SV = 3> <Delay = 2.15>
+ST_4 : Operation 41 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %payload_words, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 41 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 42 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %complex_data, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 42 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 43 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i5 %bits_per_sample, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 43 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 44 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i10 %thread_id, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 44 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 45 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %station_id, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 45 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 46 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i6 %epoch, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 46 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 47 [1/1] (0.00ns)   --->   "%header_addr_6 = getelementptr i32 %header, i64 0, i64 6" [../src/header_generator.cpp:42->../src/packetizer2.cpp:123]   --->   Operation 47 'getelementptr' 'header_addr_6' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 48 [1/1] ( I:2.15ns O:2.15ns )   --->   "%store_ln42 = store i32 0, i3 %header_addr_6" [../src/header_generator.cpp:42->../src/packetizer2.cpp:123]   --->   Operation 48 'store' 'store_ln42' <Predicate = true> <Delay = 2.15> <CoreInst = "RAM">   --->   Core 81 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_4 : Operation 49 [1/1] (0.00ns)   --->   "%header_addr_7 = getelementptr i32 %header, i64 0, i64 7" [../src/header_generator.cpp:43->../src/packetizer2.cpp:123]   --->   Operation 49 'getelementptr' 'header_addr_7' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 50 [1/1] ( I:2.15ns O:2.15ns )   --->   "%store_ln43 = store i32 0, i3 %header_addr_7" [../src/header_generator.cpp:43->../src/packetizer2.cpp:123]   --->   Operation 50 'store' 'store_ln43' <Predicate = true> <Delay = 2.15> <CoreInst = "RAM">   --->   Core 81 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_4 : Operation 51 [1/1] (0.00ns)   --->   "%ret_ln0 = ret i16 %payload_words_1"   --->   Operation 51 'ret' 'ret_ln0' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 5.802ns
+The critical path consists of the following:
+	wire read operation ('p_read_3') on port 'p_read' [12]  (3.650 ns)
+	'store' operation ('store_ln20', ../src/header_generator.cpp:20->../src/packetizer2.cpp:123) of variable 'zext_ln21', ../src/header_generator.cpp:21->../src/packetizer2.cpp:123 32 bit on array 'header' [26]  (2.152 ns)
+
+ <State 2>: 5.814ns
+The critical path consists of the following:
+	'add' operation 32 bit ('add_ln37', ../src/header_generator.cpp:37->../src/packetizer2.cpp:123) [42]  (2.667 ns)
+	'or' operation 32 bit ('or_ln37', ../src/header_generator.cpp:37->../src/packetizer2.cpp:123) [45]  (0.995 ns)
+	'store' operation ('store_ln34', ../src/header_generator.cpp:34->../src/packetizer2.cpp:123) of variable 'or_ln37', ../src/header_generator.cpp:37->../src/packetizer2.cpp:123 32 bit on array 'header' [47]  (2.152 ns)
+
+ <State 3>: 2.152ns
+The critical path consists of the following:
+	'getelementptr' operation 3 bit ('header_addr_4', ../src/header_generator.cpp:40->../src/packetizer2.cpp:123) [48]  (0.000 ns)
+	'store' operation ('store_ln40', ../src/header_generator.cpp:40->../src/packetizer2.cpp:123) of constant 16777216 32 bit on array 'header' [49]  (2.152 ns)
+
+ <State 4>: 2.152ns
+The critical path consists of the following:
+	'getelementptr' operation 3 bit ('header_addr_6', ../src/header_generator.cpp:42->../src/packetizer2.cpp:123) [52]  (0.000 ns)
+	'store' operation ('store_ln42', ../src/header_generator.cpp:42->../src/packetizer2.cpp:123) of constant 0 32 bit on array 'header' [53]  (2.152 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

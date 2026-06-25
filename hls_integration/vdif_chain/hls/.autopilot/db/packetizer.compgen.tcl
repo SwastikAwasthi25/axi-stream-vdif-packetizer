@@ -1,7 +1,67 @@
 # This script segment is generated automatically by AutoPilot
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler vdif_chain_fifo_w32_d2048_A BINDTYPE {storage} TYPE {fifo} IMPL {memory} ALLOW_PRAGMA 1 INSTNAME {fifo_U}
+	::AP::rtl_comp_handler vdif_chain_packetizer_header_RAM_AUTO_1R1W_memcore BINDTYPE {storage} TYPE {ram} IMPL {auto} LATENCY 2 ALLOW_PRAGMA 1
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler vdif_chain_packetizer_header_RAM_AUTO_1R1W BINDTYPE {storage} TYPE {ram} IMPL {auto} LATENCY 2 ALLOW_PRAGMA 1
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler vdif_chain_fifo_w16_d2_S BINDTYPE {storage} TYPE {fifo} IMPL {srl} ALLOW_PRAGMA 1 INSTNAME {p_channel_U}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler vdif_chain_fifo_w6_d3_S BINDTYPE {storage} TYPE {fifo} IMPL {srl} ALLOW_PRAGMA 1 INSTNAME {epoch_c_U}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler vdif_chain_fifo_w16_d3_S BINDTYPE {storage} TYPE {fifo} IMPL {srl} ALLOW_PRAGMA 1 INSTNAME {station_id_c_U}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler vdif_chain_fifo_w10_d3_S BINDTYPE {storage} TYPE {fifo} IMPL {srl} ALLOW_PRAGMA 1 INSTNAME {thread_id_c_U}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler vdif_chain_fifo_w5_d3_S BINDTYPE {storage} TYPE {fifo} IMPL {srl} ALLOW_PRAGMA 1 INSTNAME {bits_per_sample_c_U}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler vdif_chain_fifo_w1_d3_S BINDTYPE {storage} TYPE {fifo} IMPL {srl} ALLOW_PRAGMA 1 INSTNAME {complex_data_c_U}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler vdif_chain_fifo_w16_d3_S BINDTYPE {storage} TYPE {fifo} IMPL {srl} ALLOW_PRAGMA 1 INSTNAME {payload_words_c1_U}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler vdif_chain_fifo_w30_d2_S BINDTYPE {storage} TYPE {fifo} IMPL {srl} ALLOW_PRAGMA 1 INSTNAME {seconds_from_epoch_U}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler vdif_chain_fifo_w24_d2_S BINDTYPE {storage} TYPE {fifo} IMPL {srl} ALLOW_PRAGMA 1 INSTNAME {frame_no_U}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler vdif_chain_fifo_w16_d2_S BINDTYPE {storage} TYPE {fifo} IMPL {srl} ALLOW_PRAGMA 1 INSTNAME {payload_words_c_channel_U}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler vdif_chain_fifo_w32_d8192_A BINDTYPE {storage} TYPE {fifo} IMPL {memory} ALLOW_PRAGMA 1 INSTNAME {fifo_U}
 }
 
 
@@ -16,14 +76,14 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 25 \
+    id 113 \
     name out_stream_V_data_V \
     reset_level 1 \
     sync_rst true \
     corename {out_stream} \
     metadata {  } \
     op interface \
-    ports { out_stream_TDATA { O 32 vector } out_stream_TREADY { I 1 bit } } \
+    ports { out_stream_TDATA { O 32 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'out_stream_V_data_V'"
@@ -35,7 +95,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 26 \
+    id 114 \
     name out_stream_V_keep_V \
     reset_level 1 \
     sync_rst true \
@@ -54,7 +114,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 27 \
+    id 115 \
     name out_stream_V_strb_V \
     reset_level 1 \
     sync_rst true \
@@ -73,14 +133,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 28 \
+    id 116 \
     name out_stream_V_last_V \
     reset_level 1 \
     sync_rst true \
     corename {out_stream} \
     metadata {  } \
     op interface \
-    ports { out_stream_TVALID { O 1 bit } out_stream_TLAST { O 1 vector } } \
+    ports { out_stream_TLAST { O 1 vector } out_stream_TVALID { O 1 bit } out_stream_TREADY { I 1 bit } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'out_stream_V_last_V'"
@@ -91,7 +151,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 24 \
+    id 112 \
     name packetizer_in \
     type fifo \
     dir I \
@@ -106,105 +166,105 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 29 \
+    id 117 \
     name epoch \
-    type other \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
     corename dc_epoch \
     op interface \
-    ports { epoch { I 6 vector } } \
+    ports { epoch_dout { I 6 vector } epoch_empty_n { I 1 bit } epoch_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 30 \
+    id 118 \
     name station_id \
-    type other \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
     corename dc_station_id \
     op interface \
-    ports { station_id { I 16 vector } } \
+    ports { station_id_dout { I 16 vector } station_id_empty_n { I 1 bit } station_id_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 31 \
+    id 119 \
     name thread_id \
-    type other \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
     corename dc_thread_id \
     op interface \
-    ports { thread_id { I 10 vector } } \
+    ports { thread_id_dout { I 10 vector } thread_id_empty_n { I 1 bit } thread_id_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 32 \
+    id 120 \
     name bits_per_sample \
-    type other \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
     corename dc_bits_per_sample \
     op interface \
-    ports { bits_per_sample { I 5 vector } } \
+    ports { bits_per_sample_dout { I 5 vector } bits_per_sample_empty_n { I 1 bit } bits_per_sample_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 33 \
+    id 121 \
     name complex_data \
-    type other \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
     corename dc_complex_data \
     op interface \
-    ports { complex_data { I 1 vector } } \
+    ports { complex_data_dout { I 1 vector } complex_data_empty_n { I 1 bit } complex_data_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 34 \
+    id 122 \
     name pps \
-    type other \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
     corename dc_pps \
     op interface \
-    ports { pps { I 1 vector } } \
+    ports { pps_dout { I 1 vector } pps_empty_n { I 1 bit } pps_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 35 \
+    id 123 \
     name payload_words \
-    type other \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
     corename dc_payload_words \
     op interface \
-    ports { payload_words { I 16 vector } } \
+    ports { payload_words_dout { I 16 vector } payload_words_empty_n { I 1 bit } payload_words_read { O 1 bit } } \
 } "
 }
 
@@ -218,7 +278,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename ap_ctrl \
     op interface \
-    ports { ap_start { I 1 bit } ap_ready { O 1 bit } ap_done { O 1 bit } ap_idle { O 1 bit } } \
+    ports { ap_start { I 1 bit } ap_ready { O 1 bit } ap_done { O 1 bit } ap_idle { O 1 bit } ap_continue { I 1 bit } } \
 } "
 }
 

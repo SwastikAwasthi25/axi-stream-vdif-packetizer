@@ -49598,6 +49598,7 @@ void sample_packer(
     ap_uint<5> bits_per_sample
 )
 {
+#pragma HLS INLINE off
 #pragma HLS INTERFACE axis port=adc_in
 #pragma HLS INTERFACE axis port=packed_out
 
@@ -49608,7 +49609,7 @@ void sample_packer(
 
     if(bits_per_sample == 2)
     {
-        VITIS_LOOP_20_1: for(int i=0;i<16;i++)
+        VITIS_LOOP_21_1: for(int i=0;i<16;i++)
         {
 #pragma HLS PIPELINE II=1
 
@@ -49621,7 +49622,7 @@ void sample_packer(
 
     else if(bits_per_sample == 4)
     {
-        VITIS_LOOP_33_2: for(int i=0;i<8;i++)
+        VITIS_LOOP_34_2: for(int i=0;i<8;i++)
         {
 #pragma HLS PIPELINE II=1
 
@@ -49634,7 +49635,7 @@ void sample_packer(
 
     else if(bits_per_sample == 8)
     {
-        VITIS_LOOP_46_3: for(int i=0;i<4;i++)
+        VITIS_LOOP_47_3: for(int i=0;i<4;i++)
         {
 #pragma HLS PIPELINE II=1
 

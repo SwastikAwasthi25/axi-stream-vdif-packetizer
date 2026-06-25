@@ -1,0 +1,192 @@
+<stg><name>packetizer_Block_entry_fsm_state_fb_proc</name>
+
+
+<trans_list>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="2" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="2" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32" op_19_bw="32" op_20_bw="32">
+<![CDATA[
+newFuncRoot:0 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_5, i32 0, i32 0, void @empty_11, i32 0, i32 0, void @empty_11, void @empty_11, void @empty_11, i32 0, i32 0, i32 0, i32 0, void @empty_11, void @empty_11, i32 4294967295, i32 0, i32 0, i32 0
+
+]]></Node>
+<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+</operation>
+
+<operation id="3" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="3" bw="1" op_0_bw="1">
+<![CDATA[
+newFuncRoot:1 %fsm_state_load = load i1 %fsm_state
+
+]]></Node>
+<StgValue><ssdm name="fsm_state_load"/></StgValue>
+</operation>
+
+<operation id="4" st_id="1" stage="1" lat="1">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="4" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+newFuncRoot:2 %next_state_assign_4 = call i1 @packet_fsm.1, i1 %fsm_state_load
+
+]]></Node>
+<StgValue><ssdm name="next_state_assign_4"/></StgValue>
+</operation>
+
+<operation id="5" st_id="1" stage="1" lat="1">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="5" bw="2" op_0_bw="2" op_1_bw="1">
+<![CDATA[
+newFuncRoot:3 %next_state_assign_3 = call i2 @packet_fsm.2, i1 %next_state_assign_4
+
+]]></Node>
+<StgValue><ssdm name="next_state_assign_3"/></StgValue>
+</operation>
+
+<operation id="6" st_id="1" stage="1" lat="1">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="6" bw="1" op_0_bw="1" op_1_bw="2">
+<![CDATA[
+newFuncRoot:4 %next_state_assign_2 = call i1 @packet_fsm, i2 %next_state_assign_3
+
+]]></Node>
+<StgValue><ssdm name="next_state_assign_2"/></StgValue>
+</operation>
+
+<operation id="7" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="7" bw="0" op_0_bw="1" op_1_bw="1" op_2_bw="0">
+<![CDATA[
+newFuncRoot:5 %store_ln191 = store i1 %next_state_assign_2, i1 %fsm_state
+
+]]></Node>
+<StgValue><ssdm name="store_ln191"/></StgValue>
+</operation>
+
+<operation id="8" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="8" bw="0">
+<![CDATA[
+newFuncRoot:6 %ret_ln0 = ret
+
+]]></Node>
+<StgValue><ssdm name="ret_ln0"/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+<port id="9" name="fsm_state" dir="2" iftype="0">
+<core>NULL</core><StgValue><ssdm name="fsm_state"/></StgValue>
+</port>
+</ports>
+
+
+<dataflows>
+<dataflow id="11" from="_ssdm_op_SpecInterface" to="specinterface_ln0" fromId="10" toId="2">
+</dataflow>
+<dataflow id="13" from="StgValue_12" to="specinterface_ln0" fromId="12" toId="2">
+</dataflow>
+<dataflow id="15" from="empty_5" to="specinterface_ln0" fromId="14" toId="2">
+</dataflow>
+<dataflow id="16" from="StgValue_12" to="specinterface_ln0" fromId="12" toId="2">
+</dataflow>
+<dataflow id="17" from="StgValue_12" to="specinterface_ln0" fromId="12" toId="2">
+</dataflow>
+<dataflow id="19" from="empty_11" to="specinterface_ln0" fromId="18" toId="2">
+</dataflow>
+<dataflow id="20" from="StgValue_12" to="specinterface_ln0" fromId="12" toId="2">
+</dataflow>
+<dataflow id="21" from="StgValue_12" to="specinterface_ln0" fromId="12" toId="2">
+</dataflow>
+<dataflow id="22" from="empty_11" to="specinterface_ln0" fromId="18" toId="2">
+</dataflow>
+<dataflow id="23" from="empty_11" to="specinterface_ln0" fromId="18" toId="2">
+</dataflow>
+<dataflow id="24" from="empty_11" to="specinterface_ln0" fromId="18" toId="2">
+</dataflow>
+<dataflow id="25" from="StgValue_12" to="specinterface_ln0" fromId="12" toId="2">
+</dataflow>
+<dataflow id="26" from="StgValue_12" to="specinterface_ln0" fromId="12" toId="2">
+</dataflow>
+<dataflow id="27" from="StgValue_12" to="specinterface_ln0" fromId="12" toId="2">
+</dataflow>
+<dataflow id="28" from="StgValue_12" to="specinterface_ln0" fromId="12" toId="2">
+</dataflow>
+<dataflow id="29" from="empty_11" to="specinterface_ln0" fromId="18" toId="2">
+</dataflow>
+<dataflow id="30" from="empty_11" to="specinterface_ln0" fromId="18" toId="2">
+</dataflow>
+<dataflow id="32" from="StgValue_31" to="specinterface_ln0" fromId="31" toId="2">
+</dataflow>
+<dataflow id="33" from="StgValue_12" to="specinterface_ln0" fromId="12" toId="2">
+</dataflow>
+<dataflow id="34" from="StgValue_12" to="specinterface_ln0" fromId="12" toId="2">
+</dataflow>
+<dataflow id="35" from="StgValue_12" to="specinterface_ln0" fromId="12" toId="2">
+</dataflow>
+<dataflow id="36" from="fsm_state" to="fsm_state_load" fromId="9" toId="3">
+</dataflow>
+<dataflow id="38" from="packet_fsm.1" to="next_state_assign_4" fromId="37" toId="4">
+</dataflow>
+<dataflow id="39" from="fsm_state_load" to="next_state_assign_4" fromId="3" toId="4">
+</dataflow>
+<dataflow id="41" from="packet_fsm.2" to="next_state_assign_3" fromId="40" toId="5">
+</dataflow>
+<dataflow id="42" from="next_state_assign_4" to="next_state_assign_3" fromId="4" toId="5">
+</dataflow>
+<dataflow id="44" from="packet_fsm" to="next_state_assign_2" fromId="43" toId="6">
+</dataflow>
+<dataflow id="45" from="next_state_assign_3" to="next_state_assign_2" fromId="5" toId="6">
+</dataflow>
+<dataflow id="46" from="next_state_assign_2" to="store_ln191" fromId="6" toId="7">
+</dataflow>
+<dataflow id="47" from="fsm_state" to="store_ln191" fromId="9" toId="7">
+</dataflow>
+</dataflows>
+
+
+</stg>

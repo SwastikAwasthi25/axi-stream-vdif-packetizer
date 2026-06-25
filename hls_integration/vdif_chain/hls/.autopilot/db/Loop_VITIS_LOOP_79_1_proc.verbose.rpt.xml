@@ -1,0 +1,166 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'Loop_VITIS_LOOP_79_1_proc'" level="0">
+<item name = "Date">Wed Jun 24 16:57:25 2026
+</item>
+<item name = "Version">2025.2 (Build 6295257 on Nov 14 2025)</item>
+<item name = "Project">vdif_chain</item>
+<item name = "Solution">hls (Vivado IP Flow Target)</item>
+<item name = "Product family">artix7</item>
+<item name = "Target device">xc7a12t-cpg238-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 7.291 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">1, 1507306, 10.000 ns, 15.073 ms, 1, 1507306, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_sample_packer_fu_147">sample_packer, 1, 20, 10.000 ns, 0.200 us, 1, 20, no</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- VITIS_LOOP_79_1">0, 1507305, 4 ~ 23, -, -, 0 ~ 65535, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 50, -</column>
+<column name="FIFO">4, -, 163, 82, -</column>
+<column name="Instance">-, -, 133, 423, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, 0, 111, -</column>
+<column name="Register">-, -, 44, -, -</column>
+<specialColumn name="Available">40, 40, 16000, 8000, 0</specialColumn>
+<specialColumn name="Utilization (%)">10, 0, 2, 8, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="grp_sample_packer_fu_147">sample_packer, 0, 0, 133, 423, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+<column name="packed_stream_fifo_U">4, 163, 0, -, 2048, 32, 65536</column>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="i_12_fu_168_p2">+, 0, 0, 23, 16, 1</column>
+<column name="icmp_ln79_fu_163_p2">icmp, 0, 0, 23, 16, 16</column>
+<column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state4">or, 0, 0, 2, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="adc_in_TREADY_int_regslice">9, 2, 1, 2</column>
+<column name="ap_NS_fsm">21, 5, 1, 5</column>
+<column name="ap_done">9, 2, 1, 2</column>
+<column name="bits_per_sample_c_blk_n">9, 2, 1, 2</column>
+<column name="bram_stream_blk_n">9, 2, 1, 2</column>
+<column name="i_fu_82">9, 2, 16, 32</column>
+<column name="packed_stream_write">9, 2, 1, 2</column>
+<column name="packetizer_in_blk_n">9, 2, 1, 2</column>
+<column name="payload_words_c1_blk_n">9, 2, 1, 2</column>
+<column name="payload_words_c_blk_n">9, 2, 1, 2</column>
+<column name="real_start">9, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">4, 0, 4, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="bits_per_sample_read_reg_186">5, 0, 5, 0</column>
+<column name="grp_sample_packer_fu_147_ap_start_reg">1, 0, 1, 0</column>
+<column name="i_fu_82">16, 0, 16, 0</column>
+<column name="payload_words_read_reg_191">16, 0, 16, 0</column>
+<column name="start_once_reg">1, 0, 1, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, Loop_VITIS_LOOP_79_1_proc, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, Loop_VITIS_LOOP_79_1_proc, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, Loop_VITIS_LOOP_79_1_proc, return value</column>
+<column name="start_full_n">in, 1, ap_ctrl_hs, Loop_VITIS_LOOP_79_1_proc, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, Loop_VITIS_LOOP_79_1_proc, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, Loop_VITIS_LOOP_79_1_proc, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, Loop_VITIS_LOOP_79_1_proc, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, Loop_VITIS_LOOP_79_1_proc, return value</column>
+<column name="start_out">out, 1, ap_ctrl_hs, Loop_VITIS_LOOP_79_1_proc, return value</column>
+<column name="start_write">out, 1, ap_ctrl_hs, Loop_VITIS_LOOP_79_1_proc, return value</column>
+<column name="payload_words">in, 16, ap_none, payload_words, scalar</column>
+<column name="adc_in_TDATA">in, 8, axis, adc_in, pointer</column>
+<column name="adc_in_TVALID">in, 1, axis, adc_in, pointer</column>
+<column name="adc_in_TREADY">out, 1, axis, adc_in, pointer</column>
+<column name="bits_per_sample">in, 5, ap_none, bits_per_sample, scalar</column>
+<column name="packetizer_in_din">out, 32, ap_fifo, packetizer_in, pointer</column>
+<column name="packetizer_in_full_n">in, 1, ap_fifo, packetizer_in, pointer</column>
+<column name="packetizer_in_write">out, 1, ap_fifo, packetizer_in, pointer</column>
+<column name="packetizer_in_num_data_valid">in, 12, ap_fifo, packetizer_in, pointer</column>
+<column name="packetizer_in_fifo_cap">in, 12, ap_fifo, packetizer_in, pointer</column>
+<column name="bram_stream_din">out, 32, ap_fifo, bram_stream, pointer</column>
+<column name="bram_stream_full_n">in, 1, ap_fifo, bram_stream, pointer</column>
+<column name="bram_stream_write">out, 1, ap_fifo, bram_stream, pointer</column>
+<column name="bram_stream_num_data_valid">in, 12, ap_fifo, bram_stream, pointer</column>
+<column name="bram_stream_fifo_cap">in, 12, ap_fifo, bram_stream, pointer</column>
+<column name="bits_per_sample_c_din">out, 5, ap_fifo, bits_per_sample_c, pointer</column>
+<column name="bits_per_sample_c_full_n">in, 1, ap_fifo, bits_per_sample_c, pointer</column>
+<column name="bits_per_sample_c_write">out, 1, ap_fifo, bits_per_sample_c, pointer</column>
+<column name="bits_per_sample_c_num_data_valid">in, 3, ap_fifo, bits_per_sample_c, pointer</column>
+<column name="bits_per_sample_c_fifo_cap">in, 3, ap_fifo, bits_per_sample_c, pointer</column>
+<column name="payload_words_c_din">out, 16, ap_fifo, payload_words_c, pointer</column>
+<column name="payload_words_c_full_n">in, 1, ap_fifo, payload_words_c, pointer</column>
+<column name="payload_words_c_write">out, 1, ap_fifo, payload_words_c, pointer</column>
+<column name="payload_words_c_num_data_valid">in, 3, ap_fifo, payload_words_c, pointer</column>
+<column name="payload_words_c_fifo_cap">in, 3, ap_fifo, payload_words_c, pointer</column>
+<column name="payload_words_c1_din">out, 16, ap_fifo, payload_words_c1, pointer</column>
+<column name="payload_words_c1_full_n">in, 1, ap_fifo, payload_words_c1, pointer</column>
+<column name="payload_words_c1_write">out, 1, ap_fifo, payload_words_c1, pointer</column>
+<column name="payload_words_c1_num_data_valid">in, 3, ap_fifo, payload_words_c1, pointer</column>
+<column name="payload_words_c1_fifo_cap">in, 3, ap_fifo, payload_words_c1, pointer</column>
+</table>
+</item>
+</section>
+</profile>

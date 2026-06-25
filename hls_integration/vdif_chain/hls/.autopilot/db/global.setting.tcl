@@ -5,7 +5,7 @@ set ClockList ap_clk
 set AxiliteClockList {}
 set HasVivadoClockPeriod 0
 set CombLogicFlag 0
-set PipelineFlag 0
+set PipelineFlag 1
 set DataflowTaskPipelineFlag 1
 set TrivialPipelineFlag 0
 set noPortSwitchingFlag 0
@@ -40,8 +40,8 @@ set SCTraceFileName mytrace
 set SCTraceFileFormat vcd
 set SCTraceOption all
 set TargetInfo xc7a12t:-cpg238:-1
-set SourceFiles {sc {} c {../../../testbench/integration/golden_model.cpp ../../../src/vdif_chain.cpp ../../../src/sample_packer/sample_packer.cpp ../../../src/packetizer2.cpp}}
-set SourceFlags {sc {} c {{} {} {} {}}}
+set SourceFiles {sc {} c {../../axis_bram_writer.cpp ../../../src/write_payload.cpp ../../../src/write_header.cpp ../../../src/read_payload.cpp ../../../src/packet_fsm.cpp ../../../src/timestamp_engine.cpp ../../../src/header_generator.cpp ../../../testbench/integration/golden_model.cpp ../../../src/vdif_chain.cpp ../../../src/sample_packer/sample_packer.cpp ../../../src/packetizer2.cpp}}
+set SourceFlags {sc {} c {{} {} {} {} {} {} {} {} {} {} {}}}
 set DirectiveFile {}
 set TBFiles {verilog D:/IITK/project_1/testbench/integration/integration_tb.cpp bc D:/IITK/project_1/testbench/integration/integration_tb.cpp vhdl D:/IITK/project_1/testbench/integration/integration_tb.cpp sc D:/IITK/project_1/testbench/integration/integration_tb.cpp cas D:/IITK/project_1/testbench/integration/integration_tb.cpp c {}}
 set SpecLanguage C

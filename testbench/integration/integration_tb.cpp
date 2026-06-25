@@ -83,6 +83,7 @@ uint32_t frame_no,
 uint16_t payload_words
 )
 {
+       std::cout << "RUN_TEST START\n";
 hls::stream<ap_uint<8>> adc_stream;
 hls::stream<axis_t> out_stream;
 
@@ -121,6 +122,7 @@ vdif_chain(
     0,
     payload_words
 );
+std::cout << "VDIF_CHAIN RETURNED\n";
 
 //--------------------------------------------------
 // Golden Payload
@@ -497,6 +499,7 @@ for(int i=0;i<260;i++)
 }
 int main()
 {
+     std::cout << "ENTERED MAIN\n";
     std::cout
 << "\nExpected FSM Sequence:\n"
 << "IDLE -> HEADER -> PAYLOAD -> IDLE\n";

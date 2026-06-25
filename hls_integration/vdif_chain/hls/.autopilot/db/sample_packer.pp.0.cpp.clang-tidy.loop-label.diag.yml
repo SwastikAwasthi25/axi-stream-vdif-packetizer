@@ -51,38 +51,38 @@ Diagnostics:
     BuildDirectory:  'D:\IITK\project_1\hls_integration'
   - DiagnosticName:  xilinx-label-all-loops
     DiagnosticMessage:
-      Message:         'Added loop label VITIS_LOOP_20_1:  '
+      Message:         'Added loop label VITIS_LOOP_21_1:  '
       FilePath:        'D:\IITK\project_1\src\sample_packer\sample_packer.cpp'
-      FileOffset:      20
+      FileOffset:      21
       Replacements:
         - FilePath:        'D:\IITK\project_1\hls_integration\vdif_chain\hls\.autopilot\db\sample_packer.pp.0.cpp'
-          Offset:          2209202
+          Offset:          2209225
           Length:          0
-          ReplacementText: 'VITIS_LOOP_20_1: '
+          ReplacementText: 'VITIS_LOOP_21_1: '
     Level:           Remark
     BuildDirectory:  'D:\IITK\project_1\hls_integration'
   - DiagnosticName:  xilinx-label-all-loops
     DiagnosticMessage:
-      Message:         'Added loop label VITIS_LOOP_33_2:  '
+      Message:         'Added loop label VITIS_LOOP_34_2:  '
       FilePath:        'D:\IITK\project_1\src\sample_packer\sample_packer.cpp'
-      FileOffset:      33
+      FileOffset:      34
       Replacements:
         - FilePath:        'D:\IITK\project_1\hls_integration\vdif_chain\hls\.autopilot\db\sample_packer.pp.0.cpp'
-          Offset:          2209454
+          Offset:          2209477
           Length:          0
-          ReplacementText: 'VITIS_LOOP_33_2: '
+          ReplacementText: 'VITIS_LOOP_34_2: '
     Level:           Remark
     BuildDirectory:  'D:\IITK\project_1\hls_integration'
   - DiagnosticName:  xilinx-label-all-loops
     DiagnosticMessage:
-      Message:         'Added loop label VITIS_LOOP_46_3:  '
+      Message:         'Added loop label VITIS_LOOP_47_3:  '
       FilePath:        'D:\IITK\project_1\src\sample_packer\sample_packer.cpp'
-      FileOffset:      46
+      FileOffset:      47
       Replacements:
         - FilePath:        'D:\IITK\project_1\hls_integration\vdif_chain\hls\.autopilot\db\sample_packer.pp.0.cpp'
-          Offset:          2209705
+          Offset:          2209728
           Length:          0
-          ReplacementText: 'VITIS_LOOP_46_3: '
+          ReplacementText: 'VITIS_LOOP_47_3: '
     Level:           Remark
     BuildDirectory:  'D:\IITK\project_1\hls_integration'
 ...
